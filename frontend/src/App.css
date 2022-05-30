@@ -5,7 +5,7 @@
   --background-gradient1: linear-gradient( white 20%, #203864 80%);
   --background-gradient2: linear-gradient( white 20%, #203864 80%);
   --background-gradient3: linear-gradient( white 20%, #203864 80%);
-
+  --font-height: 1.5;
 }
 
 * {
