@@ -8,17 +8,17 @@ function Nav() {
         <Link to="/">
           <li> Home </li>
         </Link>
-        <Link to="/Page1">
-          <li> Page1 </li>
+        <Link to="/ProjectAds">
+          <li> Project Ads </li>
         </Link>
-        <Link to="/Page2">
-          <li> Page2 </li>
+        <Link to="/Artists">
+          <li> Artists </li>
         </Link>
-        <Link to="/Page3">
-          <li> Page3 </li>
+        <Link to="/Creations">
+          <li> Creations </li>
         </Link>
-        <Link to="/Page4">
-          <li> Page4 </li>
+        <Link to="/Help">
+          <li> Help </li>
         </Link>
       </ul>
     </div>
