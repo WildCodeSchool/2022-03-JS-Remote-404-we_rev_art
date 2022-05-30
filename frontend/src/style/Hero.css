@@ -1,0 +1,45 @@
+.hero-container {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient( white 20%, #203864 80%);
+    padding: 2.5rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.hero-h1 {
+    width: 75%;
+    font-weight: 500;
+    color: #222A35;
+}
+
+.hero-p {
+    font-size: 1.8rem;
+    color: white;
+    padding: 2rem 0;
+    width: 92%;
+}
+
+.hero-img {
+    width: 25rem;
+    height: auto;
+    object-fit: contain;
+    padding-right: 10rem;
+}
+
+.button-style {
+    padding: 0.25rem 3.5rem ;
+    width: fit-content;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+}
+
+.yellow  {
+    background-color: #FFD700;
+    color: #222A35;
+}
