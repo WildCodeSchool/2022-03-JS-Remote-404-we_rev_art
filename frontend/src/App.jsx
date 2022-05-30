@@ -1,21 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
+import ProjectAds from "./pages/ProjectAds";
+import Artists from "./pages/Artists";
+import Creations from "./pages/Creations";
+import Help from "./pages/Help";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Nav from "./components/Nav";
 
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/page1" element={<Page1 />} />
-        <Route path="/page2" element={<Page2 />} />
-        <Route path="/page2" element={<Page3 />} />
-        <Route path="/page2" element={<Page4 />} />
+        <Route path="/Project_Ads" element={<ProjectAds />} />
+        <Route path="/Artists" element={<Artists />} />
+        <Route path="/Creations" element={<Creations />} />
+        <Route path="/Help" element={<Help />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
