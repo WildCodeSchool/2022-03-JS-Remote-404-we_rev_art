@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&family=Nunito+Sans:wght@200&family=PT+Serif&family=Ubuntu&display=swap%27');
-
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&family=Nunito+Sans:wght@200&family=PT+Serif&family=Ubuntu&display=swap%27");
 
 :root {
-  --background-gradient1: linear-gradient( white 20%, #203864 80%);
-  --background-gradient2: linear-gradient( white 20%, #203864 80%);
-  --background-gradient3: linear-gradient( white 20%, #203864 80%);
+  --background-gradient1: linear-gradient(white 20%, #203864 80%);
+  --background-gradient2: linear-gradient(white 20%, #203864 80%);
+  --background-gradient3: linear-gradient(white 20%, #203864 80%);
   --font-height: 1.5;
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
+
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -22,7 +22,25 @@ li{
   list-style: none;
 }
 
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
+h1 {
+
+  font-size: 5rem;
+}
+
+h3 {
+  font-weight: bolder;
+}
+
+
+.style_h2{
+  padding-left: 5rem;
+  font-size: 3.5rem;
+
+}
+
