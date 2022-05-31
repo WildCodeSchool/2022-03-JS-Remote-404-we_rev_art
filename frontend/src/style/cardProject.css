@@ -1,0 +1,49 @@
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 12rem;
+    background-color: lightgrey;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.latestProject{
+    width: 75%;
+    font-weight: 500;
+    color: #222A35;
+    margin-left: 2rem;
+}
+
+.spec{
+    padding: 1rem;
+}
+
+.imageCardProject{
+    width: 10rem;
+    height: 12rem;
+    padding: 4px;
+}
+
+.small{
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.homeToAllCard{
+    text-align: center;
+}
+
+.allCard{
+    background-color: #203864;
+    color: yellow;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    height: 2.3rem;
+    width: 15rem;
+    margin-top: 1rem;
+    text-align: center;
+}
