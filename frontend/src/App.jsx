@@ -7,6 +7,7 @@ import Help from "./pages/Help";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
