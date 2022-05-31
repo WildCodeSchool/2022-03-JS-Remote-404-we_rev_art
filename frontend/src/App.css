@@ -70,3 +70,14 @@ button {
 h1 {
   font-size: 5rem
 }
+
+h3 {
+  font-weight: bolder;
+}
+
+
+.style_h2{
+  padding-left: 5rem;
+  font-size: 3.5rem;
+
+}
