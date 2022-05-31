@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import lastProject from "../data/lastProject";
 import "../style/cardProject.css";
 
@@ -34,9 +35,11 @@ function CardProject() {
         </div>
       ))}
       <div className="homeToAllCard">
-        <button className="allCard" type="button">
-          VIEW ALL ADS
-        </button>
+        <Link to="/ProjectAds">
+          <button className="allCard" type="button">
+            VIEW ALL ADS
+          </button>
+        </Link>
       </div>
     </div>
   );

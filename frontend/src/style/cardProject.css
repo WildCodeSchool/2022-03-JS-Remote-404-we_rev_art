@@ -37,7 +37,7 @@
 
 .allCard{
     background-color: #203864;
-    color: yellow;
+    color: #ffd700;
     font-weight: 700;
     font-size: 1.5rem;
     border: none;
@@ -46,4 +46,5 @@
     width: 15rem;
     margin-top: 1rem;
     text-align: center;
+    cursor: pointer;
 }
