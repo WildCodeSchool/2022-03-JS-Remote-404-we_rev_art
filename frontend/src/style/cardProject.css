@@ -55,6 +55,7 @@
 }
 
 .registerButton{
+    font-weight: bold;
     background-color:#ffd700;
     color:  #203864;
     width: 15rem;
@@ -63,17 +64,26 @@
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    font-weight: 700;
     font-size: 1.5rem;
 }
 
 .checklist{
     text-align: left;
+    
 }
 
 .registerAlignement{
-display: flex;
-justify-content: flex-end;
-margin-right: 5rem;
-margin-top: -35rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5rem;
+    margin-top: -35rem;
+}
+
+.registerHome h2{
+    color: #203864;
+}
+
+.registerHome h3{
+    color: #203864;
 }

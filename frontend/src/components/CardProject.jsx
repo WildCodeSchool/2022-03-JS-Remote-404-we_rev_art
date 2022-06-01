@@ -6,7 +6,7 @@ import "../style/cardProject.css";
 function CardProject() {
   return (
     <div className="cardProject">
-      <h1 className="latestProject">Latest project ads</h1>
+      <h2 className="latestProject">Latest project ads</h2>
       {lastProject.map((last) => (
         <div className="card">
           <div className="spec">
@@ -26,11 +26,7 @@ function CardProject() {
             <p> {last.hashtag} </p>
           </div>
           <div>
-            <img
-              className="imageCardProject"
-              src={last.image}
-              alt="oeuvre d'art"
-            />
+            <img className="imageCardProject" src={last.image} alt={last.alt} />
           </div>
         </div>
       ))}
