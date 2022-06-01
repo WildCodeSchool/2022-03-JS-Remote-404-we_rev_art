@@ -1,4 +1,3 @@
-
 import Suggestioncard from "../components/Suggestioncard";
 import HowItWork from "../components/HowItWork";
 import Hero from "../components/Hero";
@@ -15,7 +14,6 @@ export default function Home() {
       <Suggestioncard suggestionsData={suggestionsData} />
 
       <HowItWork />
-
     </div>
   );
 }
