@@ -41,6 +41,27 @@ function CardProject() {
           </button>
         </Link>
       </div>
+      <div className="registerAlignement">
+        <div className="registerHome">
+          <h2>ARE YOU A DIGITAL ARTIST ?</h2>
+          <br />
+          <p>register for free to find animation offers</p>
+          <br />
+          <Link to="/ProjectAds">
+            <button className="registerButton" type="button">
+              CREATE YOUR PORTFOLIO
+            </button>
+          </Link>
+          <br />
+          <br />
+          <h3>WHY REGISTER ?</h3>
+          <br />
+          <p className="checklist">
+            ✓ Develop and earn from your skills <br /> ✓ Gain visibility <br />✓
+            Join a growing community <br />✓ Collaborate with the art world
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
