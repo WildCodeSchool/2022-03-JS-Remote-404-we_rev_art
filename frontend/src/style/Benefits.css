@@ -1,0 +1,14 @@
+.benefits-container{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* padding: 5rem; */
+}
+
+.benefits-list{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2vw;
+    justify-content: space-around;
+
+}

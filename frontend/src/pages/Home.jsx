@@ -5,6 +5,7 @@ import CardProject from "../components/CardProject";
 import TitleText from "../components/TitleText";
 import titleTextData from "../data/titleTextData";
 import suggestionsData from "../data/suggestionsData";
+import Benefits from "../components/Benefits";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <CardProject />
       <Suggestioncard suggestionsData={suggestionsData} />
       <HowItWork />
+      <Benefits />
     </div>
   );
 }
