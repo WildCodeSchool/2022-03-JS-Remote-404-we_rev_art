@@ -1,30 +1,21 @@
-.suggestioncard-container {
-  background: (white);
+.cardsuggestion {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  padding-top: 4rem;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
 }
 
-.suggestion_h2 {
-  color: #222a35;
-  font-style: bold;
-  font-size: 2.5rem;
-  margin-left: 600px;
-}
-
-.sectionsuggestion {
-  display: flex;
-  flex-direction: initial;
-  margin: 3rem;
-  margin-left: 300px;
-}
 .sectionsuggestion p {
   background-color: #203864;
   color: white;
-  padding: 3.5rem 0rem 3.5rem 3.5rem;
-  width: 17%;
-  border: none;
-  border-radius: 0.25rem;
+  padding: 2.5rem 0;
+  border-radius: 1.25rem;
   font-size: 1.5rem;
-  font-size: fit-content;
   border-color: #ffd700;
-  border-style: groove;
+  border-style: dashed;
   border-width: bold;
+  text-align: center;
 }
