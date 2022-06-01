@@ -6,16 +6,16 @@ import "../style/cardProject.css";
 function CardProject() {
   return (
     <div className="cardProject">
-      <h2 className="latestProject">Latest project ads</h2>
+      <h2>Latest project ads</h2>
       {lastProject.map((last) => (
         <div className="card">
           <div className="spec">
-            <h2>
+            <h3>
               {last.title}
               <small className="small">
                 ~ {last.date} ~ {last.timeframe}
               </small>
-            </h2>
+            </h3>
             <p>
               Technique : {last.technique} ~ Budget {last.budget}€ ~
               {last.nboffre} offers ~ client : {last.client}
@@ -39,7 +39,7 @@ function CardProject() {
       </div>
       <div className="registerAlignement">
         <div className="registerHome">
-          <h2>ARE YOU A DIGITAL ARTIST ?</h2>
+          <h3>ARE YOU A DIGITAL ARTIST ?</h3>
           <br />
           <p>register for free to find animation offers</p>
           <br />

@@ -6,14 +6,7 @@
     height: 12rem;
     background-color: lightgrey;
     margin-top: 1rem;
-    margin-left: 2rem;
-}
-
-.latestProject{
-    width: 75%;
-    font-weight: 500;
-    color: #222A35;
-    margin-left: 2rem;
+    margin-left: 4rem;
 }
 
 .spec{
@@ -32,7 +25,8 @@
 }
 
 .homeToAllCard{
-    text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .allCard{
@@ -47,6 +41,7 @@
     margin-top: 1rem;
     text-align: center;
     cursor: pointer;
+    justify-self: right;
 }
 
 .registerHome{
@@ -86,4 +81,9 @@
 
 .registerHome h3{
     color: #203864;
+    font-size: 1.5rem;
+}
+
+.cardProject{
+    height: 50rem;
 }
