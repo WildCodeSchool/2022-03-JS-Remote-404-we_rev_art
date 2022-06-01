@@ -6,14 +6,15 @@ import Creations from "./pages/Creations";
 import Help from "./pages/Help";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Nav from "./components/Nav";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Project_Ads" element={<ProjectAds />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

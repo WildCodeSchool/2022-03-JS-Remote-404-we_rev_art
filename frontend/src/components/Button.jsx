@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 
-// eslint-disable-next-line react/prop-types
 function Button({ buttonData }) {
+  const cls = `${buttonData.style} button-style`;
   return (
-    <button type="button" className={buttonData.style}>
+    <button type="button" className={cls}>
       {buttonData.content}
     </button>
   );

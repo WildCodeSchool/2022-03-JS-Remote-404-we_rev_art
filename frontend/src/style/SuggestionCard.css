@@ -1,0 +1,21 @@
+.cardsuggestion {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  padding-top: 4rem;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+}
+
+.sectionsuggestion p {
+  background-color: #203864;
+  color: white;
+  padding: 2.5rem 0;
+  border-radius: 1.25rem;
+  font-size: 1.5rem;
+  border-color: #ffd700;
+  border-style: dashed;
+  border-width: bold;
+  text-align: center;
+}
