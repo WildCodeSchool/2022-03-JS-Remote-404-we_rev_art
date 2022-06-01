@@ -11,9 +11,9 @@ export default function Home() {
     <div>
       <Hero />
       <TitleText titleTextData={titleTextData} />
-      <CardProject />
       <Suggestioncard suggestionsData={suggestionsData} />
       <HowItWork />
+      <CardProject />
     </div>
   );
 }
