@@ -10,7 +10,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -42,5 +41,9 @@ h3 {
   padding-left: 5rem;
   font-size: 3.5rem;
 
+}
+
+h1 {
+  font-size: 5rem;
 }
 
