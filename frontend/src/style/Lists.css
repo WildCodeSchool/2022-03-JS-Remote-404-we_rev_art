@@ -8,21 +8,19 @@
   justify-content: flex-start;
   flex-direction: column;
   line-height: 2;
-
 }
-.list-container{
+.list-container {
   display: flex;
 }
-.list-container2{
+.list-container2 {
   display: flex;
   align-items: center;
 }
 
 .list-container:nth-child(1),
-.list-container:nth-child(2)
- {
-  margin-left: 5rem; 
+.list-container:nth-child(2) {
+  margin-left: 5rem;
 }
-.list-container :last-child(3){
+.list-container :last-child(3) {
   margin-left: 3rem;
 }

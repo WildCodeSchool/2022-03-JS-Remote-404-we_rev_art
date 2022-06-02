@@ -7,31 +7,61 @@ import "../style/cardProject.css";
 
 function CardProject() {
   return (
-    <div className="cardProject">
-      <h2>Latest project ads</h2>
-      {lastProject.map((last) => (
-        <div className="card">
-          <div className="spec">
-            <h3>
-              {last.title}
-              <small className="small">
-                ~ {last.date} ~ {last.timeframe}
-              </small>
-            </h3>
-            <p>
-              Technique : {last.technique} ~ Budget {last.budget}€ ~
-              {last.nboffre} offers ~ client : {last.client}
-            </p>
-            <br />
-            <p> Details of ad : {last.details}</p>
-            <br />
-            <p> {last.hashtag} </p>
-          </div>
-          <div>
-            <img className="imageCardProject" src={last.image} alt={last.alt} />
+    <>
+      <div className="cardProject">
+        <h2>Latest project ads</h2>
+
+        <div className="cards">
+          {lastProject.map((last) => (
+            <div className="card">
+              <div className="spec">
+                <h3>
+                  {last.title}
+                  <small className="small">
+                    ~ {last.date} ~ {last.timeframe}
+                  </small>
+                </h3>
+                <p className="modalities">
+                  Technique : {last.technique} ~ Budget {last.budget}€ ~
+                  {last.nboffre} offers ~ client : {last.client}
+                </p>
+                <br />
+                <p className="details"> Details of ad : {last.details}</p>
+                <br />
+                <p> {last.hashtag} </p>
+              </div>
+              <div>
+                <img
+                  className="imageCardProject"
+                  src={last.image}
+                  alt={last.alt}
+                />
+              </div>
+            </div>
+          ))}
+
+          <div className="registerAlignement">
+            <div className="registerHome">
+              <h3>ARE YOU A DIGITAL ARTIST ?</h3>
+              <br />
+              <p>register for free to find animation offers</p>
+              <br />
+              <Link to="/ProjectAds">
+                <button className="registerButton" type="button">
+                  CREATE YOUR PORTFOLIO
+                </button>
+              </Link>
+              <br />
+              <br />
+              <h3>WHY REGISTER ?</h3>
+              <div className="checklist">
+                <Checklist text={checklistData[3]} />
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+      </div>
+
       <div className="homeToAllCard">
         <Link to="/ProjectAds">
           <button className="allCard" type="button">
@@ -39,26 +69,7 @@ function CardProject() {
           </button>
         </Link>
       </div>
-      <div className="registerAlignement">
-        <div className="registerHome">
-          <h3>ARE YOU A DIGITAL ARTIST ?</h3>
-          <br />
-          <p>register for free to find animation offers</p>
-          <br />
-          <Link to="/ProjectAds">
-            <button className="registerButton" type="button">
-              CREATE YOUR PORTFOLIO
-            </button>
-          </Link>
-          <br />
-          <br />
-          <h3>WHY REGISTER ?</h3>
-          <div className="checklist">
-            <Checklist text={checklistData[3]} />
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
