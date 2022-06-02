@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/SuggestionCard.css";
+import ArtList from "./ArtList";
 
 function Suggestioncard({ suggestionsData }) {
   return (
@@ -12,6 +13,7 @@ function Suggestioncard({ suggestionsData }) {
           </section>
         ))}
       </div>
+      <ArtList />
     </div>
   );
 }

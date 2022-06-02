@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import lastProject from "../data/lastProject";
+import Checklist from "./Checklist";
+import checklistData from "../data/ChecklistData";
 import "../style/cardProject.css";
 
 function CardProject() {
@@ -51,11 +53,9 @@ function CardProject() {
           <br />
           <br />
           <h3>WHY REGISTER ?</h3>
-          <br />
-          <p className="checklist">
-            ✓ Develop and earn from your skills <br /> ✓ Gain visibility <br />✓
-            Join a growing community <br />✓ Collaborate with the art world
-          </p>
+          <div className="checklist">
+            <Checklist text={checklistData[3]} />
+          </div>
         </div>
       </div>
     </div>
