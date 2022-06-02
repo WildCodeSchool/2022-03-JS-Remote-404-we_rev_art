@@ -19,12 +19,12 @@ function CardProject() {
                     ~ {last.date} ~ {last.timeframe}
                   </small>
                 </h3>
-                <p>
+                <p className="modalities">
                   Technique : {last.technique} ~ Budget {last.budget}€ ~
                   {last.nboffre} offers ~ client : {last.client}
                 </p>
                 <br />
-                <p> Details of ad : {last.details}</p>
+                <p className="details"> Details of ad : {last.details}</p>
                 <br />
                 <p> {last.hashtag} </p>
               </div>
