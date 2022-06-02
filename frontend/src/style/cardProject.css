@@ -1,4 +1,7 @@
 
+.cardProject{
+    height: 50rem;
+}
 .card{
     display: flex;
     justify-content: space-between;
@@ -27,6 +30,7 @@
 .homeToAllCard{
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .allCard{
@@ -41,7 +45,7 @@
     margin-top: 1rem;
     text-align: center;
     cursor: pointer;
-    justify-self: right;
+    
 }
 
 .registerHome{
@@ -84,6 +88,3 @@
     font-size: 1.5rem;
 }
 
-.cardProject{
-    height: 50rem;
-}
