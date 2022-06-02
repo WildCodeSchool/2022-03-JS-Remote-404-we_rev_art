@@ -11,16 +11,16 @@
 }
 .list-container {
   display: flex;
+  justify-content: flex-start;
+
 }
 .list-container2 {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-right: 8rem;
 }
 
-.list-container:nth-child(1),
-.list-container:nth-child(2) {
-  margin-left: 5rem;
-}
-.list-container :last-child(3) {
-  margin-left: 3rem;
+.list-container section:nth-child(2) {
+  margin-left: 25rem;
 }

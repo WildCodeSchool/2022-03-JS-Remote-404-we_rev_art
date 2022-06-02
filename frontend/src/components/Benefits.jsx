@@ -8,10 +8,10 @@ function Benefits() {
   return (
     <div className="benefits-container">
       <h2>What are the benefits?</h2>
-      <div className="list-container">
+      <section className="list-container">
         <Checklist text={checklistData[0]} />
         <Checklist text={checklistData[1]} />
-      </div>
+      </section>
     </div>
   );
 }
