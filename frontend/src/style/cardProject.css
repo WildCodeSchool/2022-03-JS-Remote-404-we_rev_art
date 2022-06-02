@@ -1,8 +1,12 @@
 
+.cardProject{
+   display: flex;
+   align-items: center;
+}
 .card{
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 90%;
     height: 12rem;
     background-color: lightgrey;
     margin-top: 1rem;
@@ -26,7 +30,9 @@
 
 .homeToAllCard{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  width: 93.5%;
 }
 
 .allCard{
@@ -41,7 +47,7 @@
     margin-top: 1rem;
     text-align: center;
     cursor: pointer;
-    justify-self: right;
+    
 }
 
 .registerHome{
@@ -64,15 +70,16 @@
 
 .checklist{
     text-align: left;
+    font-size: 1.2rem;
     
 }
 
 .registerAlignement{
     font-weight: bold;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 5rem;
-    margin-top: -35rem;
+    justify-content: center;
+    width: 35%;
+    height: 100%;
 }
 
 .registerHome h2{
@@ -81,9 +88,12 @@
 
 .registerHome h3{
     color: #203864;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+.modalities{
+    font-size: 1.2rem;
+}
+.details {
+    font-size: 1.2rem;
 }
 
-.cardProject{
-    height: 50rem;
-}
