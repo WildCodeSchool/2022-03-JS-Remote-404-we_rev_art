@@ -1,9 +1,11 @@
 const checklistData = [
   {
     id: 1,
-    text1: " ✓ Your vision comes to life ",
-    text2: " ✓ People better understand your art ",
-    text3: " ✓ Your physical art increases in value ",
+    text: [
+      " ✓ Your vision comes to life ",
+      " ✓ People better understand your art ",
+      " ✓ Your physical art increases in value",
+    ],
     style: "list",
   },
   {

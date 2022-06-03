@@ -9,13 +9,13 @@ import Benefits from "../components/Benefits";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Hero />
       <TitleText titleTextData={titleTextData} />
       <Suggestioncard suggestionsData={suggestionsData} />
       <HowItWork />
       <Benefits />
       <CardProject />
-    </div>
+    </main>
   );
 }

@@ -7,7 +7,7 @@ import "../style/cardProject.css";
 
 function CardProject() {
   return (
-    <div className="cardProject">
+    <section className="cardProject">
       <div className="cards">
         <h2>Latest project ads</h2>
         {lastProject.map((last) => (
@@ -65,7 +65,7 @@ function CardProject() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

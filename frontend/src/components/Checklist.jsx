@@ -1,13 +1,14 @@
 import React from "react";
 import "../style/Lists.css";
+import checklistData from "../data/ChecklistData";
 
-function Checklist({ text }) {
+function Checklist({ index }) {
   return (
-    <section className={text.style}>
-      <p>{text.text1}</p>
-      <p>{text.text2}</p>
-      <p>{text.text3}</p>
-      {text.text4 ? <p>{text.text4}</p> : ""}
+    <section className={checklistData[index].style}>
+      <p>{checklistData[index].text1}</p>
+      <p>{checklistData[index].text2}</p>
+      <p>{checklistData[index].text3}</p>
+      {checklistData[index].text4 ? <p>{checklistData[index].text4}</p> : ""}
     </section>
   );
 }
