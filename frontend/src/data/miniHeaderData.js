@@ -64,4 +64,4 @@ const miniHeaderData = [
   },
 ];
 
-export default miniHeaderData; 
+export default miniHeaderData;
