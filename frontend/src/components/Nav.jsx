@@ -11,7 +11,7 @@ function Nav() {
             <a className="nav_link"> Home</a>
           </li>
         </Link>
-        <Link to="/ProjectAds">
+        <Link to="/Project_Ads">
           <li>
             <a className="nav_link">Project Ads</a>
           </li>
