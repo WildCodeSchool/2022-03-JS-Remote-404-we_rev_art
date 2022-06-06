@@ -1,12 +1,14 @@
 import React from "react";
 import miniHeaderData from "../data/miniHeaderData";
+import "../style/miniHeader.css";
 
-function miniHeader({ index }) {
+function MiniHeader({ index }) {
   return (
-    <section>
-      <h1> {miniHeaderData[index].title} </h1>
+    <section className="miniHeader-container">
+      <h2> {miniHeaderData[index].title} </h2>
+      {miniHeaderData[index].text ? <p> {miniHeaderData[index].text} </p> : ""}
     </section>
   );
 }
 
-export default miniHeader;
+export default MiniHeader;

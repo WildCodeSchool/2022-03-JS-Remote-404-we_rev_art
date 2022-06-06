@@ -1,0 +1,14 @@
+.miniHeader-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0 2rem;
+  align-items: flex-start;
+  background: linear-gradient(white 20%, #203864 80%);
+  margin-bottom: 5rem;
+  font-weight: bold;
+}
+
+.miniHeader-container p {
+  padding: 3rem 50rem 0 5rem;
+  color: white;
+}
