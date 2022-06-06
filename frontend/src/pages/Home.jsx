@@ -1,36 +1,21 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import Suggestioncard from "../components/Suggestioncard";
+import HowItWork from "../components/HowItWork";
+import Hero from "../components/Hero";
+import CardProject from "../components/CardProject";
+import TitleText from "../components/TitleText";
+import titleTextData from "../data/titleTextData";
+import suggestionsData from "../data/suggestionsData";
+import Benefits from "../components/Benefits";
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div>
+      <Hero />
+      <TitleText titleTextData={titleTextData} />
+      <Suggestioncard suggestionsData={suggestionsData} />
+      <HowItWork />
+      <Benefits />
+      <CardProject />
+    </div>
   );
 }
