@@ -1,11 +1,16 @@
 import React from "react";
-import fieldData from "../data/fieldData";
+import fieldDataArtistAccount from "../data/fieldDataArtistAccount";
 
-function Field({ index }) {
+function Field() {
   return (
-    <label htmlFor={fieldData[index]}>
-      <input type="text" />
-    </label>
+    <div className="field_container">
+      {fieldDataArtistAccount.map((el) => (
+        <label htmlFor={el.label} className="field_label">
+          {el.label} {el.required === true ? <span> {el.required} </span> : ""}{" "}
+          <input type="text" />
+        </label>
+      ))}
+    </div>
   );
 }
 
