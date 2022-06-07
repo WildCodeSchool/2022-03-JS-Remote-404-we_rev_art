@@ -14,9 +14,9 @@ function CardProject() {
             <div className="spec">
               <h3>
                 {last.title}
-                <small className="small">
+                <span className="small">
                   ~ {last.date} ~ {last.timeframe}
-                </small>
+                </span>
               </h3>
               <p className="modalities">
                 Technique : {last.technique} ~ Budget {last.budget}€ ~
@@ -37,10 +37,8 @@ function CardProject() {
           </div>
         ))}
         <div className="homeToAllCard">
-          <Link to="/ProjectAds">
-            <button className="allCard" type="button">
-              VIEW ALL ADS
-            </button>
+          <Link to="/ProjectAds" className="allCard">
+            VIEW ALL ADS
           </Link>
         </div>
       </div>
