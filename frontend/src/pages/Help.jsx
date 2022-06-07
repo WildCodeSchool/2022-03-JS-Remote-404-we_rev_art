@@ -1,7 +1,12 @@
 import React from "react";
+import MiniHeader from "../components/MiniHeader";
 
 function Help() {
-  return <div>Help</div>;
+  return (
+    <div>
+      <MiniHeader index={3} />
+    </div>
+  );
 }
 
 export default Help;
