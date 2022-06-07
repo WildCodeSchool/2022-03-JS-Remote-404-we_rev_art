@@ -5,13 +5,19 @@ import Button from "./Button";
 
 import checkboxesData from "../data/checkboxesData";
 import buttonData from "../data/buttonData";
+import fieldDataArtistAccount from "../data/fieldDataArtistAccount";
 
 import "../style/MyAccount.css";
 
 function MyArtistAccount() {
   return (
     <section className="myAccount_container_noMiniHeader">
-      <Field index={0} />
+      <div className="field_container">
+        {fieldDataArtistAccount.map((element) => (
+          <Field el={element} />
+        ))}
+      </div>
+
       <div className="myAccount_checkboxes_container">
         {checkboxesData.map((el) => (
           <Checkboxes data={el} />
