@@ -45,7 +45,7 @@ function CardProject() {
         </div>
       </div>
       <RegisterHome />
-    </div>
+    </section>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import MiniHeader from "../components/MiniHeader";
+import MiniHeader from "../components/miniHeader";
 
 function Creations() {
   return (
