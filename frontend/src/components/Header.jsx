@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../images/logo_werevart.png";
 import Nav from "./Nav";
 import Register from "./Register";
 import Button from "./Button";
 import buttonData from "../data/buttonData";
+import Logo from "../images/logo_werevart.png";
 import "../style/Header.css";
 import "../style/Logo.css";
 
