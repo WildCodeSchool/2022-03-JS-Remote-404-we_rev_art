@@ -7,7 +7,7 @@ function ProjectFilterOption({ list }) {
     setButtonClicked(!buttonClicked);
   }
   return (
-    <section className="XXXX">
+    <section className="XXX2">
       <button className="filter_selection" type="button" onClick={handleClick}>
         {list.filter}
       </button>

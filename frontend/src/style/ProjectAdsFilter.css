@@ -19,10 +19,13 @@
   margin-left: 4rem;
 }
 
-.XXXX {
-  width: 100%;
+.XXX2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.XXX1 {
+  display: flex;
+  
 }
 .filter_selection {
   background-color: rgb(152, 159, 193);
