@@ -6,7 +6,6 @@ import Creations from "./pages/Creations";
 import Help from "./pages/Help";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import MyAccount from "./pages/MyAccount";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -24,7 +23,6 @@ function App() {
         <Route path="/Help" element={<Help />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/My_Account" element={<MyAccount />} />
       </Routes>
       <Footer />
     </BrowserRouter>
