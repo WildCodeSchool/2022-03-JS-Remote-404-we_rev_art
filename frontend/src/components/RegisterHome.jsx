@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Checklist from "./Checklist";
-import checklistData from "../data/ChecklistData";
 
 import "../style/cardProject.css";
 
