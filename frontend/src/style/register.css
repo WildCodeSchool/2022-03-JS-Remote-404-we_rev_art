@@ -1,0 +1,5 @@
+.register_buttons_container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}

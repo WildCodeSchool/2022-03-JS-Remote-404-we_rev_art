@@ -24,6 +24,16 @@ const buttonData = [
     content: "DELETE",
     style: "button-style empty_blue",
   },
+  {
+    id: 6,
+    content: "CUSTOMER",
+    style: "button-style empty_yellow",
+  },
+  {
+    id: 7,
+    content: "DIGITAL ARTIST",
+    style: "button-style empty_yellow",
+  },
 ];
 
 export default buttonData;
