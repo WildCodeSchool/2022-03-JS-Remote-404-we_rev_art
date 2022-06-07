@@ -13,10 +13,10 @@ function ProjectAdsFilter() {
         are looking for digital artist(s) to animate physical artwork(s)
       </h3>
       <div className="XXX1">
-      {ProjectAdsFilterData.map((data) => (
-        <ProjectFilterOption list={data} />
-      ))}
-      </div> 
+        {ProjectAdsFilterData.map((data) => (
+          <ProjectFilterOption list={data} />
+        ))}
+      </div>
     </div>
   );
 }
