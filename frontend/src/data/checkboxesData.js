@@ -5,7 +5,7 @@ const checkboxesData = [
   },
   {
     id: 1,
-    text: "I’d like to be informed when a client replies to my proposa",
+    text: "I’d like to be informed when a client replies to my proposal",
   },
   {
     id: 2,

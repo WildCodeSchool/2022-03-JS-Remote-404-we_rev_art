@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import MiniHeader from "../components/miniHeader";
-import MyArtistAccount from "../components/MyArtistAccount";
+import ArtistRegistration from "../components/ArtistRegistration";
+import CustomerRegistration from "../components/CustomerRegistration";
+
 // import Buttons from "../components/Buttons";
 
 import "../style/register.css";
@@ -20,9 +22,11 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="register_container">
       <MiniHeader index={4} />
-      <h4>What type of account do you want to create? </h4>
+      <h2 className="register_title">
+        What type of account do you want to create?
+      </h2>
       {/* <Buttons min={6} max={7} /> */}
 
       <div className="register_buttons_container">
@@ -42,8 +46,8 @@ function Register() {
         </button>
       </div>
 
-      {artist ? <MyArtistAccount /> : ""}
-      {customer ? "en cours" : ""}
+      {artist ? <ArtistRegistration /> : ""}
+      {customer ? <CustomerRegistration /> : ""}
     </div>
   );
 }

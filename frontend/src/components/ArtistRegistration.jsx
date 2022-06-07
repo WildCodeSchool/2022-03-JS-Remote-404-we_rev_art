@@ -1,14 +1,14 @@
 import React from "react";
 import Checkboxes from "./Checkboxes";
+import Fields from "./Fields";
+import Buttons from "./Buttons";
 
 import checkboxesData from "../data/checkboxesData";
 import fieldDataArtistAccount from "../data/fieldDataArtistAccount";
 
 import "../style/MyAccount.css";
-import Fields from "./Fields";
-import Buttons from "./Buttons";
 
-function MyArtistAccount() {
+function ArtistRegistration() {
   return (
     <section className="myAccount_container_noMiniHeader">
       <Fields data={fieldDataArtistAccount} />
@@ -23,4 +23,4 @@ function MyArtistAccount() {
   );
 }
 
-export default MyArtistAccount;
+export default ArtistRegistration;

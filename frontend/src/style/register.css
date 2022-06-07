@@ -3,3 +3,16 @@
     justify-content: space-evenly;
     padding: 2rem;
 }
+.register_buttons_container *{
+    width: 20rem;
+    height: 8rem;
+    font-weight: bold;
+}
+.register_container {
+    background-color: #F2F2F2;
+}
+
+.register_title {
+    text-align: center;
+    padding: 3rem;
+}
