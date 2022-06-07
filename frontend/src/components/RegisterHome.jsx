@@ -22,7 +22,7 @@ function RegisterHome() {
         <br />
         <h3>WHY REGISTER ?</h3>
         <div className="checklist">
-          <Checklist text={checklistData[3]} />
+          <Checklist index={3} />
         </div>
       </div>
     </div>
