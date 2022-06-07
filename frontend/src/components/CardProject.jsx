@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import lastProject from "../data/lastProject";
 import Checklist from "./Checklist";
-import checklistData from "../data/ChecklistData";
+// import checklistData from "../data/ChecklistData";
 import "../style/cardProject.css";
 
 function CardProject() {
@@ -61,7 +61,7 @@ function CardProject() {
           <br />
           <h3>WHY REGISTER ?</h3>
           <div className="checklist">
-            <Checklist text={checklistData[3]} />
+            <Checklist index={3} />
           </div>
         </div>
       </div>

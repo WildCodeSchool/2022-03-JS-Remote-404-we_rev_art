@@ -1,4 +1,4 @@
-const suggestions = [
+const suggestionsData = [
   {
     id: 1,
     type: "Add movement and depth",
@@ -33,4 +33,4 @@ const suggestions = [
   },
 ];
 
-export default suggestions;
+export default suggestionsData;

@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import CardProject from "../components/CardProject";
 import TitleText from "../components/TitleText";
 import titleTextData from "../data/titleTextData";
-import suggestionsData from "../data/suggestionsData";
 import Benefits from "../components/Benefits";
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
     <main>
       <Hero />
       <TitleText titleTextData={titleTextData} />
-      <Suggestioncard suggestionsData={suggestionsData} />
+      <Suggestioncard />
       <HowItWork />
       <Benefits />
       <CardProject />
