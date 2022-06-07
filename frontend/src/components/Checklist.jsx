@@ -5,10 +5,10 @@ import checklistData from "../data/ChecklistData";
 function Checklist({ index }) {
   return (
     <section>
-      {checklistData[index].text.map((data) => (
-        <p>{data}</p>
-      ))}
-      ;
+      {/* {console.log(checklistData[index])} */}
+      {checklistData[index]
+        ? checklistData[index].text.map((data) => <p key={data}>{data}</p>)
+        : null}
     </section>
   );
 }
