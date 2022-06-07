@@ -6,7 +6,7 @@ function Register() {
   return (
     <div>
       <ul className="ul_container">
-        <Link to="/">
+        <Link to="/My_Account">
           <li>
             <a className="register_link"> Register</a>
           </li>
