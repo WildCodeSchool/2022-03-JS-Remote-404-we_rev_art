@@ -10,7 +10,7 @@ function CardProject() {
       <div className="cards">
         <h2>Latest project ads</h2>
         {lastProject.map((last) => (
-          <div className="card">
+          <div className="card" key={last.id}>
             <div className="spec">
               <h3>
                 {last.title}
