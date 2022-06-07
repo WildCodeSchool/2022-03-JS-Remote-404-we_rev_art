@@ -17,7 +17,7 @@ function Field() {
           </div>
           <input
             type="text"
-            className="field_input"
+            className={`field_input ${el.style}`}
             placeholder={`Enter your ${el.label.toLowerCase()}`}
           />
         </label>

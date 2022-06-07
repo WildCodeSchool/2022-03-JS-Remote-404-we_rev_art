@@ -1,0 +1,25 @@
+.button-style {
+    padding: 0.25rem 3.5rem;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+  }
+
+  .yellow {
+    background-color: #ffd700;
+    color: #222a35;
+  }
+
+  .empty_yellow {
+    background-color: inherit;
+    color: #222a35;
+    border: #ffd700 solid 4px;
+  }
+
+ .empty_blue {
+    background-color: inherit;
+    border: #222a35 solid 4px;
+    color: #ffd700;
+ }

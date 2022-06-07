@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../style/button.css";
+
 function Button({ buttonData }) {
   const cls = `${buttonData.style} button-style`;
   return (

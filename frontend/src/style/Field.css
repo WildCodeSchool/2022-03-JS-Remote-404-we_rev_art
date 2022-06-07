@@ -1,8 +1,7 @@
 .field_container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap ;
     padding: 1rem 10rem;
-    background-color: #F2F2F2;
 }
 
 .field_label {
@@ -17,7 +16,7 @@
 .field_input {
     height: 5rem;
     padding: 0 5rem;
-    width: fit-content;
+    margin-top: 1rem;
     border-radius: 1rem;
     font-size: 2rem;
     text-align: center;
@@ -25,6 +24,19 @@
 }
 
 .field_span {
-   opacity: 40%;
+   opacity: 70%;
    font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.solo {
+    width: 60vw;
+}
+
+.duo {
+    width: 35vw ;
+}
+
+.trio {
+    width: 23vw;
 }
