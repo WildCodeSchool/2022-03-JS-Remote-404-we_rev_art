@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/logo_werevart.png";
+import Logo from "../images/logo.png";
 import Nav from "./Nav";
 import Register from "./Register";
 import Button from "./Button";

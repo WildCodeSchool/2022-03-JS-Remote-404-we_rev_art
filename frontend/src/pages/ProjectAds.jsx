@@ -1,10 +1,12 @@
 import React from "react";
-import ProjectAdsFilter from "@components/ProjectAdsFilter";
+import ProjectAdsFilter from "../components/ProjectAdsFilter";
+import MiniHeader from "../components/miniHeader";
 
 function ProjectAds() {
   return (
     <div>
-      <ProjectAdsFilter />
+     <MiniHeader index={0} />
+     <ProjectAdsFilter />
     </div>
   );
 }
