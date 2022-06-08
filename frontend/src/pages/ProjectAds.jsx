@@ -1,7 +1,12 @@
 import React from "react";
+import ProjectAdsFilter from "@components/ProjectAdsFilter";
 
 function ProjectAds() {
-  return <div>ProjectAds</div>;
+  return (
+    <div>
+      <ProjectAdsFilter />
+    </div>
+  );
 }
 
 export default ProjectAds;

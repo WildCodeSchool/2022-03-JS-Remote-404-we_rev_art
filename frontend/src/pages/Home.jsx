@@ -1,4 +1,3 @@
-import ProjectAdsFilter from "@components/ProjectAdsFilter";
 import Suggestioncard from "../components/Suggestioncard";
 import HowItWork from "../components/HowItWork";
 import Hero from "../components/Hero";
@@ -17,7 +16,6 @@ export default function Home() {
       <HowItWork />
       <Benefits />
       <CardProject />
-      <ProjectAdsFilter />
     </div>
   );
 }

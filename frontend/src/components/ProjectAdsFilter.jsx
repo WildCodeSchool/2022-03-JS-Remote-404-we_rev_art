@@ -12,7 +12,7 @@ function ProjectAdsFilter() {
         artists, illustrators, museums, galleries, collectors and art lovers who
         are looking for digital artist(s) to animate physical artwork(s)
       </h3>
-      <div className="XXX1">
+      <div className="buttonlist_map">
         {ProjectAdsFilterData.map((data) => (
           <ProjectFilterOption list={data} />
         ))}
