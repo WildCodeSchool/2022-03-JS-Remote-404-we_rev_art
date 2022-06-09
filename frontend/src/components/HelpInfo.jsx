@@ -6,7 +6,9 @@ function HelpInfo() {
   return (
     <div className="helpinfo-container">
       {helpInfoData.map((data) => (
-        <li className="helpinfo-li"> {data.question} </li>
+        <li className="helpinfo-li">
+          <a href="http://www.google.com"> {data.question} </a>
+        </li>
       ))}
     </div>
   );
