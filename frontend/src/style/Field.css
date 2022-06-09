@@ -1,42 +1,42 @@
 .field_container {
-    display: flex;
-    flex-wrap: wrap ;
-    padding: 1rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 10rem;
 }
 
 .field_label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 3rem;
-    font-size: 2rem;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .field_input {
-    height: 5rem;
-    padding: 0 2rem;
-    margin-top: 1rem;
-    border-radius: 1rem;
-    font-size: 2rem;
-    text-align: left;
-    display: flex;
+  height: 5rem;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-align: left;
+  display: flex;
 }
 
 .field_span {
-   opacity: 70%;
-   font-size: 1.5rem;
-   font-weight: bold;
+  opacity: 70%;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .solo {
-    width: 60vw;
+  width: 60vw;
 }
 
 .duo {
-    width: 35vw ;
+  width: 35vw;
 }
 
 .trio {
-    width: 23vw;
+  width: 23vw;
 }

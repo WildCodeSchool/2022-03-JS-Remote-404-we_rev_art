@@ -5,8 +5,8 @@ import MiniHeader from "../components/miniHeader";
 function ProjectAds() {
   return (
     <div>
-     <MiniHeader index={0} />
-     <ProjectAdsFilter />
+      <MiniHeader index={0} />
+      <ProjectAdsFilter />
     </div>
   );
 }
