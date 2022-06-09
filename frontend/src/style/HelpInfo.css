@@ -1,6 +1,8 @@
-.helpinfo-container {
+.helpinfo-container li {
   color: black;
-  list-style: circle;
-  size: 2rem;
-  background-color: blue;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 5rem;
+  text-decoration: underline;
+  margin-left: 4rem;
 }

@@ -1,11 +1,12 @@
 import React from "react";
+import "../style/HelpInfo.css";
 import helpInfoData from "../data/helpInfoData";
 
 function HelpInfo() {
   return (
     <div className="helpinfo-container">
       {helpInfoData.map((data) => (
-        <li className="helpinfo-container"> {data.question} </li>
+        <li className="helpinfo-li"> {data.question} </li>
       ))}
     </div>
   );
