@@ -1,0 +1,48 @@
+.card_container {
+  display: flex;
+}
+.cardProject_card {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  height: 35rem;
+  background-color: whitesmoke;
+  margin-top: 1rem;
+  margin-left: 4rem;
+}
+.card-title {
+  margin-left: 10rem;
+}
+.cardProject_small {
+  margin-left: 12rem;
+}
+
+.cardProject_spec {
+  padding: 1rem;
+}
+
+.card-img-top {
+  width: 10rem;
+  height: 6rem;
+  padding: 4px;
+  border-radius: 70%;
+}
+
+.cardProject_checklist {
+  text-align: left;
+  font-size: 1.2rem;
+}
+.cardProject_registerAlignement {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+}
+
+.cardProject_modalities {
+  font-size: 1.2rem;
+}
+.cardProject_details {
+  font-size: 1.2rem;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import ArtistCards from "../components/ArtistCards";
 import ArtistFilter from "../components/ArtistFilter";
 import MiniHeader from "../components/miniHeader";
 
@@ -7,6 +8,7 @@ function Artists() {
     <div>
       <MiniHeader index={1} />
       <ArtistFilter />
+      <ArtistCards />
     </div>
   );
 }
