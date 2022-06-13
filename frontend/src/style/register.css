@@ -1,12 +1,33 @@
-.register_buttons_container {
+.register_loginVsResgister_container {
   display: flex;
   justify-content: space-evenly;
-  padding: 2rem;
+  align-items: flex-start;
+  height: 95vh;
+  width: 100%;
+  padding: 2rem 10rem;
+  font-size: 1.5rem;
+
 }
+
+.register_loginVsResgister_container > * {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+text-align: center;
+}
+
+.register_buttons_container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .register_buttons_container * {
-  width: 20rem;
-  height: 8rem;
+  width: 16rem;
+  height: 4rem;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 .register_container {
   background-color: #f2f2f2;
@@ -14,5 +35,31 @@
 
 .register_title {
   text-align: center;
-  padding: 3rem;
+}
+
+.register_h4 {
+  font-size: 5rem;
+}
+
+.register_login_container > * {
+  padding: 2rem 0;
+}
+
+.register_div_or {
+  height: 100%;
+  padding-top: 25%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.register_terms_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.register_checkbox {
+  transform: scale(2);
+  margin-right: 2rem;
 }
