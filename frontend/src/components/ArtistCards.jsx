@@ -4,14 +4,14 @@ import "../style/ArtistCard.css";
 
 function ArtistCards() {
   return (
-    <section className="xxx">
+    <section className="card_container">
       <div className="card_map">
         {ArtistCardData.map((data) => (
-          <div className="card" key={data.id}>
+          <div className="card-top" key={data.id}>
             <img className="card-img-top" src={data.image} alt={data.alt} />
             <div>
               <h4 className="card-title">{data.username}</h4>
-              <p className="card-titlebis">
+              <p className="card-text">
                 {data.country} <br />
                 {data.nbcreation}
               </p>
@@ -23,7 +23,7 @@ function ArtistCards() {
               <br />
               <p className="card-body"> Details of ad : {data.presentation}</p>
               <br />
-              <p> {data.hashtag} </p>
+              <p> {data.hashtag}</p>
             </div>
           </div>
         ))}

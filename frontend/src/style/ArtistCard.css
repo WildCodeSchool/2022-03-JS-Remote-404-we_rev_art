@@ -1,56 +1,68 @@
-.card {
-  display: inline-block;
-  position: relative;
-  width: 80%;
-  background-color: blanchedalmond;
-}
-.card_map {
+.card_container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-left: 3rem;
 }
+.card-top {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+  width: 500px;
+}
+
+.card_map {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  padding-top: 4rem;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+}
+
 .allcards {
   display: flex;
   justify-content: space-between;
-  width: 30%;
-  height: 35rem;
-
   margin-top: 1rem;
-  margin-left: 4rem;
+  margin-left: 2rem;
 }
+
 .card-title {
-  margin-left: 10rem;
+  margin-left: 11rem;
   margin-top: -9rem;
   font-weight: bold;
 }
-.card-titlebis {
-  margin-left: 22rem;
+
+.card-text {
+  margin-left: 23rem;
   margin-top: -2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
-.card_header {
-  display: flex;
-}
+
 .list-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 4rem;
 }
+
 .list-group-item {
   background-color: rgb(133, 165, 193);
   font-weight: bold;
   margin-top: 1rem;
 }
+
 .list-group-item {
   background-color: rgb(133, 165, 193);
   font-weight: bold;
   margin-top: 1rem;
 }
-.list-group-item {
-  background-color: rgb(133, 165, 193);
-  font-weight: bold;
-  margin-top: 1rem;
-}
+
 .card-img-top {
   width: 10rem;
   height: 10rem;
