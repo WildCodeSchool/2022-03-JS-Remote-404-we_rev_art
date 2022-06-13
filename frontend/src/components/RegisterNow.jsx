@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const handleClick = (yes, setYes, setNo) => {
@@ -13,6 +15,20 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const customerClassName = customer
     ? "button-style yellow"
     : "button-style empty_yellow";
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    if (customer || artist) {
+      console.warn(data);
+    } else {
+      console.error("please choose a type account");
+    }
+  };
 
   return (
     <section className="register_login_container">
@@ -44,22 +60,42 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
         </div>
       </section>
 
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className="field_label">
           Email address
-          <input type="email" className="field_input" />
+          <input
+            type="email"
+            className="field_input"
+            {...register("email", { required: true })}
+          />
+          {errors.email && <p> Email is required </p>}
         </label>
         <label htmlFor="password" className="field_label">
           Password
-          <input type="password" className="field_input" />
+          <input
+            type="password"
+            className="field_input"
+            {...register("password", { required: true })}
+          />
+          {errors.password && <p> Password is required </p>}
         </label>
         <div className="register_terms_container">
-          <input type="checkbox" className="register_checkbox" />
-
+          <input
+            type="checkbox"
+            className="register_checkbox"
+            {...register("terms", { required: true })}
+          />
+          {errors.terms && <p> You must accept terms and conditions </p>}
           <p>
             I agree with the <Link to="/">terms and conditions </Link>
           </p>
         </div>
+        <input
+          type="checkbox"
+          className="hidden"
+          checked={customer}
+          {...register("customer account")}
+        />
         <button type="submit" className="button-style empty_yellow">
           Register
         </button>

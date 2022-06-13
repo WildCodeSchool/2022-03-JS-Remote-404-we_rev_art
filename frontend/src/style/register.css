@@ -63,3 +63,7 @@ text-align: center;
   transform: scale(2);
   margin-right: 2rem;
 }
+
+.hidden {
+  display: none;
+}
