@@ -4,26 +4,23 @@ import "../style/ArtistCard.css";
 
 function ArtistCards() {
   return (
-    <section className="card-container">
-      <div className="card">
+    <section className="card">
+      <div className="card_map">
         {ArtistCardData.map((data) => (
-          <div className="cardProject_card" key={data.id}>
+          <div className="allcards" key={data.id}>
             <div>
               <img className="card-img-top" src={data.image} alt={data.alt} />
-
-              <h3 className="card-title">
-                {data.username}
-                <span className="cardProject_small">
-                  ~ {data.date} ~ {data.timeframe}
-                </span>
-              </h3>
+              <div>
+                <h4 className="card-title">{data.username}</h4>
+                <p className="card-titlebis">
+                  {data.country} <br />
+                  {data.nbcreation}
+                </p>
+              </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item"> {data.technique}</li>
-                <li className="list-group-item"> {data.country}</li>
-                <li className="list-group-item"> {data.nbcreation}</li>
-                <li className="list-group-item"> {data.technique}</li>
-                <li className="list-group-item"> {data.service_provider}</li>
-                <li className="list-group-item"> {data.type_of_contract}</li>
+                <li className="list-group-item1"> {data.technique}</li>
+                <li className="list-group-item2"> {data.service_provider}</li>
+                <li className="list-group-item3"> {data.type_of_contract}</li>
               </ul>
               <br />
               <p className="card-body"> Details of ad : {data.presentation}</p>

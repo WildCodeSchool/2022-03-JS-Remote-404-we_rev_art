@@ -1,48 +1,60 @@
-.card_container {
+.card {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  background-color: blanchedalmond;
+}
+.card_map {
   display: flex;
 }
-.cardProject_card {
+.allcards {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 25%;
   height: 35rem;
-  background-color: whitesmoke;
+
   margin-top: 1rem;
   margin-left: 4rem;
 }
 .card-title {
-  margin-left: 10rem;
-}
-.cardProject_small {
   margin-left: 12rem;
+  margin-top: -9rem;
+  font-weight: bold;
 }
-
-.cardProject_spec {
-  padding: 1rem;
+.card-titlebis {
+  margin-left: 22rem;
+  margin-top: -2rem;
+  font-size: 1rem;
 }
-
+.card_header {
+  display: flex;
+}
+.list-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.list-group-item1 {
+  background-color: rgb(133, 165, 193);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.list-group-item2 {
+  background-color: rgb(133, 165, 193);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.list-group-item3 {
+  background-color: rgb(133, 165, 193);
+  font-weight: bold;
+  margin-top: 1rem;
+}
 .card-img-top {
   width: 10rem;
-  height: 6rem;
+  height: 10rem;
   padding: 4px;
   border-radius: 70%;
-}
-
-.cardProject_checklist {
-  text-align: left;
-  font-size: 1.2rem;
-}
-.cardProject_registerAlignement {
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  width: 25%;
-  height: 100%;
-}
-
-.cardProject_modalities {
-  font-size: 1.2rem;
-}
-.cardProject_details {
-  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
