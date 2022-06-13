@@ -10,14 +10,14 @@
 .allcards {
   display: flex;
   justify-content: space-between;
-  width: 25%;
+  width: 30%;
   height: 35rem;
 
   margin-top: 1rem;
   margin-left: 4rem;
 }
 .card-title {
-  margin-left: 12rem;
+  margin-left: 10rem;
   margin-top: -9rem;
   font-weight: bold;
 }
@@ -36,17 +36,17 @@
   align-items: center;
   margin-top: 4rem;
 }
-.list-group-item1 {
+.list-group-item {
   background-color: rgb(133, 165, 193);
   font-weight: bold;
   margin-top: 1rem;
 }
-.list-group-item2 {
+.list-group-item {
   background-color: rgb(133, 165, 193);
   font-weight: bold;
   margin-top: 1rem;
 }
-.list-group-item3 {
+.list-group-item {
   background-color: rgb(133, 165, 193);
   font-weight: bold;
   margin-top: 1rem;
