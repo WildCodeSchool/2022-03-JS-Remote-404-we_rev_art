@@ -2,20 +2,23 @@ import React from "react";
 import buttonData from "../data/buttonData";
 import AllProjectsData from "../data/AllProjectsData";
 import Button from "./Button";
+import "../style/AllProjects.css";
 
 function AllProjects() {
   return (
-    <section className="">
+    <section>
       {AllProjectsData.map((last) => (
-        <div className="d-flex">
-          <div className="">
+        <div className="global-container">
+          <div className="contain">
             <h3>
               {last.title}
-              <span className="">
+              <span className="col">
                 ~ {last.date} ~ {last.timeframe}
               </span>
             </h3>
             <p className=""> Details of ad : {last.details}</p>
+            <br />
+            <p> {last.hashtag} </p>
           </div>
           <div>
             <img
@@ -30,9 +33,8 @@ function AllProjects() {
               {last.nboffre} offers ~ client : {last.client}
             </p>
           </div>
+
           <br />
-          <br />
-          <p> {last.hashtag} </p>
 
           <div className="button-container">
             <Button buttonData={buttonData[7]} />
