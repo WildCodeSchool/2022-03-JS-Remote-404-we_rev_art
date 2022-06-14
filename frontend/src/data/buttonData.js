@@ -7,7 +7,7 @@ const buttonData = [
   {
     id: 2,
     content: "SUBMIT YOUR PROJECT",
-    style: "button-style yellow",
+    style: "button-artlist",
   },
 ];
 
