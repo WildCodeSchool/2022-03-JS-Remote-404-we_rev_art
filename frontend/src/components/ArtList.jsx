@@ -7,9 +7,10 @@ function ArtList() {
   return (
     <section className="list-container2">
       <Checklist index={2} />
-      <Button buttonData={buttonData[1]} />
+      <Button className="button-artlist" buttonData={buttonData[1]} />
     </section>
   );
 }
 
 export default ArtList;
+
