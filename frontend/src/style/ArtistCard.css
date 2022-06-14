@@ -5,17 +5,24 @@
   margin-top: 50px;
   margin-left: 3rem;
 }
+.card-img-top {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 70%;
+}
 .card-top {
-  border-radius: 5px;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
-  margin-bottom: 5px;
-  margin-left: 50px;
-  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 1rem 5rem;
+  margin-bottom: 5rem;
+  margin-left: 4rem;
+  width: 30rem;
 }
-
 .card_map {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -26,7 +33,10 @@
   margin-bottom: 3rem;
   margin-right: 3rem;
 }
-
+.card-top:hover {
+  transform: scale(1.05);
+  box-shadow: 10rem 10rem 15rem rgba(0, 0, 0, 0.3);
+}
 .allcards {
   display: flex;
   justify-content: space-between;
@@ -35,7 +45,7 @@
 }
 
 .card-title {
-  margin-left: 11rem;
+  margin-left: 12rem;
   margin-top: -9rem;
   font-weight: bold;
 }
@@ -52,21 +62,12 @@
 }
 
 .list-group-item {
-  background-color: rgb(133, 165, 193);
+  display: flex;
+  margin: 1rem;
+  background-color: rgb(218, 235, 250);
   font-weight: bold;
   margin-top: 1rem;
 }
-
-.list-group-item {
-  background-color: rgb(133, 165, 193);
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.card-img-top {
-  width: 10rem;
-  height: 10rem;
-  padding: 4px;
-  border-radius: 70%;
-  margin-bottom: 2rem;
+.artisthashtag p {
+  margin-left: 4rem;
 }

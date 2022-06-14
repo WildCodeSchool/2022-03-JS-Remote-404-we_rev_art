@@ -2,7 +2,17 @@ const ArtistFilterData = [
   {
     id: 0,
     filter: "select by technique",
-    option: ["2D", "3D", "RV", "AR"],
+    option: [
+      "3D",
+      "2D",
+      "Harmony",
+      "Tvpaint",
+      "After",
+      "Effect",
+      "Maya",
+      "Blender",
+      "Animate",
+    ],
   },
   {
     id: 1,

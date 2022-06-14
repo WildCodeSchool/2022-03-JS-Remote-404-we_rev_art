@@ -21,7 +21,6 @@
   justify-content: center;
   align-items: flex-start;
   margin-left: 2.4rem;
-  
 }
 .filter_selection {
   background-color: rgb(152, 159, 193);
@@ -48,4 +47,12 @@
   color: black;
   font-style: bold;
   margin-left: 0.4rem;
+}
+.list_map {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.yellow {
+  background-color: yellow;
 }

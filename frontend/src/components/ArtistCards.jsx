@@ -16,14 +16,14 @@ function ArtistCards() {
                 {data.nbcreation}
               </p>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item"> {data.technique}</li>
+                <li className="list-group-item">{data.technique}</li>
                 <li className="list-group-item"> {data.service_provider}</li>
                 <li className="list-group-item"> {data.type_of_contract}</li>
               </ul>
               <br />
               <p className="card-body"> Details of ad : {data.presentation}</p>
               <br />
-              <p> {data.hashtag}</p>
+              <p className="artisthashtag"> {data.hashtag}</p>
             </div>
           </div>
         ))}
