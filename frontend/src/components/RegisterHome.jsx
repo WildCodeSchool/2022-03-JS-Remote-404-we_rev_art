@@ -6,7 +6,7 @@ import "../style/cardProject.css";
 
 function RegisterHome() {
   return (
-    <div className="registerAlignement">
+    <section className="registerAlignement">
       <div className="registerHome">
         <h3>ARE YOU A DIGITAL ARTIST ?</h3>
         <br />
@@ -24,7 +24,7 @@ function RegisterHome() {
           <Checklist index={3} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

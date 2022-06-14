@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className="nav">
+    <section className="nav">
       <ul className="nav_ul">
         <Link to="/">
           <li>
@@ -32,7 +32,7 @@ function Nav() {
           </li>
         </Link>
       </ul>
-    </div>
+    </section>
   );
 }
 
