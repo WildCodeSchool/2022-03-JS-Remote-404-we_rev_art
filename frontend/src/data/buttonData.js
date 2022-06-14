@@ -34,6 +34,11 @@ const buttonData = [
     content: "DIGITAL ARTIST",
     style: "button-style empty_yellow",
   },
+  {
+    id: 8,
+    content: "SEE OFFERS",
+    style: "button-style empty_yellow",
+  },
 ];
 
 export default buttonData;
