@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function LoginNow({ setLoginButton }) {
+function LoginNow() {
   const {
     handleSubmit,
     register,
@@ -35,11 +35,7 @@ function LoginNow({ setLoginButton }) {
           />
           {errors.password && <p> Password is required </p>}
         </label>
-        <button
-          type="submit"
-          className="button-style empty_yellow"
-          onClick={() => setLoginButton(true)}
-        >
+        <button type="submit" className="button-style empty_yellow">
           Continue
         </button>
       </form>

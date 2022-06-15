@@ -44,9 +44,15 @@ function ArtistRegistration() {
           <Checkboxes data={el} />
         ))}
       </div>
-      <div>
-        <button type="submit" className="button-style">
+      <div className="register_buttons_container">
+        <button type="submit" className="button-style yellow">
           Register
+        </button>
+        <button type="button" className="button-style empty_yellow">
+          Modify
+        </button>
+        <button type="button" className="button-style empty_blue">
+          Delete
         </button>
       </div>
     </form>
