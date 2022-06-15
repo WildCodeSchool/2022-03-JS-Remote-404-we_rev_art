@@ -1,6 +1,8 @@
 import React from "react";
 import ArtistCardData from "../data/ArtistCardData";
+
 import "../style/ArtistCard.css";
+import Likebutton from "./Likebutton";
 
 function ArtistCards() {
   return (
@@ -20,11 +22,11 @@ function ArtistCards() {
                 <li className="list-group-item"> {data.service_provider}</li>
                 <li className="list-group-item"> {data.type_of_contract}</li>
               </ul>
-              <br />
+
               <p className="card-body"> Details of ad : {data.presentation}</p>
-              <br />
-              <p className="artisthashtag"> {data.hashtag}</p>
+              <Likebutton />
             </div>
+            <div />
           </div>
         ))}
       </div>

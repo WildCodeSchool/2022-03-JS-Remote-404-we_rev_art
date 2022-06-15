@@ -15,13 +15,14 @@
 }
 .card-top {
   border-radius: 2rem;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   box-shadow: rgba(0, 0, 0, 0.35) 0rem 1rem 5rem;
   margin-bottom: 5rem;
   margin-left: 4rem;
-  width: 30rem;
+  width: 35rem;
 }
 .card_map {
   display: grid;
@@ -63,11 +64,23 @@
 
 .list-group-item {
   display: flex;
-  margin: 1rem;
+
   background-color: rgb(218, 235, 250);
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
-.artisthashtag p {
-  margin-left: 4rem;
+.card-body {
+  font-weight: bold;
+}
+.likediv {
+  display: flex;
+}
+.btn {
+  margin-left: 25rem;
+  margin-bottom: 2rem;
+}
+.counter {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 1rem;
 }

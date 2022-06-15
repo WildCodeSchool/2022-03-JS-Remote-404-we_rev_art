@@ -1,11 +1,19 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 
-function FilterOptions({ filteroptions }) {
+function FilterOptions({ filteroptions, filter, setFilter }) {
   const [filterButtonClicked, setFilterButtonClicked] = useState(false);
+
   function handleClick() {
     setFilterButtonClicked(!filterButtonClicked);
-    console.warn(filteroptions);
   }
+  useEffect(() => {
+    if (filterButtonClicked) {
+      setFilter([...filter, filteroptions]);
+    } else if (!filterButtonClicked) {
+      setFilter(filter.filter((el) => el !== filteroptions));
+    }
+  }, [filterButtonClicked]);
+
   return (
     <button
       className={`filter_options ${filterButtonClicked ? "yellow" : ""}`}
