@@ -13,4 +13,3 @@ function ArtList() {
 }
 
 export default ArtList;
-
