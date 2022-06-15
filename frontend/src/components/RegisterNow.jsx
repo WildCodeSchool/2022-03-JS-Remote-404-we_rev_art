@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function RegisterNow({ artist, setArtist, customer, setCustomer }) {
+function RegisterNow({
+  artist,
+  setArtist,
+  customer,
+  setCustomer,
+  setRegisterButton,
+}) {
   const handleClick = (yes, setYes, setNo) => {
     setNo(false);
     setYes(!yes);
@@ -95,7 +101,11 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
           checked={customer}
           {...register("customer account")}
         />
-        <button type="submit" className="button-style empty_yellow">
+        <button
+          type="submit"
+          className="button-style empty_yellow"
+          onClick={() => setRegisterButton(true)}
+        >
           Register
         </button>
       </form>
