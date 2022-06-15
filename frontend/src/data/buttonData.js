@@ -45,6 +45,7 @@ const buttonData = [
     id: 8,
     content: "SEE OFFERS",
     style: "button-style empty_yellow",
+    type: "button",
   },
 ];
 

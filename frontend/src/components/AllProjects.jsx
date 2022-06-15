@@ -34,7 +34,7 @@ function AllProjects() {
 
           <br />
 
-          <div className="button-container">
+          <div className="button-contain">
             <Button buttonData={buttonData[7]} />
             <Button buttonData={buttonData[3]} />
             <Button buttonData={buttonData[4]} />
