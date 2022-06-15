@@ -22,13 +22,30 @@ function HelpInfo() {
       }, 10000);
     }
   }, [rows]);
+  const styles = {
+    // bgColor: 'white',
+    // titleTextColor: "blue",
+    // rowContentColor: 'grey',
+    arrowColor: "#E5735C",
+  };
+
+  const config = {
+    // animate: true,
+    // arrowIcon: "V",
+    // tabFocus: true
+  };
 
   return (
     <div>
-      <h3 className="section-title">FAQ (how it works?)</h3>
+      <h3 className="section-title">General FAQ </h3>
 
       <div>
-        <Faq data={data} getRowOptions={setRowsOption} />
+        <Faq
+          data={data}
+          styles={styles}
+          config={config}
+          getRowOptions={setRowsOption}
+        />
       </div>
     </div>
   );
