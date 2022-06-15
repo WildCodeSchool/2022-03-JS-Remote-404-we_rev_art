@@ -21,16 +21,19 @@ const fieldDataArtistAccount = [
     id: 3,
     label: "Name of company",
     style: "trio",
+    required: false,
   },
   {
     id: 4,
     label: "Company registration number",
     style: "trio",
+    required: false,
   },
   {
     id: 5,
     label: "Country of registration",
     style: "trio",
+    required: false,
   },
   {
     id: 6,
