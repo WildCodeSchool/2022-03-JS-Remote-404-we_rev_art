@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Register() {
   return (
-    <div>
+    <section>
       <ul className="ul_container">
         <Link to="/Register">
           <li>
@@ -17,7 +17,7 @@ function Register() {
           </li>
         </Link>
       </ul>
-    </div>
+    </section>
   );
 }
 

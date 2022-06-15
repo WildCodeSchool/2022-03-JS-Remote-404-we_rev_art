@@ -9,14 +9,14 @@ import "../style/Logo.css";
 
 function Header() {
   return (
-    <div className="header-container">
+    <section className="header-container">
       <img className="logo" src={Logo} alt="logo" />
       <Nav />
       <div className="button-container">
         <Button buttonData={buttonData[0]} />
       </div>
       <Register />
-    </div>
+    </section>
   );
 }
 

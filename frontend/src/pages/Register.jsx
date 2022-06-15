@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import MiniHeader from "../components/miniHeader";
 import ArtistRegistration from "../components/ArtistRegistration";
 import CustomerRegistration from "../components/CustomerRegistration";
-
-// import Buttons from "../components/Buttons";
+import RegisterNow from "../components/RegisterNow";
+import LoginNow from "../components/LoginNow";
 
 import "../style/register.css";
 
@@ -11,44 +11,26 @@ function Register() {
   const [customer, setCustomer] = useState(false);
   const [artist, setArtist] = useState(false);
 
-  const handleClick1 = () => {
-    setArtist(false);
-    setCustomer(true);
-  };
-
-  const handleClick2 = () => {
-    setCustomer(false);
-    setArtist(true);
-  };
+  console.warn(customer);
 
   return (
-    <div className="register_container">
-      <MiniHeader index={4} />
-      <h2 className="register_title">
-        What type of account do you want to create?
-      </h2>
-      {/* <Buttons min={6} max={7} /> */}
+    <section className="register_container">
+      <section className="register_loginVsResgister_container">
+        <RegisterNow
+          artist={artist}
+          setArtist={setArtist}
+          customer={customer}
+          setCustomer={setCustomer}
+        />
+        <p className="register_div_or">OR</p>
+        <LoginNow />
+      </section>
 
-      <div className="register_buttons_container">
-        <button
-          type="button"
-          className="button-style empty_yellow"
-          onClick={handleClick1}
-        >
-          Customer Account
-        </button>
-        <button
-          type="button"
-          className="button-style empty_yellow"
-          onClick={handleClick2}
-        >
-          Digital artist
-        </button>
-      </div>
+      <MiniHeader index={4} />
 
       {artist ? <ArtistRegistration /> : ""}
       {customer ? <CustomerRegistration /> : ""}
-    </div>
+    </section>
   );
 }
 export default Register;

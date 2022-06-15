@@ -7,7 +7,7 @@ import "../style/Hero.css";
 
 function Hero() {
   return (
-    <div className="hero-container">
+    <section className="hero-container">
       <section className="hero-text">
         <h1 className="hero-h1">Find a digital artist to animate your art </h1>
         <p className="hero-p">
@@ -21,7 +21,7 @@ function Hero() {
         alt="painting of two women dancing during the night"
         className="hero-img"
       />
-    </div>
+    </section>
   );
 }
 
