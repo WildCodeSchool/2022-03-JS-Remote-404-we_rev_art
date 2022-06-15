@@ -1,20 +1,21 @@
-.global_contain {
+.global-contain {
   display: flex;
-  padding: 2rem;
-  margin-left: -4rem; 
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 .contain {
  width: 30%;
 }
+
 .button-container {
-  
+ margin-left: 2rem;
+ padding: 0; 
+
 }
 .allCardImage {
   width: 25rem;
   height: 25rem;
   
 }
-.detailsOfAd {
-  color: red;
-}
+
