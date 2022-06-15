@@ -1,0 +1,25 @@
+.faq {
+  display: flex;
+  flex-direction: center;
+}
+.section-title {
+  margin-left: 6rem;
+  margin-top: 5rem;
+  color: rgb(44, 44, 76);
+}
+.faq-row {
+  display: flex;
+  border: #d2cdf3 0.1rem solid;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin: 3rem;
+  margin-left: 6rem;
+  size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  width: 60%;
+  height: 30%;
+}
+.faq-row :hover {
+  background-color: #ffd700;
+}

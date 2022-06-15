@@ -10,13 +10,11 @@
 }
 
 .sectionsuggestion p {
-  background-color: #203864;
+  background-color: #596987;
   color: white;
   padding: 2.5rem 0;
   border-radius: 1.25rem;
   font-size: 1.5rem;
-  border-color: #ffd700;
-  border-style: dashed;
   border-width: bold;
   text-align: center;
 }
