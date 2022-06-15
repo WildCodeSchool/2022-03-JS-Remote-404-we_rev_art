@@ -41,6 +41,11 @@ const buttonData = [
     style: "button-style empty_yellow",
     type: "button",
   },
+  {
+    id: 8,
+    content: "SEE OFFERS",
+    style: "button-style empty_yellow",
+  },
 ];
 
 export default buttonData;
