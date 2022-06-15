@@ -6,7 +6,7 @@ import "../style/AllProjects.css";
 
 function AllProjects() {
   return (
-    <section>
+    <section className="AllProjects">
       {AllProjectsData.map((last) => (
         <div className="global-container">
           <div className="global-contain">

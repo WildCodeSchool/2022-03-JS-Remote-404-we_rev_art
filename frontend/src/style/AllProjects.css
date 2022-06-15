@@ -1,11 +1,13 @@
 .global-contain {
   display: flex;
+  justify-content: space-between;
   margin-top: 2rem;
   margin-left: 2rem;
+  margin-bottom: 2rem;
 }
 
 .contain {
- width: 30%;
+ width: 45%;
 }
 
 .button-container {
@@ -14,8 +16,9 @@
 
 }
 .allCardImage {
-  width: 25rem;
-  height: 25rem;
+  width: 18rem;
+  height: 18rem;
   
 }
+
 
