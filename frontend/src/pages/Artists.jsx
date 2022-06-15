@@ -5,7 +5,6 @@ import MiniHeader from "../components/miniHeader";
 
 function Artists() {
   const [filter, setFilter] = useState([]);
-  console.warn(filter);
 
   return (
     <div>

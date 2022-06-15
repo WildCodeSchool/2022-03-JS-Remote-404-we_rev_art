@@ -84,3 +84,30 @@
   font-size: 1rem;
   margin-left: 1rem;
 }
+.btnfollow {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 0, 1rem;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: #ffd700;
+  margin-left: 15rem;
+  border-radius: 0.5rem;
+}
+
+.btncount {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 0, 1rem;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: white;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+}

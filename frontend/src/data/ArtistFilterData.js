@@ -27,7 +27,7 @@ const ArtistFilterData = [
   {
     id: 3,
     filter: "sort by likes",
-    option: ["Most rated", "Most fowwed", "Most creations"],
+    option: ["Most rated", "Most followed", "Most creations"],
   },
 ];
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 import data from "../data/helpInfoData";
-import sky from "../images/sky.jpg";
 import "../style/FAQ.css";
 
 function HelpInfo() {
@@ -26,7 +25,6 @@ function HelpInfo() {
 
   return (
     <div>
-      <img src={sky} alt="2dsky" />
       <h3 className="section-title">FAQ (how it works?)</h3>
 
       <div>

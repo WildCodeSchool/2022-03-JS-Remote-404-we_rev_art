@@ -4,7 +4,8 @@ import ArtistCardData from "../data/ArtistCardData";
 import "../style/ArtistCard.css";
 import Likebutton from "./Likebutton";
 
-function ArtistCards() {
+function ArtistCards({ filter }) {
+  console.warn(filter);
   return (
     <section className="card_container">
       <div className="card_map">
