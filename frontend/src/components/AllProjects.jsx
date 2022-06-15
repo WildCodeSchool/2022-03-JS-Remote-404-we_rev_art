@@ -9,29 +9,27 @@ function AllProjects() {
     <section>
       {AllProjectsData.map((last) => (
         <div className="global-container">
-          <div className="contain">
-            <h3>
-              {last.title}
-              <span className="col">
-                ~ {last.date} ~ {last.timeframe}
-              </span>
-            </h3>
-            <p className=""> Details of ad : {last.details}</p>
-            <br />
-            <p> {last.hashtag} </p>
-          </div>
-          <div>
-            <img
-              className="cardProject_imageCardProject"
-              src={last.image}
-              alt={last.alt}
-            />
-          </div>
-          <div>
-            <p className="">
-              Technique : {last.technique} ~ Budget {last.budget}€ ~
-              {last.nboffre} offers ~ client : {last.client}
-            </p>
+          <div className="global-contain">
+            <div className="contain">
+              <h3>
+                {last.title}
+                <span className="col">
+                  ~ {last.date} ~ {last.timeframe}
+                </span>
+              </h3>
+              <p className="detailsOfAd"> Details of ad : {last.details}</p>
+              <br />
+              <p> {last.hashtag} </p>
+            </div>
+            <div>
+              <img className="allCardImage" src={last.image} alt={last.alt} />
+            </div>
+            <div>
+              <p className="">
+                Technique : {last.technique} ~ Budget {last.budget}€ ~
+                {last.nboffre} offers ~ client : {last.client}
+              </p>
+            </div>
           </div>
 
           <br />
