@@ -10,26 +10,32 @@ import "../style/register.css";
 function Register() {
   const [customer, setCustomer] = useState(false);
   const [artist, setArtist] = useState(false);
+  const [registerButton, setRegisterButton] = useState(false);
 
   console.warn(customer);
 
   return (
     <section className="register_container">
-      <section className="register_loginVsResgister_container">
+      <MiniHeader index={4} />
+      <section
+        className={
+          (artist && registerButton) || (customer && registerButton)
+            ? "hidden"
+            : "register_loginVsResgister_container"
+        }
+      >
         <RegisterNow
           artist={artist}
           setArtist={setArtist}
           customer={customer}
           setCustomer={setCustomer}
+          setRegisterButton={setRegisterButton}
         />
         <p className="register_div_or">OR</p>
         <LoginNow />
       </section>
-
-      <MiniHeader index={4} />
-
-      {artist ? <ArtistRegistration /> : ""}
-      {customer ? <CustomerRegistration /> : ""}
+      {artist && registerButton ? <ArtistRegistration /> : ""}
+      {customer && registerButton ? <CustomerRegistration /> : ""}
     </section>
   );
 }
