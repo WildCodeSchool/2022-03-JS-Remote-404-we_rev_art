@@ -30,17 +30,3 @@
   object-fit: contain;
   padding-right: 10rem;
 }
-
-.button-style {
-  padding: 0.25rem 3.5rem;
-  width: fit-content;
-  height: fit-content;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 2rem;
-}
-
-.yellow {
-  background-color: #ffd700;
-  color: #222a35;
-}

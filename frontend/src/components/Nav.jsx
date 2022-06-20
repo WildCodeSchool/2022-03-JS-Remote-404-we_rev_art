@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className="nav">
+    <section className="nav">
       <ul className="nav_ul">
         <Link to="/">
           <li>
             <a className="nav_link"> Home</a>
           </li>
         </Link>
-        <Link to="/ProjectAds">
+        <Link to="/Project_Ads">
           <li>
             <a className="nav_link">Project Ads</a>
           </li>
@@ -32,7 +32,7 @@ function Nav() {
           </li>
         </Link>
       </ul>
-    </div>
+    </section>
   );
 }
 

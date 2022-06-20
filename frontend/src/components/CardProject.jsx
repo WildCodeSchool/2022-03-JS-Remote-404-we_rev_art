@@ -1,71 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import lastProject from "../data/lastProject";
-import Checklist from "./Checklist";
-import checklistData from "../data/ChecklistData";
 import "../style/cardProject.css";
+import RegisterHome from "./RegisterHome";
 
 function CardProject() {
   return (
-    <div className="cardProject">
-      <div className="cards">
+    <section className="cardProject_cardProject">
+      <div className="cardProject_cards">
         <h2>Latest project ads</h2>
         {lastProject.map((last) => (
-          <div className="card">
-            <div className="spec">
+          <div className="cardProject_card" key={last.id}>
+            <div className="cardProject_spec">
               <h3>
                 {last.title}
-                <small className="small">
+                <span className="cardProject_small">
                   ~ {last.date} ~ {last.timeframe}
-                </small>
+                </span>
               </h3>
-              <p className="modalities">
+              <p className="cardProject_modalities">
                 Technique : {last.technique} ~ Budget {last.budget}€ ~
                 {last.nboffre} offers ~ client : {last.client}
               </p>
               <br />
-              <p className="details"> Details of ad : {last.details}</p>
+              <p className="cardProject_details">
+                {" "}
+                Details of ad : {last.details}
+              </p>
               <br />
               <p> {last.hashtag} </p>
             </div>
             <div>
               <img
-                className="imageCardProject"
+                className="cardProject_imageCardProject"
                 src={last.image}
                 alt={last.alt}
               />
             </div>
           </div>
         ))}
-        <div className="homeToAllCard">
-          <Link to="/ProjectAds">
-            <button className="allCard" type="button">
-              VIEW ALL ADS
-            </button>
+        <div className="cardProject_homeToAllCard">
+          <Link to="/ProjectAds" className="cardProject_allCard">
+            VIEW ALL ADS
           </Link>
         </div>
       </div>
-
-      <div className="registerAlignement">
-        <div className="registerHome">
-          <h3>ARE YOU A DIGITAL ARTIST ?</h3>
-          <br />
-          <p>register for free to find animation offers</p>
-          <br />
-          <Link to="/ProjectAds">
-            <button className="registerButton" type="button">
-              CREATE YOUR PORTFOLIO
-            </button>
-          </Link>
-          <br />
-          <br />
-          <h3>WHY REGISTER ?</h3>
-          <div className="checklist">
-            <Checklist text={checklistData[3]} />
-          </div>
-        </div>
-      </div>
-    </div>
+      <RegisterHome />
+    </section>
   );
 }
 
