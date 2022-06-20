@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { UserController } = require("./controllers");
+const { UserController, SkillsController } = require("./controllers");
 
 const router = express.Router();
 
@@ -12,5 +12,7 @@ router.delete("/items/:id", ItemController.delete); */
 router.get("/user", UserController.browse);
 router.get("/user/:id", UserController.read);
 router.post("/user", UserController.add);
+router.post("/skills", SkillsController.add);
+router.delete("/skills/:id", SkillsController.delete);
 
 module.exports = router;
