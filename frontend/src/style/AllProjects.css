@@ -7,18 +7,14 @@
 }
 
 .contain {
- width: 45%;
+  width: 45%;
 }
 
 .button-contain {
- margin-left: 2rem;
- padding: 0; 
-
+  margin-left: 2rem;
+  padding: 0;
 }
 .allCardImage {
   width: 18rem;
   height: 18rem;
-  
 }
-
-
