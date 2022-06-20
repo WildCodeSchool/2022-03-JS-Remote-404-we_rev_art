@@ -7,19 +7,19 @@
 -- -----------------------------------------------------
 -- Schema werevart
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`user` ;
-DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
-DROP TABLE IF EXISTS `werevart`.`picture` ;
-DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
-DROP TABLE IF EXISTS `werevart`.`profil` ;
-DROP TABLE IF EXISTS `werevart`.`skills` ;
-DROP TABLE IF EXISTS `werevart`.`softwareused` ;
-DROP TABLE IF EXISTS `werevart`.`contracttype` ;
-DROP TABLE IF EXISTS `werevart`.`artwork` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_artwork` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
+DROP TABLE IF EXISTS `werevart`.`profil` ;
+DROP TABLE IF EXISTS `werevart`.`artwork` ;
+DROP TABLE IF EXISTS `werevart`.`user` ;
+DROP TABLE IF EXISTS `werevart`.`picture` ;
+DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
+DROP TABLE IF EXISTS `werevart`.`skills` ;
+DROP TABLE IF EXISTS `werevart`.`softwareused` ;
+DROP TABLE IF EXISTS `werevart`.`contracttype` ;
 DROP TABLE IF EXISTS `werevart`.`usertype` ;
 -- -----------------------------------------------------
 -- Table `werevart`.`user`
