@@ -3,24 +3,28 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema werevart
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema werevart
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `werevart` DEFAULT CHARACTER SET utf8 ;
-USE `werevart` ;
-
+DROP TABLE IF EXISTS `werevart`.`user` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
+DROP TABLE IF EXISTS `werevart`.`picture` ;
+DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
+DROP TABLE IF EXISTS `werevart`.`profil` ;
+DROP TABLE IF EXISTS `werevart`.`skills` ;
+DROP TABLE IF EXISTS `werevart`.`softwareused` ;
+DROP TABLE IF EXISTS `werevart`.`contracttype` ;
+DROP TABLE IF EXISTS `werevart`.`artwork` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_artwork` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
+DROP TABLE IF EXISTS `werevart`.`usertype` ;
 -- -----------------------------------------------------
 -- Table `werevart`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`user` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`user` (
   `id` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL UNIQUE,
@@ -39,7 +43,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`picture`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`picture` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`picture` (
   `idpicture` INT NOT NULL AUTO_INCREMENT,
   `image` VARCHAR(255) NULL,
@@ -49,14 +53,14 @@ ENGINE = InnoDB;
 
 INSERT INTO  `picture`(`image`,`alt`)
  VALUES
-    ('https://randomwordgenerator.com/img/picture-generator/52e7d544435ab10ff3d8992cc12c30771037dbf852547941742673dc944e_640.jpg','route casser'),
+    ('https://randomwordgenerator.com/img/picture-generator/52e7d544435ab10ff3d8992cc12c30771037dbf852547941742673dc944e_640.jpg','route cassée'),
     ('https://images.unsplash.com/photo-1645680827507-9f392edae51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','main entouré d un anneau')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`typeaccount`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`typeaccount` (
   `id` int NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(255) NOT NULL,
@@ -74,27 +78,27 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil` (
   `id` VARCHAR(255) NOT NULL,
   `user_id` VARCHAR(255) NOT NULL,
-  `typeaccount_id` INT NOT NULL,
-  `picture_idpicture` INT NOT NULL,
-  `firstname` VARCHAR(255) NOT NULL,
-  `lastname` VARCHAR(255) NOT NULL,
-  `adress` VARCHAR(255) NOT NULL,
-  `postcode` INT NOT NULL,
-  `city` VARCHAR(255) NOT NULL,
-  `country` VARCHAR(255) NOT NULL,
-  `username` VARCHAR(255) NOT NULL,
-  `namecompagny` VARCHAR(255) NULL,
-  `compagnyregistration` INT NULL,
-  `countryregistration` VARCHAR(255) NULL,
-  `description` TEXT NULL,
+  `typeaccount_id` INT,
+  `picture_idpicture` INT,
+  `firstname` VARCHAR(255),
+  `lastname` VARCHAR(255),
+  `adress` VARCHAR(255),
+  `postcode` INT,
+  `city` VARCHAR(255),
+  `country` VARCHAR(255),
+  `username` VARCHAR(255),
+  `namecompagny` VARCHAR(255),
+  `compagnyregistration` INT,
+  `countryregistration` VARCHAR(255),
+  `description` LONGTEXT,
   PRIMARY KEY (`id`, `typeaccount_id`),
-  INDEX `fk_profil_user1_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_profil_picture1_idx` (`picture_idpicture` ASC) VISIBLE,
-  INDEX `fk_profil_typeaccount1_idx` (`typeaccount_id` ASC) VISIBLE,
+  INDEX `fk_profil_user1_idx` (`user_id` ASC),
+  INDEX `fk_profil_picture1_idx` (`picture_idpicture` ASC),
+  INDEX `fk_profil_typeaccount1_idx` (`typeaccount_id` ASC),
   CONSTRAINT `fk_profil_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `werevart`.`user` (`id`)
@@ -115,8 +119,8 @@ ENGINE = InnoDB;
 INSERT INTO
     `profil`(`user_id`,`id`,`firstName`, `lastName`, `adress`, `postcode`,`city`,`country`,`username`,`typeaccount_id`, `picture_idpicture`)
 VALUES
-    ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','beef8662-ecb5-11ec-8ea0-0242ac120002','Quentin','Billac','rue rene boylesve',37160,'Descartes','France','Quentin',1,1),
-    ('5437622c-ecb5-11ec-8ea0-0242ac120002','cb0255ce-ecb5-11ec-8ea0-0242ac120002','Aurore','Obert','rue de la soif',29000,'Brest','France','Aurore',1,1),
+    ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','beef8662-ecb5-11ec-8ea0-0242ac120002','Quentin','Billac','rue rene boylesve',37160,'Descartes','France','Quentin',1,NULL),
+    ('5437622c-ecb5-11ec-8ea0-0242ac120002','cb0255ce-ecb5-11ec-8ea0-0242ac120002','Aurore','Obert','rue de la soif',29000,'Brest','France','Aurore',1,NULL),
     ('5c512ede-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','Etienne','Bacle','rue de loseille',33000,'Bordeaux','France','Etienne',2,1),
     ('644929ca-ecb5-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','MC','MC','Rue de la vieille',34000,'Montpellier','France','MC',2,2)
 ;
@@ -125,7 +129,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`skills`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`skills` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`skills` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `skills` VARCHAR(255) NOT NULL,
@@ -145,7 +149,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`softwareused`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`softwareused` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`softwareused` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `software` VARCHAR(100) NOT NULL,
@@ -168,7 +172,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`contracttype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`contracttype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`contracttype` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `contract` VARCHAR(100) NOT NULL,
@@ -185,7 +189,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`artwork`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`artwork` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
   `id` VARCHAR(255) NOT NULL,
   `hashtag` VARCHAR(255) NULL,
@@ -202,9 +206,9 @@ CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
   `picture_idpicture_digital` INT NULL,
   `skills_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_artwork_picture1_idx` (`picture_idpicture_original` ASC) VISIBLE,
-  INDEX `fk_artwork_picture2_idx` (`picture_idpicture_digital` ASC) VISIBLE,
-  INDEX `fk_artwork_skills1_idx` (`skills_id` ASC) VISIBLE,
+  INDEX `fk_artwork_picture1_idx` (`picture_idpicture_original` ASC),
+  INDEX `fk_artwork_picture2_idx` (`picture_idpicture_digital` ASC),
+  INDEX `fk_artwork_skills1_idx` (`skills_id` ASC),
   CONSTRAINT `fk_artwork_picture1`
     FOREIGN KEY (`picture_idpicture_original`)
     REFERENCES `werevart`.`picture` (`idpicture`)
@@ -224,20 +228,20 @@ ENGINE = InnoDB;
 
 INSERT INTO `artwork`(`id`,`hashtag`,`title`,`timeframe`,`customer`,`date`,`budget`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
 VALUES
-    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée','contemporain','',14/06/2022,1000,0,'je veux que la route se casse a cause d un tremblement de terre',14/07/2022,0,1,1,5),
-    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau','contemporain','',15/06/2022,500,0,'je veux que l anneau tourne autours de la main',30/06/2022,0,2,2,2)
+    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée','contemporain','','2022-06-14',1000,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
+    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau','contemporain','','2022-06-15',500,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2)
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_artwork`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_artwork` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_artwork` (
   `profil_id` VARCHAR(255) NOT NULL,
   `artwork_id` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`profil_id`, `artwork_id`),
-  INDEX `fk_profil_has_artwork_artwork1_idx` (`artwork_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_artwork_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_artwork_artwork1_idx` (`artwork_id` ASC),
+  INDEX `fk_profil_has_artwork_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_artwork_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -261,13 +265,13 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_skills`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_skills` (
   `profil_id` VARCHAR(255) NOT NULL,
   `skills_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `skills_id`),
-  INDEX `fk_profil_has_skills_skills1_idx` (`skills_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_skills_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_skills_skills1_idx` (`skills_id` ASC),
+  INDEX `fk_profil_has_skills_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_skills_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -293,13 +297,13 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_softwareused`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_softwareused` (
   `profil_id` VARCHAR(255) NOT NULL,
   `softwareused_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `softwareused_id`),
-  INDEX `fk_profil_has_softwareused_softwareused1_idx` (`softwareused_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_softwareused_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_softwareused_softwareused1_idx` (`softwareused_id` ASC),
+  INDEX `fk_profil_has_softwareused_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_softwareused_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -327,13 +331,13 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_contracttype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_contracttype` (
   `profil_id` VARCHAR(255) NOT NULL,
   `contracttype_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `contracttype_id`),
-  INDEX `fk_profil_has_contacttype_contacttype1_idx` (`contracttype_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_contacttype_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_contacttype_contacttype1_idx` (`contracttype_id` ASC),
+  INDEX `fk_profil_has_contacttype_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_contacttype_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -358,7 +362,7 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`usertype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`usertype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`usertype` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usertype` VARCHAR(100) NOT NULL,
@@ -380,13 +384,12 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_usertype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_usertype` (
   `profil_id` VARCHAR(255) NOT NULL,
   `usertype_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `usertype_id`),
-  INDEX `fk_profil_has_usertype_usertype1_idx` (`usertype_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_usertype_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_usertype_usertype1_idx` (`usertype_id` ASC),
+  INDEX `fk_profil_has_usertype_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_usertype_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -412,7 +415,3 @@ INSERT INTO `werevart`.`profil_has_usertype` (
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',3),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',4)
 ;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
