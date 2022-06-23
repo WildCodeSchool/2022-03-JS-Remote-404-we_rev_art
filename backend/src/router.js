@@ -1,6 +1,10 @@
 const express = require("express");
 
-const { UserController, SkillsController } = require("./controllers");
+const {
+  UserController,
+  SkillsController,
+  ProfilController,
+} = require("./controllers");
 
 const router = express.Router();
 
@@ -14,5 +18,6 @@ router.get("/user/:id", UserController.read);
 router.post("/user", UserController.add);
 router.post("/skills", SkillsController.add);
 router.delete("/skills/:id", SkillsController.delete);
+router.get("/profil", ProfilController.browse);
 
 module.exports = router;
