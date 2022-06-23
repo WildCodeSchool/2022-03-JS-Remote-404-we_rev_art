@@ -14,15 +14,15 @@ function ProjectFilterOption({ list, filter, setFilter }) {
       </button>
 
       <ul className="list_map">
-        {buttonClicked
-          ? list.option.map((filteroptions) => (
-              <FilterOptions
-                filteroptions={filteroptions}
-                filter={filter}
-                setFilter={setFilter}
-              />
-            ))
-          : ""}
+        {buttonClicked &&
+          list.option.map((filteroptions) => (
+            <FilterOptions
+              filteroptions={filteroptions}
+              filter={filter}
+              setFilter={setFilter}
+              type={list.type}
+            />
+          ))}
       </ul>
     </section>
   );
