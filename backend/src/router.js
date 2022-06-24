@@ -1,5 +1,4 @@
 const express = require("express");
-
 const { UserController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
 
