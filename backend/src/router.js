@@ -11,5 +11,4 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete); */
 
 router.post("/user/signin", validateSignin, UserController.signin);
-
 module.exports = router;

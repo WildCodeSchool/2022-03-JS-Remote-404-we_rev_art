@@ -19,15 +19,13 @@ const hashPassword = (plainPassword) => {
 
 class UserController {
   static signin = async (req, res) => {
-    // const user = req.body;
-
     // TODO hashpassword
     try {
       const hash = await hashPassword(req.body.password);
       // TODO uuid
       const id = uuidv4();
       await models.user.insert(id, hash, req.body.email);
-      // await models.profil.insert(id, req.body.typeaccount_id);
+      await models.profil.insert(req.body, id);
       res.send("nickel");
     } catch (err) {
       res.status(400).send("error server");
@@ -42,5 +40,4 @@ class UserController {
   // TODO generate token cookie via JWT
   // };
 }
-
 module.exports = UserController;
