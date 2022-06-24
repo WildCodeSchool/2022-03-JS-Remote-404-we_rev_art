@@ -2,13 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function RegisterNow({
-  artist,
-  setArtist,
-  customer,
-  setCustomer,
-  setRegisterButton,
-}) {
+function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const handleClick = (yes, setYes, setNo) => {
     setNo(false);
     setYes(!yes);
@@ -93,9 +87,9 @@ function RegisterNow({
             {...register(
               "confirmed_password",
               {
-                validate: (value) => value === passwordCurrent,
+                validate: (value) =>
+                  value === passwordCurrent || "The passwords do not match",
               },
-              { message: "The passwords do not match" },
               { required: true }
             )}
           />
@@ -120,11 +114,7 @@ function RegisterNow({
           checked={customer}
           {...register("customer account")}
         />
-        <button
-          type="submit"
-          className="button-style empty_yellow"
-          onClick={() => setRegisterButton(true)}
-        >
+        <button type="submit" className="button-style empty_yellow">
           Register
         </button>
       </form>
