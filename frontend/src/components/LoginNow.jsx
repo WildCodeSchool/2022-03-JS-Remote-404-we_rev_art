@@ -5,14 +5,12 @@ function LoginNow() {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.warn(data);
   };
-  const passwordCurrent = watch("password", "");
 
   return (
     <section className="register_login_container">
@@ -36,24 +34,6 @@ function LoginNow() {
             {...register("password", { minLength: 8 }, { required: true })}
           />
           {errors.password && <p> Password is required </p>}
-        </label>
-        <label htmlFor="confirmed_password" className="field_label">
-          Confirm your password
-          <input
-            type="password"
-            className="field_input"
-            {...register(
-              "confirmed_password",
-              {
-                validate: (value) => value === passwordCurrent,
-              },
-              { message: "The passwords do not match" },
-              { required: true }
-            )}
-          />
-          {errors.confirmed_password && (
-            <p> {errors.confirmed_password.message} </p>
-          )}
         </label>
         <button type="submit" className="button-style empty_yellow">
           Continue
