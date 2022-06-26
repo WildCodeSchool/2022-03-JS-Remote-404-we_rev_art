@@ -20,27 +20,24 @@ const hashPassword = (plainPassword) => {
 
 class UserController {
   static signin = async (req, res) => {
-    /* const user = req.body; */
-
     // TODO hashpassword
     try {
       const hash = await hashPassword(req.body.password);
       // TODO uuid
       const id = uuidv4();
       await models.user.insert(id, hash, req.body.email);
-      /* await models.profil.insert(id, req.body.typeaccount_id); */
+      await models.profil.insert(req.body, id);
       res.send("nickel");
     } catch (err) {
       res.status(400).send("error server");
     }
   };
 
-  /* static login = async (req, res) => { */
-  // ==>TODO VALIDATE DATA => MIDDLEWARE
-  // ==>TODO (GET HASHPASSWORD VIA EMAIL)
-  // ==>TODO (COMPARE LE HASHEDPASSWORD WITH USER PASSWORD)=>(ligne 17 à 19?)
-  // ==>TODO GET PROFIL A PARTIR DU UUID(comparaison aussi en front Terry?)
-  // ==>TODO GENERATE TOKEN COOKIE VIA via JWT
+  // static login = async (req, res) => {
+  // TODO validate data => midlleware
+  // TODO get hashpassword via email
+  // TODO comparer le hashpassword avec password
+  // TODO get profil a partire du uuid
   /* static token = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
