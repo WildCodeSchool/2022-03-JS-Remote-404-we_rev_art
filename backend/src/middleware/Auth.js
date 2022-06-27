@@ -1,9 +1,9 @@
+const models = require("../models");
 /* const jwt = require("jsonwebtoken"); */
 require("dotenv").config();
-const user = require("../models/UserManager");
 
 const checkedForEmail = (req, res, next) => {
-  user.findOne(req.body.email).then((result) => {
+  models.user.findOne(req.body.email).then((result) => {
     if (result) {
       req.user = result;
       next();

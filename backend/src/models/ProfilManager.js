@@ -3,12 +3,14 @@ const AbstractManager = require("./AbstractManager");
 class ProfilManager extends AbstractManager {
   static table = "profil";
 
-  /* insert(id, typeaccount_id) {
+  // eslint-disable-next-line camelcase
+  insert(id, typeaccount_id) {
     return this.connection.query(
-      `insert into ${ProfilManager.table} (id, typeaccount_id) values (?,?)`,
-      [id, typeaccount_id]
+      `insert into ${ProfilManager.table} (id, user_id, typeaccount_id) values (?,?,?)`,
+      // eslint-disable-next-line camelcase
+      [id, id, typeaccount_id]
     );
-  } */
+  }
 
   update(profil) {
     return this.connection.query(
