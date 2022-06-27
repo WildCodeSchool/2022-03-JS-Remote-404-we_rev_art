@@ -1,7 +1,9 @@
 const argon2 = require("argon2");
 const { v4: uuidv4 } = require("uuid");
+const jwt = require("jsonwebtoken");
+/* const bodyParser = require("body-parser"); */
 const models = require("../models");
-/* const jwt = require('jsonwebtoken'); */
+const { verifyPassword } = require("../middleware/Auth");
 
 const hashingOptions = {
   type: argon2.argon2id,
@@ -13,10 +15,6 @@ const hashingOptions = {
 const hashPassword = (plainPassword) => {
   return argon2.hash(plainPassword, hashingOptions);
 };
-
-// const verifyPassword = (password, hashedPassword) => {
-//   return argon2.verify(hashedPassword, password);
-// };
 
 class UserController {
   static signin = async (req, res) => {
@@ -33,28 +31,62 @@ class UserController {
     }
   };
 
-  // static login = async (req, res) => {
-  // TODO validate data => midlleware
+  static login = async (req, res) => {
+    verifyPassword(req.body.email, req.user.password)
+      .then(() => {
+        const token = jwt.sign(
+          { email: req.body.email },
+          process.env.PRIVATETOKEN
+        );
+        res
+          .status(201)
+          .cookie("user_token", token, {
+            httpOnly: true,
+            expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
+          })
+          .json({ email: req.body.email, token });
+      })
+      .catch((error) => {
+        /* console.log(error); */
+        res.send(error);
+      });
+  };
+  // TODO validate data => midlleware => voir middleware auth
   // TODO get hashpassword via email
+
   // TODO comparer le hashpassword avec password
+  /* 
+    verifyPassword(req.body.password, req.user.hashedpassword)
+      .then(response => {
+        const token = jwt.sign({ email: req.body.email }, process.env.PRIVATETOKEN)
+        res
+          .status(201)
+          .cookie('user_token', token, { httpOnly: true, expires: new Date(Date.now() + (1000 * 60 * 60 * 24)) })
+          .json({ email: req.body.email, token })
+      })
+      .catch(error => {
+        console.log(error)
+        res.send(error)
+      })
+  }) */
   // TODO get profil a partire du uuid
   /* static token = (req, res, next) => {
-  try {
-    const token = req.headers.authorization.split(' ')[1];
-    const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
-    const userId = decodedToken.userId;
-    if (req.body.userId && req.body.userId !== userId) {
-      throw 'Invalid user ID';
-    } else {
-      next();
+    try {
+      const token = req.headers.authorization.split(" ")[1];
+      const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
+      const userId = decodedToken.userId;
+      if (req.body.userId && req.body.userId !== userId) {
+        throw "Invalid user ID";
+      } else {
+        next();
+      }
+    } catch {
+      res.status(401).json({
+        error: new Error("Invalid request!"),
+      });
     }
-  } catch {
-    res.status(401).json({
-      error: new Error('Invalid request!')
-    });
-  }
-};
-    // }; */
+  };
+  // }; */
 }
 
-module.exports = UserController /* checkEMail; checkAuth */;
+module.exports = UserController;
