@@ -32,7 +32,7 @@ function LoginNow() {
           <input
             type="password"
             className="field_input"
-            {...register("password", { required: true })}
+            {...register("password", { minLength: 8 }, { required: true })}
           />
           {errors.password && <p> Password is required </p>}
         </label>
