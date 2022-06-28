@@ -27,9 +27,7 @@ class UserController {
       // TODO uuid
       const id = uuidv4();
       await models.user.insert(id, hash, req.body.email);
-
       await models.profil.insert(id, req.body.typeaccount_id);
-
       res.status(200).send("profil user created successfully");
     } catch (err) {
       res.status(500).send("error server");
@@ -56,5 +54,4 @@ class UserController {
       });
   };
 }
-
 module.exports = UserController;

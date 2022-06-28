@@ -16,6 +16,7 @@ function LoginNow() {
     <section className="register_login_container">
       <h4 className="register_h4"> Log in </h4>
       <p>I am a registered user and I would like to log into my account</p>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className="field_label">
           Email address
@@ -31,10 +32,11 @@ function LoginNow() {
           <input
             type="password"
             className="field_input"
-            {...register("password", { required: true })}
+            {...register("password", { minLength: 8 }, { required: true })}
           />
           {errors.password && <p> Password is required </p>}
         </label>
+
         <button type="submit" className="button-style empty_yellow">
           Continue
         </button>

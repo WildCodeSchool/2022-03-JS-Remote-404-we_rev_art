@@ -2,13 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function RegisterNow({
-  artist,
-  setArtist,
-  customer,
-  setCustomer,
-  setRegisterButton,
-}) {
+function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const handleClick = (yes, setYes, setNo) => {
     setNo(false);
     setYes(!yes);
@@ -24,6 +18,7 @@ function RegisterNow({
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -34,7 +29,7 @@ function RegisterNow({
       console.error("please choose a type account");
     }
   };
-
+  const passwordCurrent = watch("password", "");
   return (
     <section className="register_login_container">
       <h4 className="register_h4"> Register </h4>
@@ -80,9 +75,27 @@ function RegisterNow({
           <input
             type="password"
             className="field_input"
-            {...register("password", { required: true })}
+            {...register("password", { minLength: 8 }, { required: true })}
           />
           {errors.password && <p> Password is required </p>}
+        </label>
+        <label htmlFor="confirmed_password" className="field_label">
+          Confirm your password
+          <input
+            type="password"
+            className="field_input"
+            {...register(
+              "confirmed_password",
+              {
+                validate: (value) =>
+                  value === passwordCurrent || "The passwords do not match",
+              },
+              { required: true }
+            )}
+          />
+          {errors.confirmed_password && (
+            <p> {errors.confirmed_password.message} </p>
+          )}
         </label>
         <div className="register_terms_container">
           <input
@@ -101,11 +114,7 @@ function RegisterNow({
           checked={customer}
           {...register("customer account")}
         />
-        <button
-          type="submit"
-          className="button-style empty_yellow"
-          onClick={() => setRegisterButton(true)}
-        >
+        <button type="submit" className="button-style empty_yellow">
           Register
         </button>
       </form>

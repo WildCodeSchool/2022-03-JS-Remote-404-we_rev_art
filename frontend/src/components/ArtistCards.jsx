@@ -1,11 +1,9 @@
 import React from "react";
-import ArtistCardData from "../data/ArtistCardData";
 
 import "../style/ArtistCard.css";
 import Likebutton from "./Likebutton";
 
-function ArtistCards({ filter }) {
-  console.warn(filter);
+function ArtistCards({ ArtistCardData }) {
   return (
     <section className="card_container">
       <div className="card_map">
