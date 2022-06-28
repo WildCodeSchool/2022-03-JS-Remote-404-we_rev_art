@@ -4,11 +4,11 @@ class ProfilManager extends AbstractManager {
   static table = "profil";
 
   // eslint-disable-next-line camelcase
-  insert(data, user_id) {
+  insert(id, typeaccount_id) {
     return this.connection.query(
       `insert into ${ProfilManager.table} (id, user_id, typeaccount_id) values (?,?,?)`,
       // eslint-disable-next-line camelcase
-      [user_id, user_id, data.typeaccount_id]
+      [id, id, typeaccount_id]
     );
   }
 

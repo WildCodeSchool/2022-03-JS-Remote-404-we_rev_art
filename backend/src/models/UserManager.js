@@ -10,6 +10,20 @@ class UserManager extends AbstractManager {
     );
   }
 
+  findOne(email) {
+    return this.connection.query(
+      `SELECT email, password FROM ${UserManager.table} WHERE email = ?`,
+      [email]
+    );
+  }
+
+  checkPassword(password) {
+    return this.connection.query(
+      `SELECT email, password FROM ${UserManager.table} WHERE email = ?`,
+      [password]
+    );
+  }
+
   update(user) {
     return this.connection.query(
       `update ${UserManager.table} set title = ? where id = ?`,
