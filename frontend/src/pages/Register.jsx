@@ -8,7 +8,7 @@ import LoginNow from "../components/LoginNow";
 import "../style/register.css";
 
 function Register() {
-  const [customer, setCustomer] = useState(false);
+  const [customer, setCustomer] = useState(true);
   const [artist, setArtist] = useState(false);
   const [registerButton, setRegisterButton] = useState(false);
 

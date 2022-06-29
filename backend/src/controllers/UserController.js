@@ -30,6 +30,7 @@ class UserController {
       await models.profil.insert(id, req.body.typeaccount_id);
       res.status(200).send("profil user created successfully");
     } catch (err) {
+      console.error(err);
       res.status(500).send("error server");
     }
   };
@@ -47,7 +48,7 @@ class UserController {
             httpOnly: true,
             expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
           })
-          .json({ email: req.body.email, token });
+          .json({ email: req.body.email, typeaccount_id: 1 });
       })
       .catch(() => {
         res.status(500).send("error server");
