@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import ExportContextUser from "../context/UserContext";
 
 function LoginNow() {
+  const { setUser } = useContext(ExportContextUser.UserContext);
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -9,7 +14,13 @@ function LoginNow() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.warn(data);
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, data)
+      .then((res) => {
+        setUser(res.data);
+        navigate("/My_Project_Ads");
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
