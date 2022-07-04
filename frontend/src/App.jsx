@@ -7,7 +7,6 @@ import Artists from "./pages/Artists";
 import Creations from "./pages/Creations";
 import Help from "./pages/Help";
 import Register from "./pages/Register";
-import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MyProjectAds from "./pages/MyProjectAds";
@@ -28,7 +27,6 @@ function App() {
         <Route path="/Help" element={<Help />} />
         <Route path="/Contact_us" element={<ContactUs />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
 
         <Route
           path="/My_Project_Ads"
