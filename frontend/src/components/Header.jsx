@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../images/logo.png";
 import Nav from "./Nav";
 import Register from "./Register";
@@ -10,7 +11,9 @@ import "../style/Logo.css";
 function Header() {
   return (
     <section className="header-container">
-      <img className="logo" src={Logo} alt="logo" />
+      <Link to="/">
+        <img className="logo" src={Logo} alt="logo" />
+      </Link>
       <Nav />
       <div className="button-container">
         <Button buttonData={buttonData[0]} />

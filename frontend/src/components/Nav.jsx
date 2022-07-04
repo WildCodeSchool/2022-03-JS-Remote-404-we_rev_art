@@ -1,16 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
 import { Link } from "react-router-dom";
+
+import Mail from "../images/mail.png";
 
 function Nav() {
   return (
     <section className="nav">
       <ul className="nav_ul">
-        <Link to="/">
-          <li>
-            <a className="nav_link"> Home</a>
-          </li>
-        </Link>
         <Link to="/Project_Ads">
           <li>
             <a className="nav_link">Project Ads</a>
@@ -30,6 +26,9 @@ function Nav() {
           <li>
             <a className="nav_link">Help</a>
           </li>
+        </Link>
+        <Link to="/Contact_us">
+          <img className="navMail" src={Mail} alt="logo mail" />
         </Link>
       </ul>
     </section>
