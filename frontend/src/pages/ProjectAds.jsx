@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectAdsFilter from "../components/ProjectAdsFilter";
+import ProjectAdsFilter from "../components/Filters/ProjectAds/ProjectAdsFilter";
 import MiniHeader from "../components/miniHeader";
 
 function ProjectAds() {

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { React, useState } from "react";
 import FilterOptions from "./FilterOptions";
 
@@ -15,12 +16,13 @@ function ProjectFilterOption({ list, filter, setFilter }) {
 
       <ul className="list_map">
         {buttonClicked &&
-          list.option.map((filteroptions) => (
+          list.option.map((filteroptions, index) => (
             <FilterOptions
               filteroptions={filteroptions}
               filter={filter}
               setFilter={setFilter}
               type={list.type}
+              key={index}
             />
           ))}
       </ul>
