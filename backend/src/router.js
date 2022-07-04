@@ -21,3 +21,4 @@ router.post('/profil', ProfilController.postprofil);
 router.put('/profil/:id', ProfilController.updateprofil);
 router.delete('/profil/:id', ProfilController.deleteprofil); */
 module.exports = router;
+ 
