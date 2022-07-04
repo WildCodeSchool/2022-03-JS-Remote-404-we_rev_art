@@ -10,7 +10,9 @@ function RegisterHome() {
       <div className="registerHome">
         <h3>ARE YOU A DIGITAL ARTIST ?</h3>
         <br />
-        <p>register for free to find animation offers</p>
+        <p className="registerHomeForFree">
+          register for free <br /> to find animation offers
+        </p>
         <br />
         <Link to="/ProjectAds">
           <button className="cardProject_registerButton" type="button">

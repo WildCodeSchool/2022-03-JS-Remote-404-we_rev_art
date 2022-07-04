@@ -13,7 +13,7 @@ function TitleText({ titleTextData }) {
           )}
           <div>
             <h3> {data.title} </h3>
-            <p> {data.text} </p>
+            <p className="dataText-p"> {data.text} </p>
           </div>
         </section>
       ))}
