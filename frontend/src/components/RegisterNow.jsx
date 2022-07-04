@@ -18,16 +18,18 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const {
     handleSubmit,
     register,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     if (customer || artist) {
-      console.warn(data);
+      console.warn("account is already registered");
     } else {
       console.error("please choose a type account");
     }
+    reset();
   };
   const passwordCurrent = watch("password", "");
   return (
