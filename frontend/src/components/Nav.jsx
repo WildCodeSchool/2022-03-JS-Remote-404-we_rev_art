@@ -7,25 +7,17 @@ function Nav() {
   return (
     <section className="nav">
       <ul className="nav_ul">
-        <Link to="/Project_Ads">
-          <li>
-            <a className="nav_link">Project Ads</a>
-          </li>
+        <Link className="nav_link" to="/Project_Ads">
+          Project Ads
         </Link>
-        <Link to="/Artists">
-          <li>
-            <a className="nav_link">Artists</a>
-          </li>
+        <Link className="nav_link" to="/Artists">
+          Artists
         </Link>
-        <Link to="/Creations">
-          <li>
-            <a className="nav_link">Creations</a>
-          </li>
+        <Link className="nav_link" to="/Creations">
+          Creations
         </Link>
-        <Link to="/Help">
-          <li>
-            <a className="nav_link">Help</a>
-          </li>
+        <Link className="nav_link" to="/Help">
+          Help
         </Link>
         <Link to="/Contact_us">
           <img className="navMail" src={Mail} alt="logo mail" />

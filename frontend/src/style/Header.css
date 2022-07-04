@@ -4,38 +4,46 @@
   list-style: none;
   justify-content: space-between;
 }
-.nav_ul li {
-  list-style-type: none;
-  font-weight: bold;
-}
 
 .header-container {
   display: flex;
   width: 98vw;
   justify-content: space-between;
 }
+
 .logo {
   width: 13rem;
   padding: 1vh 0 0 2vw;
   margin-right: 4vw;
 }
+
 .nav_link {
   font-size: 1.5rem;
   padding-right: 6vw;
+  font-weight: bold;
 }
+
+.register_link{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .button-container {
   height: inherit;
   padding-top: 6vh;
 }
+
 .ul_container {
   padding-top: 5.2vh;
   font-weight: bold;
   display: flex;
   flex-direction: column;
 }
+
 .ul_container li {
   list-style-type: none;
 }
+
 .ul_container li a {
   font-size: 1.5rem;
 }
