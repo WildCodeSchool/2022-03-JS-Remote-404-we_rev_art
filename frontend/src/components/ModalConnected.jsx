@@ -1,40 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import ExportContextUser from "../context/UserContext";
 
 function ModalConnected({ setModal }) {
-  const [accountType] = useState(false);
+  const { user } = useContext(ExportContextUser.UserContext);
+  const customer = [
+    "My account",
+    "My project ads",
+    "My favourite artists",
+    "My invoices",
+    "Log out",
+  ];
+
+  const artist = [
+    "My account",
+    "My subscription",
+    "My profile",
+    "My creations",
+    "My invoices",
+    "Log out",
+  ];
+
+  const typeAccount = user.typeaccount_id === 1 ? artist : customer;
   return (
     <ul className="modal_connected">
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>My Account</li>
-        </button>
-      </Link>
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>{accountType ? "My project ads" : "My subscription"}</li>
-        </button>
-      </Link>
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>{accountType ? "My favourite artists" : "My profile"}</li>
-        </button>
-      </Link>
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>{accountType ? "" : "My creations"}</li>
-        </button>
-      </Link>
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>My invoices</li>
-        </button>
-      </Link>
-      <Link to="/" className="modal_li" onClick={() => setModal(false)}>
-        <button type="button" className="no_button">
-          <li>Log out</li>
-        </button>
-      </Link>
+      {typeAccount.map((el) => (
+        <Link to="/" className="modal_li" onClick={() => setModal(false)}>
+          <button type="button" className="no_button">
+            <li> {el}</li>
+          </button>
+        </Link>
+      ))}
     </ul>
   );
 }

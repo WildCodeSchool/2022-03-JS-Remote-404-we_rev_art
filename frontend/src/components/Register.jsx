@@ -1,39 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import ExportContextUser from "../context/UserContext";
 
-import user from "../images/user.png";
+import userAvatar from "../images/user.png";
 import ModalConnected from "./ModalConnected";
 
 function Register() {
   const [modal, setModal] = useState(false);
+  const { user } = useContext(ExportContextUser.UserContext);
 
   return (
     <section>
       <ul className="ul_container">
-        <li>
-          <button
-            type="button"
-            className="no_button"
-            onClick={() => setModal(!modal)}
-          >
-            <img
-              src={user}
-              alt="avatar of a user"
-              className="user_avatar_img"
-            />
-          </button>
-        </li>
-        <Link to="/Register">
+        {user === null ? (
+          <Link to="/Register" className="register_link">
+            <li>
+              Register <br /> or <br /> Log in
+            </li>
+          </Link>
+        ) : (
           <li>
-            <a className="register_link"> Register</a>
+            <button
+              type="button"
+              className="no_button"
+              onClick={() => setModal(!modal)}
+            >
+              <img
+                src={userAvatar}
+                alt="avatar of a user"
+                className="user_avatar_img"
+              />
+            </button>
           </li>
-        </Link>
-        <Link to="/">
-          <li>
-            <a className="register_link">Log in</a>
-          </li>
-        </Link>
+        )}
       </ul>
       {modal && <ModalConnected setModal={setModal} />}
     </section>

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+
+import hide from "../images/hide.png";
+import show from "../images/show.png";
 
 function RegisterNow({ artist, setArtist, customer, setCustomer }) {
   const handleClick = (yes, setYes, setNo) => {
@@ -30,6 +33,7 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
     }
   };
   const passwordCurrent = watch("password", "");
+  const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
       <h4 className="register_h4"> Register </h4>
@@ -72,27 +76,51 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
         </label>
         <label htmlFor="password" className="field_label">
           Password
-          <input
-            type="password"
-            className="field_input"
-            {...register("password", { minLength: 8 }, { required: true })}
-          />
+          <div className="flex">
+            <input
+              type={shown ? "text" : "password"}
+              className="field_input"
+              {...register("password", { minLength: 8 }, { required: true })}
+            />
+            <button
+              type="button"
+              className="no_button"
+              onClick={() => setShown(!shown)}
+            >
+              <img
+                src={shown ? show : hide}
+                alt="eye that changes if password is shown or hidden"
+              />
+            </button>
+          </div>
           {errors.password && <p> Password is required </p>}
         </label>
         <label htmlFor="confirmed_password" className="field_label">
           Confirm your password
-          <input
-            type="password"
-            className="field_input"
-            {...register(
-              "confirmed_password",
-              {
-                validate: (value) =>
-                  value === passwordCurrent || "The passwords do not match",
-              },
-              { required: true }
-            )}
-          />
+          <div className="flex">
+            <input
+              type={shown ? "text" : "password"}
+              className="field_input"
+              {...register(
+                "confirmed_password",
+                {
+                  validate: (value) =>
+                    value === passwordCurrent || "The passwords do not match",
+                },
+                { required: true }
+              )}
+            />
+            <button
+              type="button"
+              className="no_button"
+              onClick={() => setShown(!shown)}
+            >
+              <img
+                src={shown ? show : hide}
+                alt="eye that changes if password is shown or hidden"
+              />
+            </button>
+          </div>
           {errors.confirmed_password && (
             <p> {errors.confirmed_password.message} </p>
           )}

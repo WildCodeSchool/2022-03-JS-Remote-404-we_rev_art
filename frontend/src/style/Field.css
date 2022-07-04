@@ -40,3 +40,7 @@
 .trio {
   width: 23vw;
 }
+
+.flex {
+  display: flex;
+}
