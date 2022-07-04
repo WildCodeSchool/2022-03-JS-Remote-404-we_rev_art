@@ -6,15 +6,10 @@ function Register() {
   return (
     <section>
       <ul className="ul_container">
-        <Link to="/Register">
-          <li>
-            <a className="register_link"> Register</a>
-          </li>
-        </Link>
-        <Link to="/">
-          <li>
-            <a className="register_link">Log in</a>
-          </li>
+        <Link className="register_link" to="/Register">
+          Register
+          <br />
+          Log in
         </Link>
       </ul>
     </section>
