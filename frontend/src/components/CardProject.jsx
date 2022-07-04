@@ -27,7 +27,7 @@ function CardProject() {
                 {" "}
                 Details of ad : {last.details}
               </p>
-              <br />
+              {/* <br /> */}
               <p> {last.hashtag} </p>
             </div>
             <div>
