@@ -3,7 +3,7 @@ const models = require("../models");
 class ProfilController {
   static browse = (req, res) => {
     models.profil
-      .findAll()
+      .findAll(req.params)
       .then(([rows]) => {
         res.send(rows);
       })

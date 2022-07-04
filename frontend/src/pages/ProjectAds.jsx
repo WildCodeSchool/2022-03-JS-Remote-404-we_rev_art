@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectAdsFilter from "../components/ProjectAdsFilter";
 import MiniHeader from "../components/miniHeader";
 import NewProject from "../components/NewProject";
 
 function ProjectAds() {
+  const [filter, setFilter] = useState({
+    technique: [],
+    contract: [],
+    provider: [],
+    clients: [],
+    timeframe: [],
+  });
   return (
     <div>
       <MiniHeader index={0} />
-      <ProjectAdsFilter />
+
+      <ProjectAdsFilter filter={filter} setFilter={setFilter} />
       <NewProject />
     </div>
   );
 }
-
 export default ProjectAds;

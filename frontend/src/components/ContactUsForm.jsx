@@ -12,77 +12,74 @@ export default function ContactUsForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  /**
-   *
-   * @param {string :adresse email} serviceId
-   * @param {template : mise en forme de l'email} templateId
-   * @param {object : data form} variables
-   * la fonction sendEmail va envoyer toutes les informations du formulaire (variables) pour
-   * l'envoyer a emailJS sur l'adresse mail teammiditrente (serviceId) et le mettre
-   * enforme grace au templateId
-   */
+  const onSubmit = () => {
+    console.warn("the email was sent correctly");
+    reset();
+  };
 
   return (
-    <div className="contact_form_qb">
-      <h1>Contactez-nous </h1>
-      <form>
-        <label className="contact_label_qb" htmlFor="nameInput">
-          Name :
-          <input
-            className="contact_input_qb"
-            type="text"
-            name="nameInput"
-            {...register("Name", { required: true })}
-          />
-          {/* Si le champ n'est pas rempli, on indique à l'utilisateur que ce champ est requis. */}
-          {errors.Name?.type === "required" && (
-            <p className="contact_required_qb">Name is required</p>
-          )}
-        </label>
-        <label className="contact_label_qb" htmlFor="emailInput">
-          Email :
-          <input
-            className="contact_input_qb"
-            type="text"
-            name="emailInput"
-            {...register("Email", { required: true })}
-          />
-          {errors.Email?.type === "required" && (
-            <p className="contact_required_qb">Email is required</p>
-          )}
-        </label>
-        <label className="contact_label_qb" htmlFor="sujetlInput">
-          Quel est le sujet ?
-          <input
-            className="contact_input_qb"
-            type="text"
-            name="sujetlInput"
-            {...register("Sujet", { required: true })}
-          />
-          {errors.Sujet?.type === "required" && (
-            <p className="contact_required_qb">Sujet is required</p>
-          )}
-        </label>
-        <label className="contact_label_qb" htmlFor="messageInput">
-          Message :
-          <textarea
-            className="contact_textaera_qb"
-            name="messageInput"
-            rows="6"
-            cols="50"
-            {...register("Message", { required: true })}
-          />
-          {errors.Message?.type === "required" && (
-            <p className="contact_required_qb">Message is required</p>
-          )}
-        </label>
-        <button type="submit" value="send" className="button_form_qb">
-          submit{handleSubmit}
-        </button>
+    <section className="section_form">
+      <form className="form_qb" onSubmit={handleSubmit(onSubmit)}>
+        <div className="contact_form_qb">
+          <label className="field_label_qb" htmlFor="nameInput">
+            Name
+            <input
+              className="field_input"
+              type="text"
+              name="nameInput"
+              {...register("Name", { required: true })}
+            />
+            {/* Si le champ n'est pas rempli, on indique à l'utilisateur que ce champ est requis. */}
+            {errors.Name?.type === "required" && (
+              <p className="contact_required_qb">Name is required</p>
+            )}
+          </label>
+          <label className="field_label_qb" htmlFor="emailInput">
+            Email
+            <input
+              className="field_input"
+              type="text"
+              name="emailInput"
+              {...register("Email", { required: true })}
+            />
+            {errors.Email?.type === "required" && (
+              <p className="contact_required_qb">Email is required</p>
+            )}
+          </label>
+          <label className="field_label_qb" htmlFor="sujetlInput">
+            Subject
+            <input
+              className="field_input"
+              type="text"
+              name="sujetlInput"
+              {...register("Sujet", { required: true })}
+            />
+            {errors.Sujet?.type === "required" && (
+              <p className="contact_required_qb">Sujet is required</p>
+            )}
+          </label>
+        </div>
+        <div className="form_message_qb">
+          <label className="field_label_qb" htmlFor="messageInput">
+            Message
+            <textarea
+              className="contact_textaera_qb"
+              name="messageInput"
+              {...register("Message", { required: true })}
+            />
+            {errors.Message?.type === "required" && (
+              <p className="contact_required_qb">Message is required</p>
+            )}
+          </label>
+          <button type="submit" value="send" className="button_form_qb yellow">
+            submit
+          </button>
+        </div>
       </form>
-    </div>
+    </section>
   );
 }

@@ -30,7 +30,7 @@ const ArtistFilterData = [
   {
     id: 3,
     filter: "sort by likes",
-    type: "likes",
+    type: "like",
     option: ["Most rated", "Most followed", "Most creations"],
   },
 ];

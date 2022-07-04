@@ -39,3 +39,10 @@
 .ul_container li a {
   font-size: 1.5rem;
 }
+
+.navMail{
+  width: 55px;
+  height: 45px;
+  margin-top: -3px;
+  margin-right: 3rem;
+}
