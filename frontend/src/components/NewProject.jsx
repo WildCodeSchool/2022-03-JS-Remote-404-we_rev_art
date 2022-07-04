@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import lastProject from "../data/lastProject";
-import "../style/cardProject.css";
-import RegisterHome from "./RegisterHome";
+// import { Link } from "react-router-dom";
 
-function CardProject() {
+import "../style/cardProject.css";
+
+function NewProject() {
   return (
     <section className="cardProject_cardProject">
       <div className="cardProject_cards">
-        <h2>Latest project ads</h2>
         {lastProject.map((last) => (
           <div className="cardProject_card" key={last.id}>
             <div className="cardProject_spec">
@@ -27,7 +26,7 @@ function CardProject() {
                 {" "}
                 Details of ad : {last.details}
               </p>
-              {/* <br /> */}
+              <br />
               <p> {last.hashtag} </p>
             </div>
             <div>
@@ -39,15 +38,9 @@ function CardProject() {
             </div>
           </div>
         ))}
-        <div className="cardProject_homeToAllCard">
-          <Link to="/ProjectAds" className="cardProject_allCard">
-            VIEW ALL ADS
-          </Link>
-        </div>
       </div>
-      <RegisterHome />
     </section>
   );
 }
 
-export default CardProject;
+export default NewProject;
