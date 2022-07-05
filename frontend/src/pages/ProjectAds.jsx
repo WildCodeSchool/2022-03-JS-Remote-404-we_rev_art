@@ -23,14 +23,20 @@ function ProjectAds() {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [filter]);
 
   return (
     <div>
       <MiniHeader index={0} />
 
       <ProjectAdsFilter filter={filter} setFilter={setFilter} />
-      <NewProject projects={projects} />
+      <section className="cardProject_cardProject">
+        <div className="cardProject_cards">
+          {projects.map((project) => (
+            <NewProject project={project} key={project} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
