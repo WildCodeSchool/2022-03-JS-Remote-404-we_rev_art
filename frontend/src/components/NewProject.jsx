@@ -1,39 +1,36 @@
 import React from "react";
-import lastProject from "../data/lastProject";
-// import { Link } from "react-router-dom";
 
 import "../style/cardProject.css";
 
-function NewProject() {
+function NewProject({ projects }) {
   return (
     <section className="cardProject_cardProject">
       <div className="cardProject_cards">
-        {lastProject.map((last) => (
-          <div className="cardProject_card" key={last.id}>
+        {projects.map((project) => (
+          <div className="cardProject_card" key={project.id}>
             <div className="cardProject_spec">
               <h3>
-                {last.title}
+                {project.title}
                 <span className="cardProject_small">
-                  ~ {last.date} ~ {last.timeframe}
+                  ~ {project.date.split("T")[0]} ~ {project.timeframe}
                 </span>
               </h3>
               <p className="cardProject_modalities">
-                Technique : {last.technique} ~ Budget {last.budget}€ ~
-                {last.nboffre} offers ~ client : {last.client}
+                Technique : {project.skills_id} ~ Budget {project.budget}€ ~
+                {project.offers} offers ~ client : {project.customer}
               </p>
               <br />
               <p className="cardProject_details">
-                {" "}
-                Details of ad : {last.details}
+                Details of ad : {project.details}
               </p>
               <br />
-              <p> {last.hashtag} </p>
+              <p> {project.hashtag} </p>
             </div>
             <div>
               <img
                 className="cardProject_imageCardProject"
-                src={last.image}
-                alt={last.alt}
+                src={project.image}
+                alt={project.alt}
               />
             </div>
           </div>
