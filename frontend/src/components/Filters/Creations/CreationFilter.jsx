@@ -1,7 +1,7 @@
 import React from "react";
-import CreationFilterData from "../data/CreationFilterData";
-import "../style/ProjectAdsFilter.css";
-import ProjectFilterOption from "./ProjectFilterOption";
+import CreationFilterData from "../../../data/CreationFilterData";
+import "../../../style/ProjectAdsFilter.css";
+import ProjectFilterOption from "../ProjectFilterOption";
 
 function CreationFilter({ filter, setFilter }) {
   return (
@@ -12,6 +12,7 @@ function CreationFilter({ filter, setFilter }) {
             list={data}
             filter={filter}
             setFilter={setFilter}
+            key={data.id}
           />
         ))}
       </div>

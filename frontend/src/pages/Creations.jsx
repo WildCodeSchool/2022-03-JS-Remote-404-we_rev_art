@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CreationFilter from "../components/CreationFilter";
+import CreationFilter from "../components/Filters/Creations/CreationFilter";
 import MiniHeader from "../components/miniHeader";
 
 function Creations() {

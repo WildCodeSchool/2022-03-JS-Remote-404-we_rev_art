@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ArtistCards from "../components/ArtistCards";
-import ArtistFilter from "../components/ArtistFilter";
+import ArtistFilter from "../components/Filters/Artists/ArtistFilter";
 import MiniHeader from "../components/miniHeader";
 import ArtistCardData from "../data/ArtistCardData";
 
