@@ -9,7 +9,7 @@ function CardProject() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/projects `)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/projects?limit=3 `)
       .then((res) => {
         setProjects(res.data);
       })
