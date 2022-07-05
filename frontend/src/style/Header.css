@@ -23,7 +23,7 @@
   font-weight: bold;
 }
 
-.register_link{
+.register_link {
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -48,7 +48,7 @@
   font-size: 1.5rem;
 }
 
-.navMail{
+.navMail {
   width: 55px;
   height: 45px;
   margin-top: -3px;
@@ -61,7 +61,7 @@
 
 .modal_connected {
   transition: all ease-in-out 1s;
-  animation: open 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: open 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   position: absolute;
   top: 80px;
   right: 80px;
@@ -75,24 +75,22 @@
 }
 
 @keyframes open {
- 0% {
+  0% {
     transform: scale(0);
     transform-origin: 100% 0%;
     opacity: 1;
- }
- 100% {
+  }
+  100% {
     transform: scale(1);
     transform-origin: 100% 0%;
     opacity: 1;
- }
+  }
 }
 
 .modal_li {
   padding: 0.5rem 1rem;
   width: 100%;
-
 }
-
 
 .modal_li:hover {
   background-color: yellow;

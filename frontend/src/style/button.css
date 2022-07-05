@@ -29,3 +29,37 @@
   border: #222a35 solid 4px;
   color: #ffd700;
 }
+/*MYcreationuplaod button*/
+.my_creation_allbtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.btn_background {
+  background-image: url();
+}
+.my_creation_savebtn {
+  background-color: #ffd700;
+  color: #222a35;
+  border: #ffd700 solid 4px;
+  padding: 0.25rem 3.5rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+.my_creation_modifybtn {
+  background-color: inherit;
+  color: #222a35;
+  border: #ffd700 solid 4px;
+  padding: 0.25rem 3.5rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+  margin-left: 4rem;
+}
