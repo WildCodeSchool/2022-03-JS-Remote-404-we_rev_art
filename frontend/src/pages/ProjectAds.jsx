@@ -13,17 +13,17 @@ function ProjectAds() {
 
   const [projects, setProjects] = useState([]);
 
-  let url = `${import.meta.env.VITE_BACKEND_URL}/projects?limit=25`;
-  if (filter.skills[0]) {
-    url += `&skills=${filter.skills.join("|")}`;
-  }
-  if (filter.contracttype[0]) {
-    url += `&contracttype=${filter.contracttype.join("|")}`;
-  }
-  if (filter.usertype[0]) {
-    url += `&usertype=${filter.usertype.join("|")}`;
-  }
   useEffect(() => {
+    let url = `${import.meta.env.VITE_BACKEND_URL}/projects?limit=25`;
+    if (filter.skills[0]) {
+      url += `&skills=${filter.skills.join("|")}`;
+    }
+    if (filter.contracttype[0]) {
+      url += `&contracttype=${filter.contracttype.join("|")}`;
+    }
+    if (filter.usertype[0]) {
+      url += `&usertype=${filter.usertype.join("|")}`;
+    }
     axios
       .get(url)
       .then((res) => {
