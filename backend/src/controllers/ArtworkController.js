@@ -3,7 +3,7 @@ const models = require("../models");
 class ArtworkController {
   static browse = async (req, res) => {
     try {
-      const artworks = await models.artwork.findAll();
+      const artworks = await models.artwork.findAll(req.query);
       if (artworks[0]) {
         const pictureDigital = await Promise.all(
           artworks.map((artwork) =>
