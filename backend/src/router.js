@@ -1,5 +1,9 @@
 const express = require("express");
-const { UserController, ArtworkController } = require("./controllers");
+const {
+  UserController,
+  ArtworkController,
+  FilterController,
+} = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
 const { checkedForEmail } = require("./middleware/Auth");
@@ -15,6 +19,8 @@ router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
 
 router.get("/projects", ArtworkController.browse);
+
+router.get("/filters/:table", FilterController.browse);
 
 // router.get("/profil", ProfilController.findAll);
 
