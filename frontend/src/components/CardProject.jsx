@@ -26,7 +26,7 @@ function CardProject() {
           <NewProject project={project} key={project} />
         ))}
         <div className="cardProject_homeToAllCard">
-          <Link to="/ProjectAds" className="cardProject_allCard">
+          <Link to="/Project_Ads" className="cardProject_allCard">
             VIEW ALL ADS
           </Link>
         </div>
