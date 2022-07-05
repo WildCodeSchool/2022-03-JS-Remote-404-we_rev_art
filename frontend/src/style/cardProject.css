@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
-  height: 12rem;
+  /* height: 12rem; */
   background-color: lightgrey;
   margin-top: 1rem;
   margin-left: 4rem;
@@ -17,9 +17,12 @@
 }
 
 .cardProject_imageCardProject {
-  width: 10rem;
+  /* width: 10rem;
   height: 12rem;
-  padding: 4px;
+  padding: 4px; */
+  height:auto;
+  width: 21rem;
+  margin-right: 0.8rem;
 }
 
 .cardProject_small {
@@ -92,4 +95,9 @@
 }
 .cardProject_details {
   font-size: 1.2rem;
+}
+.registerHomeForFree {
+  font-weight: bold;
+  font-size: 1.4rem;
+  /* text-align: center; */
 }

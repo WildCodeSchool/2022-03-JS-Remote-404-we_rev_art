@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import ExportContextUser from "../context/UserContext";
+
+import hide from "../images/hide.png";
+import show from "../images/show.png";
 
 function LoginNow() {
   const { setUser } = useContext(ExportContextUser.UserContext);
@@ -22,7 +25,7 @@ function LoginNow() {
       })
       .catch((err) => console.error(err));
   };
-
+  const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
       <h4 className="register_h4"> Log in </h4>
@@ -40,11 +43,23 @@ function LoginNow() {
         </label>
         <label htmlFor="password" className="field_label">
           Password
-          <input
-            type="password"
-            className="field_input"
-            {...register("password", { minLength: 8 }, { required: true })}
-          />
+          <div className="flex">
+            <input
+              type={shown ? "text" : "password"}
+              className="field_input"
+              {...register("password", { minLength: 8 }, { required: true })}
+            />
+            <button
+              type="button"
+              className="no_button"
+              onClick={() => setShown(!shown)}
+            >
+              <img
+                src={shown ? show : hide}
+                alt="eye that changes if password is shown or hidden"
+              />
+            </button>
+          </div>
           {errors.password && <p> Password is required </p>}
         </label>
 

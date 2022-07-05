@@ -50,7 +50,8 @@ class UserController {
           })
           .json({ email: req.body.email, typeaccount_id: 1 });
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error(err);
         res.status(500).send("error server");
       });
   };

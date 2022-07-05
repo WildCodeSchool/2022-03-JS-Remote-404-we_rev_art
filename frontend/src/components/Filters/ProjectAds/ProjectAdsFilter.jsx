@@ -1,7 +1,7 @@
 import { React } from "react";
-import ProjectAdsFilterData from "../data/ProjectAdsFilterData";
-import "../style/ProjectAdsFilter.css";
-import ProjectFilterOption from "./ProjectFilterOption";
+import ProjectAdsFilterData from "../../../data/ProjectAdsFilterData";
+import "../../../style/ProjectAdsFilter.css";
+import ProjectFilterOption from "../ProjectFilterOption";
 
 function ProjectAdsFilter({ filter, setFilter }) {
   return (
@@ -12,6 +12,7 @@ function ProjectAdsFilter({ filter, setFilter }) {
             list={data}
             filter={filter}
             setFilter={setFilter}
+            key={data.type}
           />
         ))}
       </div>

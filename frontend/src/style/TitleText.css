@@ -22,3 +22,10 @@
   color: yellow;
   padding: 0 0.5rem;
 }
+.dataText-p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h3 {
+  color: #203864;
+}
