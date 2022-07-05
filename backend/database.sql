@@ -175,12 +175,12 @@ VALUES
 
 CREATE TABLE IF NOT EXISTS `werevart`.`contracttype` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `contract` VARCHAR(100) NOT NULL,
+  `contracttype` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 INSERT INTO
-    `contracttype` (`contract`)
+    `contracttype` (`contracttype`)
 VALUES
     ('paid service'),
     ('free collaboration')

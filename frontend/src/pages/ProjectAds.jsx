@@ -6,11 +6,9 @@ import NewProject from "../components/NewProject";
 
 function ProjectAds() {
   const [filter, setFilter] = useState({
-    technique: [],
-    contract: [],
-    provider: [],
-    clients: [],
-    timeframe: [],
+    skills: [],
+    contracttype: [],
+    usertype: [],
   });
 
   const [projects, setProjects] = useState([]);
@@ -33,7 +31,7 @@ function ProjectAds() {
       <section className="cardProject_cardProject">
         <div className="cardProject_cards">
           {projects.map((project) => (
-            <NewProject project={project} key={project} />
+            <NewProject project={project} key={project.id} />
           ))}
         </div>
       </section>

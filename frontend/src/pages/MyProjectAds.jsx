@@ -22,7 +22,7 @@ function MyProjectAds() {
       <section className="cardProject_cardProject">
         <div className="cardProject_cards">
           {projects.map((project) => (
-            <NewProject project={project} key={project} />
+            <NewProject project={project} key={project.id} />
           ))}
         </div>
       </section>
