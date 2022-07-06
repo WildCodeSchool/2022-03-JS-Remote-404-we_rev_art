@@ -56,8 +56,8 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
     reset();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/user/signin`, data2)
-      .then((res) => {
-        res.send("user created");
+      .then(() => {
+        console.warn("User signin successful");
       })
       .catch((err) => console.error(err));
   };
