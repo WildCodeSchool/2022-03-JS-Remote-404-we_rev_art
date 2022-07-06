@@ -1,0 +1,32 @@
+.button_eb {
+    border-radius: 0.5rem;
+    border-color: yellow;
+    background-color: white;
+    margin-right: 1rem;
+
+}
+.section_form2 {
+    margin-bottom: 20rem;
+}
+.form_eb {
+    display: flex;
+}
+.contact_form_eb {
+  font-size: 1.5rem;
+}
+.field_label_eb {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.input_eb {
+width: 100%;
+height: 12vh;
+border-radius: 1.5rem;
+}
+.textarea_eb {
+    border-radius: 1.5rem;
+}
+
