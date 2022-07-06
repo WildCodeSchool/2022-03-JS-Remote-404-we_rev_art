@@ -12,8 +12,6 @@ function Register() {
   const [artist, setArtist] = useState(false);
   const [registerButton, setRegisterButton] = useState(false);
 
-  // console.warn(customer);
-
   return (
     <section className="register_container">
       <MiniHeader index={4} />
