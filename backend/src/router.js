@@ -4,9 +4,11 @@ const {
   ArtworkController,
   FilterController,
 
+  SkillsController,
+  ContractTypeController,
+
   UserTypeController,
-  
-=======
+
   TypeAccountController,
 
 } = require("./controllers");
@@ -27,6 +29,10 @@ router.post("/user/login", checkedForEmail, UserController.login);
 router.get("/projects", ArtworkController.browse);
 router.get("/usertype", UserTypeController.browse);
 router.get("/softwareused", SoftwareController.browse);
+
+router.get("/skills", SkillsController.browse);
+
+router.get("/contracttype", ContractTypeController.browse);
 
 router.get("/filters/:table", FilterController.browse);
 

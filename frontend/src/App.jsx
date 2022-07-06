@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MyProjectAds from "./pages/MyProjectAds";
 import ContactUs from "./pages/ContactUs";
+import PostAnAd from "./pages/PostAnAd";
 import ProtectedRoute from "./components/Protected/ProtectedRoute";
 import "./App.css";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/Help" element={<Help />} />
         <Route path="/Contact_us" element={<ContactUs />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/Post_An_Ad" element={<PostAnAd />} />
 
         <Route
           path="/My_Project_Ads"
