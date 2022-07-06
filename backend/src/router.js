@@ -3,7 +3,12 @@ const {
   UserController,
   ArtworkController,
   FilterController,
+
+  UserTypeController,
+  
+=======
   TypeAccountController,
+
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -20,10 +25,16 @@ router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
 
 router.get("/projects", ArtworkController.browse);
+router.get("/usertype", UserTypeController.browse);
+router.get("/softwareused", SoftwareController.browse);
 
 router.get("/filters/:table", FilterController.browse);
 
+
+/* router.post("/mycreations", MyCreationsUploadController.browse); */
+
 router.get("/typeaccount", TypeAccountController.browse);
+
 
 // router.get("/profil", ProfilController.findAll);
 
