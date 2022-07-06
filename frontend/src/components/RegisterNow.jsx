@@ -7,9 +7,16 @@ import hide from "../images/hide.png";
 import show from "../images/show.png";
 
 function RegisterNow({ artist, setArtist, customer, setCustomer }) {
-  const handleClick = (yes, setYes, setNo) => {
-    setNo(false);
-    setYes(!yes);
+  const [registerButton, setRegisterButton] = useState([]);
+
+  const handleClick = (index) => {
+    if (index === 0) {
+      setArtist(true);
+      setCustomer(false);
+    } else {
+      setArtist(false);
+      setCustomer(true);
+    }
   };
 
   const artistClassName = artist
@@ -19,7 +26,6 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
     ? "button-style yellow"
     : "button-style empty_yellow";
 
-  const [registerButton, setRegisterButton] = useState([]);
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/typeaccount `)
@@ -30,7 +36,6 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
         console.error(err);
       });
   }, []);
-  console.warn(registerButton);
   const {
     handleSubmit,
     register,
@@ -39,13 +44,22 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    if (customer || artist) {
-      console.warn("account is already registered");
+  const onSubmit = (data) => {
+    let data2 = {};
+    const { email } = data;
+    const { password } = data;
+    if (customer) {
+      data2 = { email, password, typeaccount_id: 2 };
     } else {
-      console.error("please choose a type account");
+      data2 = { email, password, typeaccount_id: 1 };
     }
     reset();
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/user/signin`, data2)
+      .then((res) => {
+        res.send("user created");
+      })
+      .catch((err) => console.error(err));
   };
   const passwordCurrent = watch("password", "");
   const [shown, setShown] = useState(false);
@@ -57,26 +71,22 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
         want to create?
       </p>
       <section className="register_buttons_container">
-        <div>
-          <button
-            type="button"
-            className={customerClassName}
-            onClick={() => handleClick(customer, setCustomer, setArtist)}
-          >
-            TRADITIONAL ARTIST
-          </button>
-          <p>I am looking for digital artists to animate my art</p>
-        </div>
-        <div>
-          <button
-            type="button"
-            className={artistClassName}
-            onClick={() => handleClick(artist, setArtist, setCustomer)}
-          >
-            DIGITAL ARTIST
-          </button>
-          <p>I am looking for physical artworks to animate</p>
-        </div>
+        {registerButton.map((btn, index) => (
+          <div key={btn.id}>
+            <button
+              type="button"
+              className={index === 1 ? customerClassName : artistClassName}
+              onClick={() => handleClick(index)}
+            >
+              {btn.type}
+            </button>
+            {btn.id === 1 ? (
+              <p>I am looking for physical artworks to animate</p>
+            ) : (
+              <p>I am looking for digital artists to animate my art</p>
+            )}
+          </div>
+        ))}
       </section>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -151,12 +161,6 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
             I agree with the <Link to="/">terms and conditions </Link>
           </p>
         </div>
-        <input
-          type="checkbox"
-          className="hidden"
-          checked={customer}
-          {...register("customer account")}
-        />
         <button type="submit" className="button-style empty_yellow">
           Register
         </button>
