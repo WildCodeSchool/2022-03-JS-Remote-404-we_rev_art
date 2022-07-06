@@ -6,63 +6,58 @@ import axios from "axios";
 import hide from "../images/hide.png";
 import show from "../images/show.png";
 
-function RegisterNow({ artist, setArtist, customer, setCustomer }) {
+function RegisterNow() {
+  const [shown, setShown] = useState(false);
   const [registerButton, setRegisterButton] = useState([]);
-
-  const handleClick = (index) => {
-    if (index === 0) {
-      setArtist(true);
-      setCustomer(false);
-    } else {
-      setArtist(false);
-      setCustomer(true);
-    }
-  };
-
-  const artistClassName = artist
-    ? "button-style yellow"
-    : "button-style empty_yellow";
-  const customerClassName = customer
-    ? "button-style yellow"
-    : "button-style empty_yellow";
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/typeaccount `)
       .then((res) => {
-        setRegisterButton(res.data);
+        const typeAccount = res.data.map((type) => ({
+          ...type,
+          active: false,
+        }));
+        setRegisterButton(typeAccount);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
+
   const {
     handleSubmit,
     register,
-    reset,
     watch,
     formState: { errors },
   } = useForm();
+  const passwordCurrent = watch("password", "");
+
+  const handleClick = (index) => {
+    const provisoirRegisterButton = registerButton.map((button) => ({
+      ...button,
+      active: false,
+    }));
+    provisoirRegisterButton[index].active = true;
+    setRegisterButton(provisoirRegisterButton);
+  };
 
   const onSubmit = (data) => {
-    let data2 = {};
-    const { email } = data;
-    const { password } = data;
-    if (customer) {
-      data2 = { email, password, typeaccount_id: 2 };
-    } else {
-      data2 = { email, password, typeaccount_id: 1 };
+    if (data.password === data.confirmed_password) {
+      const data2 = { ...data };
+      const activeButton = registerButton.find((el) => el.active);
+      data2.typeaccount_id = activeButton.id;
+      delete data2.confirmed_password;
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/user/signin`, data2)
+        .then(() => {
+          console.warn("User signin successful");
+        })
+        .catch((err) => console.error(err));
     }
-    reset();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/user/signin`, data2)
-      .then(() => {
-        console.warn("User signin successful");
-      })
-      .catch((err) => console.error(err));
+    //  else {
+    // }
   };
-  const passwordCurrent = watch("password", "");
-  const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
       <h4 className="register_h4"> Register </h4>
@@ -75,7 +70,9 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
           <div key={btn.id}>
             <button
               type="button"
-              className={index === 1 ? customerClassName : artistClassName}
+              className={
+                btn.active ? "button-style yellow" : "button-style empty_yellow"
+              }
               onClick={() => handleClick(index)}
             >
               {btn.type}
