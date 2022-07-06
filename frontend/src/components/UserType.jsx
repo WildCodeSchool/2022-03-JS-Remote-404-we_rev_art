@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "../style/MyProfile.css";
+
 function UserType() {
   const [myProfile, setMyProfile] = useState([]);
   useEffect(() => {
@@ -15,12 +17,18 @@ function UserType() {
   }, []);
   return (
     <div>
-      {myProfile.map((usertypes) => (
-        <label htmlFor={usertypes.usertype} key={usertypes.id}>
-          {usertypes.usertype}
-          <input id={usertypes.usertype} value={usertypes.id} type="checkbox" />
-        </label>
-      ))}
+      <div className="checkbox_container">
+        {myProfile.map((usertypes) => (
+          <label htmlFor={usertypes.usertype} key={usertypes.id}>
+            {usertypes.usertype}
+            <input
+              id={usertypes.usertype}
+              value={usertypes.id}
+              type="checkbox"
+            />
+          </label>
+        ))}
+      </div>
     </div>
   );
 }

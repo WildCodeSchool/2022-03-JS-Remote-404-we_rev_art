@@ -1,0 +1,41 @@
+.profile_h3{
+    font-size: 2rem;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+}
+.checkbox_container{
+    display: flex;
+    flex-direction: row;
+}
+.checkbox_container input{
+    width: 70%;
+    position: relative;
+    margin-right: 10rem;
+    
+}
+.checkbox_container label{
+    width: 70%;
+    margin-left: 1rem;
+    position: relative;
+    margin-bottom: -10rem;
+}
+.profiledescription {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+.softwarebuttons{
+    border-radius: 0.5rem;
+    border-color: yellow;
+    background-color: white;
+    margin-right: 1rem;
+  }
+  .profiledescription {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }

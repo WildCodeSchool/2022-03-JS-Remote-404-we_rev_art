@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../style/MyProfile.css";
 
 function SoftwareUse() {
   const [mysoftwareUse, mySoftwareUse] = useState([]);
@@ -14,9 +15,9 @@ function SoftwareUse() {
       });
   }, []);
   return (
-    <div className="my_profile_button">
+    <div className="software_all_buttons">
       {mysoftwareUse.map((softwares) => (
-        <button className="xx" type="button" key={softwares.id}>
+        <button className="softwarebuttons" type="button" key={softwares.id}>
           {softwares.software}
         </button>
       ))}
