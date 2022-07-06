@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/button.css";
 import MyCreationUpload from "./MyCreationUpload";
-
-const defaultValue = 0;
-const [counter, setCounter] = useState(defaultValue);
 
 function MyCreationsModal() {
   return (
@@ -12,19 +9,11 @@ function MyCreationsModal() {
       <div className="" />
       <MyCreationUpload />
       <div className="my_creation_allbtn">
-        <button
-          type="button"
-          className="my_creation_savebtn"
-          onClick={() => setCounter(counter + 1)}
-        >
+        <button type="button" className="my_creation_savebtn">
           SAVE
         </button>
-        <button
-          type="button"
-          className="my_creation_modifybtn"
-          onClick={() => setCounter(counter - 1)}
-        >
-          MODIFY
+        <button type="button" className="my_creation_modifybtn">
+          REMOVE
         </button>
       </div>
     </div>

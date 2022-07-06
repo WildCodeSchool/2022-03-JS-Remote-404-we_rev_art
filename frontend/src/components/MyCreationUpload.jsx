@@ -10,14 +10,14 @@ function MyCreationUpload() {
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("myfile", data.file[0]);
-    fetch("http://localhost:3000/upload", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/upload`, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-shadow
-      .then((data) => setImage(data.url));
-    /* .catch(err) => console.log(err)); */
+      .then((data) => setImage(data.url))
+      .catch((err) => console.error(err));
   };
   return (
     <div>
