@@ -1,7 +1,7 @@
 const AbstractManager = require("./AbstractManager");
 
-class UserTypeManager extends AbstractManager {
-  static table = "usertype";
+class SoftwareManager extends AbstractManager {
+  static table = "softwareused";
 
   findAll() {
     return this.connection.query(`select * from  ${this.table}`);
@@ -9,17 +9,17 @@ class UserTypeManager extends AbstractManager {
 
   insert(item) {
     return this.connection.query(
-      `insert into ${UserTypeManager.table} (title) values (?)`,
+      `insert into ${SoftwareManager.table} (title) values (?)`,
       [item.title]
     );
   }
 
   update(item) {
     return this.connection.query(
-      `update ${UserTypeManager.table} set title = ? where id = ?`,
+      `update ${SoftwareManager.table} set title = ? where id = ?`,
       [item.title, item.id]
     );
   }
 }
 
-module.exports = UserTypeManager;
+module.exports = SoftwareManager;
