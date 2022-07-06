@@ -5,6 +5,7 @@ const validateSignin = (req, res, next) => {
     email: Joi.string().email({ minDomainSegments: 2 }).presence("required"),
     password: Joi.string().min(8).max(24).presence("required"),
     typeaccount_id: Joi.number().max(2).presence("required"),
+    terms: Joi.boolean().truthy("true").presence("required"),
   }).validate(req.body, { abortEarly: false });
 
   if (!error) {

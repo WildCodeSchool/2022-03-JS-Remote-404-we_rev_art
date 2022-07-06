@@ -14,11 +14,17 @@ class ArtworkManager extends AbstractManager {
 
     let sql = `select * from  ${this.table} AS art 
     INNER JOIN picture AS p ON art.picture_idpicture_original = p.idpicture 
-    INNER JOIN skills AS sk ON art.skills_id = sk.id
+    INNER JOIN skills AS sk ON art.skills_id = sk.id 
     INNER JOIN profil AS pr ON art.profil_id = pr.id `;
+
+    if (contracttype)
+      sql += `INNER JOIN profil_has_contracttype AS phc ON art.profil_id = phc.profil_id `;
+    if (usertype)
+      sql += `INNER JOIN profil_has_usertype AS phu on art.profil_id = phu.profil_id `;
+
     if (skills) {
       const skillsArray = skills.split("|");
-      sql += `${this.andOrWhere(sql)} art.skills_id = ? `;
+      sql += `${this.andOrWhere(sql)} ( art.skills_id = ? `;
       if (skillsArray[1]) {
         skillsArray.forEach((element, index) => {
           if (index > 0) {
@@ -26,33 +32,36 @@ class ArtworkManager extends AbstractManager {
           }
         });
       }
+      sql += `) `;
       sqlValue = [...sqlValue, ...skillsArray];
-    }
-
-    if (contracttype) {
-      const contracttypeArray = contracttype.split("|");
-      sql += `${this.andOrWhere(sql)} art.contracttype_id = ? `;
-      if (contracttypeArray[1]) {
-        contracttypeArray.forEach((element, index) => {
-          if (index > 0) {
-            sql += `OR art.contracttype_id = ? `;
-          }
-        });
-      }
-      sqlValue = [...sqlValue, ...contracttypeArray];
     }
 
     if (usertype) {
       const usertypeArray = usertype.split("|");
-      sql += `${this.andOrWhere(sql)} art.usertype_id = ? `;
+      sql += `${this.andOrWhere(sql)} ( phu.usertype_id = ? `;
       if (usertypeArray[1]) {
         usertypeArray.forEach((element, index) => {
           if (index > 0) {
-            sql += `OR art.usertype_id = ? `;
+            sql += `OR phu.usertype_id = ? `;
           }
         });
       }
+      sql += `) `;
       sqlValue = [...sqlValue, ...usertypeArray];
+    }
+
+    if (contracttype) {
+      const contracttypeArray = contracttype.split("|");
+      sql += `${this.andOrWhere(sql)} ( phc.contracttype_id = ? `;
+      if (contracttypeArray[1]) {
+        contracttypeArray.forEach((element, index) => {
+          if (index > 0) {
+            sql += `OR phc.contracttype_id = ? `;
+          }
+        });
+      }
+      sql += `) `;
+      sqlValue = [...sqlValue, ...contracttypeArray];
     }
 
     if (limit && limit < 25) {

@@ -3,8 +3,12 @@ const {
   UserController,
   ArtworkController,
   FilterController,
+
   UserTypeController,
-  SoftwareController,
+  
+=======
+  TypeAccountController,
+
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -26,7 +30,11 @@ router.get("/softwareused", SoftwareController.browse);
 
 router.get("/filters/:table", FilterController.browse);
 
+
 /* router.post("/mycreations", MyCreationsUploadController.browse); */
+
+router.get("/typeaccount", TypeAccountController.browse);
+
 
 // router.get("/profil", ProfilController.findAll);
 
