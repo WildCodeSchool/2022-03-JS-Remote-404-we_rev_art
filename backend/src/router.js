@@ -3,8 +3,12 @@ const {
   UserController,
   ArtworkController,
   FilterController,
+
   SkillsController,
   ContractTypeController,
+
+  TypeAccountController,
+
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -27,6 +31,8 @@ router.get("/skills", SkillsController.browse);
 router.get("/contracttype", ContractTypeController.browse);
 
 router.get("/filters/:table", FilterController.browse);
+
+router.get("/typeaccount", TypeAccountController.browse);
 
 // router.get("/profil", ProfilController.findAll);
 
