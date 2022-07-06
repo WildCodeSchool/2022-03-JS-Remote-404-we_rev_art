@@ -1,6 +1,6 @@
 const models = require("../models");
 
-class UserTypeController {
+class TypeAccountController {
   static browse = (req, res) => {
     models.typeaccount
       .findAll()
@@ -14,4 +14,4 @@ class UserTypeController {
   };
 }
 
-module.exports = UserTypeController;
+module.exports = TypeAccountController;
