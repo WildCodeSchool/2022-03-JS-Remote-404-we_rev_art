@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 import hide from "../images/hide.png";
 import show from "../images/show.png";
@@ -18,6 +19,18 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
     ? "button-style yellow"
     : "button-style empty_yellow";
 
+  const [registerButton, setRegisterButton] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/typeaccount `)
+      .then((res) => {
+        setRegisterButton(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+  console.warn(registerButton);
   const {
     handleSubmit,
     register,

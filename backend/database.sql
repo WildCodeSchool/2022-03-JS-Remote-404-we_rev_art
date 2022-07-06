@@ -68,9 +68,9 @@ ENGINE = InnoDB;
 
 INSERT INTO
     `typeaccount` (`type`)
-VALUES 
-    ('digital Artist'),
-    ('customer')
+VALUES
+    ('Digital Artist'),
+    ('Traditional Artist')
 ;
 
 
