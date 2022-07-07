@@ -6,11 +6,10 @@ const {
 
   SkillsController,
   ContractTypeController,
-
+  SoftwareController,
   UserTypeController,
 
   TypeAccountController,
-
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -36,11 +35,9 @@ router.get("/contracttype", ContractTypeController.browse);
 
 router.get("/filters/:table", FilterController.browse);
 
-
 /* router.post("/mycreations", MyCreationsUploadController.browse); */
 
 router.get("/typeaccount", TypeAccountController.browse);
-
 
 // router.get("/profil", ProfilController.findAll);
 
