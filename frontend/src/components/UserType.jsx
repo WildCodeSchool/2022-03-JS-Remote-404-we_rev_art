@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function UserType() {
-  const [myProfile, setMyProfile] = useState([]);
+import "../style/MyProfile.css";
+
+function UserType({ type, setType }) {
+  const [userTypes, setUserTypes] = useState([]);
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/usertype `)
       .then((res) => {
-        setMyProfile(res.data);
+        setUserTypes(res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -15,12 +17,19 @@ function UserType() {
   }, []);
   return (
     <div>
-      {myProfile.map((usertypes) => (
-        <label htmlFor={usertypes.usertype} key={usertypes.id}>
-          {usertypes.usertype}
-          <input id={usertypes.usertype} value={usertypes.id} type="checkbox" />
-        </label>
-      ))}
+      <div className="checkbox_container flex">
+        {userTypes.map((user) => (
+          <label htmlFor={user.usertype} key={user.id}>
+            {user.usertype}
+            <input
+              onChange={() => setType(user.id)}
+              checked={user.id === type}
+              id={user.usertype}
+              type="checkbox"
+            />
+          </label>
+        ))}
+      </div>
     </div>
   );
 }

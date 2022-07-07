@@ -7,6 +7,7 @@ import Artists from "./pages/Artists";
 import Creations from "./pages/Creations";
 import Help from "./pages/Help";
 import Register from "./pages/Register";
+import MyProfile from "./pages/MyProfile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MyProjectAds from "./pages/MyProjectAds";
@@ -29,7 +30,7 @@ function App() {
         <Route path="/Contact_us" element={<ContactUs />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Post_An_Ad" element={<PostAnAd />} />
-
+        <Route path="/MyProfile" element={<MyProfile />} />
         <Route
           path="/My_Project_Ads"
           element={

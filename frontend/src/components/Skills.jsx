@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../style/MyProfile.css";
 
-function Skills() {
+function Skills({ skills, handleSkills }) {
   const [mySkill, setMySkill] = useState([]);
   useEffect(() => {
     axios
@@ -14,9 +15,14 @@ function Skills() {
       });
   }, []);
   return (
-    <div>
+    <div className="software_all_buttons">
       {mySkill.map((skill) => (
-        <button className="form_button" type="button" key={skill.id}>
+        <button
+          onClick={() => handleSkills(skill.id)}
+          className={skills.includes(skill.id) ? "active" : "form_button"}
+          type="button"
+          key={skill.id}
+        >
           {skill.skills}
         </button>
       ))}

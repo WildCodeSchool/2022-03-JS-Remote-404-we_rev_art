@@ -27,7 +27,6 @@ function MyCreationUpload() {
           UPLOAD YOUR PHOTO
         </button>
       </form>
-      <img src={image} alt="En attente d'une image" className="downlaoding" />
     </div>
   );
 }
