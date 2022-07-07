@@ -2,17 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../style/MyProfile.css";
 
-function SoftwareUse() {
-  const [buttonClicked, setButtonClicked] = useState(false);
-  function handleClick() {
-    setButtonClicked(!buttonClicked);
-  }
-  const [mysoftwareUse, mySoftwareUse] = useState([]);
+function SoftwareUse({ soft, handleSoft }) {
+  const [mysoftwareUse, setMySoftwareUse] = useState([]);
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/softwareused`)
       .then((res) => {
-        mySoftwareUse(res.data);
+        setMySoftwareUse(res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -22,8 +18,8 @@ function SoftwareUse() {
     <div className="software_all_buttons">
       {mysoftwareUse.map((softwares) => (
         <button
-          onClick={handleClick}
-          className="softwarebuttons"
+          onClick={() => handleSoft(softwares.id)}
+          className={soft.includes(softwares.id) ? "active" : "form_button"}
           type="button"
           key={softwares.id}
         >
