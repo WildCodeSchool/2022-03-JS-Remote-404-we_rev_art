@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/* import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import "../style/MyProfile.css";
@@ -33,4 +33,4 @@ function UserType() {
   );
 }
 
-export default UserType;
+export default UserType; */
