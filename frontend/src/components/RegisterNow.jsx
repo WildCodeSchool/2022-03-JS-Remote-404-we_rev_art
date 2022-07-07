@@ -1,41 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 import hide from "../images/hide.png";
 import show from "../images/show.png";
 
-function RegisterNow({ artist, setArtist, customer, setCustomer }) {
-  const handleClick = (yes, setYes, setNo) => {
-    setNo(false);
-    setYes(!yes);
-  };
+function RegisterNow() {
+  const [shown, setShown] = useState(false);
+  const [registerButton, setRegisterButton] = useState([]);
 
-  const artistClassName = artist
-    ? "button-style yellow"
-    : "button-style empty_yellow";
-  const customerClassName = customer
-    ? "button-style yellow"
-    : "button-style empty_yellow";
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/typeaccount `)
+      .then((res) => {
+        const typeAccount = res.data.map((type) => ({
+          ...type,
+          active: false,
+        }));
+        setRegisterButton(typeAccount);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const {
     handleSubmit,
     register,
-    reset,
     watch,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = () => {
-    if (customer || artist) {
-      console.warn("account is already registered");
-    } else {
-      console.error("please choose a type account");
-    }
-    reset();
-  };
   const passwordCurrent = watch("password", "");
-  const [shown, setShown] = useState(false);
+
+  const handleClick = (index) => {
+    const provisoirRegisterButton = registerButton.map((button) => ({
+      ...button,
+      active: false,
+    }));
+    provisoirRegisterButton[index].active = true;
+    setRegisterButton(provisoirRegisterButton);
+  };
+
+  const onSubmit = (data) => {
+    if (data.password === data.confirmed_password) {
+      const data2 = { ...data };
+      const activeButton = registerButton.find((el) => el.active);
+      data2.typeaccount_id = activeButton.id;
+      delete data2.confirmed_password;
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/user/signin`, data2)
+        .then(() => {
+          console.warn("User signin successful");
+        })
+        .catch((err) => console.error(err));
+    }
+    //  else {
+    // }
+  };
   return (
     <section className="register_login_container">
       <h4 className="register_h4"> Register </h4>
@@ -44,26 +66,24 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
         want to create?
       </p>
       <section className="register_buttons_container">
-        <div>
-          <button
-            type="button"
-            className={customerClassName}
-            onClick={() => handleClick(customer, setCustomer, setArtist)}
-          >
-            TRADITIONAL ARTIST
-          </button>
-          <p>I am looking for digital artists to animate my art</p>
-        </div>
-        <div>
-          <button
-            type="button"
-            className={artistClassName}
-            onClick={() => handleClick(artist, setArtist, setCustomer)}
-          >
-            DIGITAL ARTIST
-          </button>
-          <p>I am looking for physical artworks to animate</p>
-        </div>
+        {registerButton.map((btn, index) => (
+          <div key={btn.id}>
+            <button
+              type="button"
+              className={
+                btn.active ? "button-style yellow" : "button-style empty_yellow"
+              }
+              onClick={() => handleClick(index)}
+            >
+              {btn.type}
+            </button>
+            {btn.id === 1 ? (
+              <p>I am looking for physical artworks to animate</p>
+            ) : (
+              <p>I am looking for digital artists to animate my art</p>
+            )}
+          </div>
+        ))}
       </section>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -138,12 +158,6 @@ function RegisterNow({ artist, setArtist, customer, setCustomer }) {
             I agree with the <Link to="/">terms and conditions </Link>
           </p>
         </div>
-        <input
-          type="checkbox"
-          className="hidden"
-          checked={customer}
-          {...register("customer account")}
-        />
         <button type="submit" className="button-style empty_yellow">
           Register
         </button>
