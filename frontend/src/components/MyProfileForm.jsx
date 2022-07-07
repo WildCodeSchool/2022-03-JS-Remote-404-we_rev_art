@@ -23,7 +23,7 @@ export default function MyProfileForm() {
     }
   };
 
-  const handleSofts = (id) => {
+  const handleSoft = (id) => {
     if (soft.includes(id)) {
       setSoft(soft.filter((softwares) => softwares !== id));
     } else {
@@ -52,7 +52,7 @@ export default function MyProfileForm() {
       <h3 className="profile_h3"> Your skills</h3>
       <Skills skills={skills} handleSkills={handleSkills} />
       <h3 className="profile_h3"> Software used</h3>
-      <SoftwareUse soft={soft} handleSofts={handleSofts} />
+      <SoftwareUse soft={soft} handleSoft={handleSoft} />
       <h3 className="profile_h3"> Your prefered type of contract</h3>
       <ContractTypes />
       <h3 className="profile_h3"> Your art portofolio</h3>
