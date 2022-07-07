@@ -32,9 +32,6 @@ function PostProject() {
             <ContractTypes />
           </div>
           <div>
-            <h2>Who are you looking for?</h2>
-          </div>
-          <div>
             <h2>What is your budget?</h2>
           </div>
           <div>
