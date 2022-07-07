@@ -17,7 +17,7 @@ function UserType() {
   }, []);
   return (
     <div>
-      <div className="checkbox_container">
+      <div className="checkbox_container flex">
         {myProfile.map((usertypes) => (
           <label htmlFor={usertypes.usertype} key={usertypes.id}>
             {usertypes.usertype}

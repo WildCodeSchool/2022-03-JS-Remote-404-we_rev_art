@@ -5,6 +5,9 @@ import "../style/MyProfile.css";
 import { useForm } from "react-hook-form";
 import UserType from "./UserType";
 import SoftwareUse from "./SoftwareUse";
+import Skills from "./Skills";
+import MyCreationUpload from "./MyCreationUpload";
+import ContractTypes from "./ContractTypes";
 // eslint-disable-next-line import/no-extraneous-dependencies
 
 export default function MyProfileForm() {
@@ -16,42 +19,47 @@ export default function MyProfileForm() {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    console.warn("your profil is created");
+  const onSubmit = (data) => {
+    console.warn(data);
+    reset();
   };
 
   return (
     <section className="section_form">
       <h1>My profile</h1>
-      <h3 className="profile_h3"> You are...</h3>
-      <UserType />
+      <div className="profile_picture_upload">
+        <MyCreationUpload />
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label className="profiledescription " htmlFor="messageInput">
-            Your public presentation
-            <textarea
-              className="profiledescription"
-              name="descriptionInput"
-              {...register("Message", { required: true })}
-            />
-            {errors.Message?.type === "required" && (
-              <p className="message"> Description is required </p>
-            )}
-          </label>
-        </div>
-      </form>
-      <h3 className="profile_h3"> Your skills</h3>
-      <h3 className="profile_h3"> Software used</h3>
-      <SoftwareUse />
-      <h3 className="profile_h3"> Your prefered type of contract</h3>
-      <h3 className="profile_h3"> Your art portofolio</h3>
+        <h3 className="profile_h3"> You are...</h3>
+        <UserType />
+        <label className="profiledescription " htmlFor="messageInput">
+          Your public presentation
+          <textarea
+            className="profiledescription"
+            name="descriptionInput"
+            {...register("Message", { required: true })}
+          />
+          {errors.Message?.type === "required" && (
+            <p className="message"> Description is required </p>
+          )}
+        </label>
+        <h3 className="profile_h3"> Your skills</h3>
+        <Skills />
+        <h3 className="profile_h3"> Software used</h3>
+        <SoftwareUse />
+        <h3 className="profile_h3"> Your prefered type of contract</h3>
+        <ContractTypes />
+        <h3 className="profile_h3"> Your art portofolio</h3>
 
-      <button type="submit" value="send" className="button_form_qb yellow">
-        + ADD
-      </button>
+        <button type="submit" value="send" className="button_form_qb yellow">
+          + ADD
+        </button>
+      </form>
     </section>
   );
 }

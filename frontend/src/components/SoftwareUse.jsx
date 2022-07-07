@@ -3,6 +3,10 @@ import axios from "axios";
 import "../style/MyProfile.css";
 
 function SoftwareUse() {
+  const [buttonClicked, setButtonClicked] = useState(false);
+  function handleClick() {
+    setButtonClicked(!buttonClicked);
+  }
   const [mysoftwareUse, mySoftwareUse] = useState([]);
   useEffect(() => {
     axios
@@ -17,7 +21,12 @@ function SoftwareUse() {
   return (
     <div className="software_all_buttons">
       {mysoftwareUse.map((softwares) => (
-        <button className="softwarebuttons" type="button" key={softwares.id}>
+        <button
+          onClick={handleClick}
+          className="softwarebuttons"
+          type="button"
+          key={softwares.id}
+        >
           {softwares.software}
         </button>
       ))}
