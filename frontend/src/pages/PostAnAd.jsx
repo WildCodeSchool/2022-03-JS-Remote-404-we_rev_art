@@ -16,6 +16,11 @@ function PostAnAd() {
           <div className="contact_form_eb">
             <label className="field_label_eb" htmlFor="nameInput">
               Describe your project in few words
+              <input className="input_eb" type="text" name="nameInput" id="" />
+              <p>50 caracters max</p>
+            </label>
+            <label className="field_label_eb" htmlFor="nameInput">
+              Detail your need
               <textarea
                 className="textarea_eb"
                 name="Project"
@@ -23,11 +28,6 @@ function PostAnAd() {
                 cols="30"
                 rows="2"
               />
-              <p>50 caracters max</p>
-            </label>
-            <label className="field_label_eb" htmlFor="nameInput">
-              Detail your need
-              <input className="input_eb" type="text" name="nameInput" id="" />
               <p>1 000 caracters max</p>
             </label>
             <div>
