@@ -12,6 +12,8 @@ DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
 DROP TABLE IF EXISTS `werevart`.`profil` ;
+DROP TABLE IF EXISTS `werevart`.`budget` ;
+DROP TABLE IF EXISTS `werevart`.`timeframe` ;
 DROP TABLE IF EXISTS `werevart`.`artwork` ;
 DROP TABLE IF EXISTS `werevart`.`user` ;
 DROP TABLE IF EXISTS `werevart`.`picture` ;
@@ -138,11 +140,11 @@ ENGINE = InnoDB;
 INSERT INTO
     `skills` (`skills`)
 VALUES
-    ('motion'),
+    ('Motion'),
     ('VR'),
     ('3D'),
-    ('painting'),
-    ('photography')
+    ('Painting'),
+    ('Photography')
 ;
 
 -- -----------------------------------------------------
@@ -181,42 +183,76 @@ ENGINE = InnoDB;
 INSERT INTO
     `contracttype` (`contracttype`)
 VALUES
-    ('paid service'),
-    ('free collaboration')
+    ('Paid Service'),
+    ('Free Collaboration')
+;
+
+-- -----------------------------------------------------
+-- Table `werevart`.`budget`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `werevart`.`budget` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `budget` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `budget`))
+ENGINE = InnoDB;
+
+INSERT INTO
+    `budget` (`budget`)
+VALUES
+    ('No Budget'),
+    ('Less than 200€'),
+    ('200€ to 1000€'),
+    ('1000€ to 3000€'),
+    ('Over 3000€')
+;
+
+-- -----------------------------------------------------
+-- Table `werevart`.`timeframe`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `werevart`.`timeframe` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `timeframe` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `timeframe`))
+ENGINE = InnoDB;
+
+INSERT INTO
+    `timeframe` (`timeframe`)
+VALUES
+    ('Urgent'),
+    ('One Month'),
+    ('Long-therm'),
+    ('Reccurent')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`artwork`
 -- -----------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
   `id` VARCHAR(255) NOT NULL,
-  `profil_id` VARCHAR(255) NOT NULL,
   `hashtag` VARCHAR(255) NULL,
   `title` VARCHAR(255) NOT NULL,
-  `timeframe` VARCHAR(255) NULL,
   `customer` VARCHAR(255) NULL,
   `date` DATE NOT NULL,
-  `budget` INT NULL,
   `offers` INT NULL,
   `details` TEXT NULL,
   `deadline` DATE NULL,
   `likes` INT NULL,
   `picture_idpicture_original` INT NOT NULL,
   `picture_idpicture_digital` INT NULL,
+  `profil_id` VARCHAR(255) NOT NULL,
   `skills_id` INT NOT NULL,
+  `timeframe_id` INT NOT NULL,
+  `budget_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_artwork_picture1_idx` (`picture_idpicture_original` ASC),
-  INDEX `fk_artwork_picture2_idx` (`picture_idpicture_digital` ASC),
-  INDEX `fk_artwork_skills1_idx` (`skills_id` ASC),
+  INDEX `fk_artwork_picture1_idx` (`picture_idpicture_original` ASC) VISIBLE,
+  INDEX `fk_artwork_picture2_idx` (`picture_idpicture_digital` ASC) VISIBLE,
+  INDEX `fk_artwork_skills1_idx` (`skills_id` ASC) VISIBLE,
+  INDEX `fk_artwork_budget1_idx` (`budget_id` ASC) VISIBLE,
+  INDEX `fk_artwork_timeframe1_idx` (`timeframe_id` ASC) VISIBLE,
+  INDEX `fk_artwork_profil1_idx` (`profil_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_picture1`
     FOREIGN KEY (`picture_idpicture_original`)
     REFERENCES `werevart`.`picture` (`idpicture`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_artwork_profil`
-    FOREIGN KEY (`profil_id`)
-    REFERENCES `werevart`.`profil` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_artwork_picture2`
@@ -224,17 +260,32 @@ CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
     REFERENCES `werevart`.`picture` (`idpicture`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_artwork_skills1`
+   CONSTRAINT `fk_artwork_skills1`
     FOREIGN KEY (`skills_id`)
     REFERENCES `werevart`.`skills` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_budget1`
+    FOREIGN KEY (`budget_id`)
+    REFERENCES `werevart`.`budget` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_timeframe1`
+    FOREIGN KEY (`timeframe_id`)
+    REFERENCES `werevart`.`timeframe` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_profil1`
+    FOREIGN KEY (`profil_id`)
+    REFERENCES `werevart`.`profil` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `artwork`(`id`,`profil_id`,`hashtag`,`title`,`timeframe`,`customer`,`date`,`budget`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
+INSERT INTO `artwork`(`id`,`profil_id`,`hashtag`,`title`,`timeframe_id`,`customer`,`date`,`budget_id`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
 VALUES
-    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée','contemporain','','2022-06-14',1000,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
-    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau','contemporain','','2022-06-15',500,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2)
+    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée',1,'','2022-06-14',4,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
+    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau',2,'','2022-06-15',1,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2)
 ;
 
 -- -----------------------------------------------------
