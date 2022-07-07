@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function ContractTypes() {
+function ContractTypes({ contracttype, handleContractTypes }) {
   const [myContractType, setContractType] = useState([]);
   useEffect(() => {
     axios
@@ -15,9 +15,16 @@ function ContractTypes() {
   }, []);
   return (
     <div>
-      {myContractType.map((ContractType) => (
-        <button className="form_button" type="button" key={ContractType.id}>
-          {ContractType.contracttype}
+      {myContractType.map((contracttypes) => (
+        <button
+          onClick={() => handleContractTypes(contracttype.id)}
+          className={
+            contracttype.includes(contracttype.id) ? "active" : "form_button"
+          }
+          type="button"
+          key={contracttype.id}
+        >
+          {contracttypes.contracttype}
         </button>
       ))}
     </div>
