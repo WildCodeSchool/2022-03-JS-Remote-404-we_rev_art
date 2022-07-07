@@ -3,12 +3,12 @@ const {
   UserController,
   ArtworkController,
   FilterController,
-
   SkillsController,
   ContractTypeController,
   SoftwareController,
   UserTypeController,
-
+  BudgetController,
+  TimeframeController,
   TypeAccountController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
@@ -38,6 +38,9 @@ router.get("/filters/:table", FilterController.browse);
 /* router.post("/mycreations", MyCreationsUploadController.browse); */
 
 router.get("/typeaccount", TypeAccountController.browse);
+
+router.get("/timeframe", TimeframeController.browse);
+router.get("/budget", BudgetController.browse);
 
 // router.get("/profil", ProfilController.findAll);
 

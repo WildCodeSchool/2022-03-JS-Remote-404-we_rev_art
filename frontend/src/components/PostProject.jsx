@@ -1,6 +1,8 @@
 import React from "react";
 import Skills from "./Skills";
 import ContractTypes from "./ContractTypes";
+import Budget from "./Budget";
+import Timeframe from "./Timeframe";
 
 function PostProject() {
   return (
@@ -9,6 +11,11 @@ function PostProject() {
         <div className="contact_form_eb">
           <label className="field_label_eb" htmlFor="nameInput">
             Describe your project in few words
+            <input className="input_eb" type="text" name="nameInput" id="" />
+            <p>50 caracters max</p>
+          </label>
+          <label className="field_label_eb" htmlFor="nameInput">
+            Detail your need
             <textarea
               className="textarea_eb"
               name="Project"
@@ -16,11 +23,6 @@ function PostProject() {
               cols="30"
               rows="2"
             />
-            <p>50 caracters max</p>
-          </label>
-          <label className="field_label_eb" htmlFor="nameInput">
-            Detail your need
-            <input className="input_eb" type="text" name="nameInput" id="" />
             <p>1 000 caracters max</p>
           </label>
           <div>
@@ -33,9 +35,11 @@ function PostProject() {
           </div>
           <div>
             <h2>What is your budget?</h2>
+            <Budget />
           </div>
           <div>
             <h2>What is the timeframe of your project?</h2>
+            <Timeframe />
           </div>
         </div>
       </form>
