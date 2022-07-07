@@ -4,6 +4,8 @@ import "../style/PostAnAd.css";
 import MiniHeader from "../components/miniHeader";
 import Skills from "../components/Skills";
 import ContractTypes from "../components/ContractTypes";
+import Budget from "../components/Budget";
+import Timeframe from "../components/Timeframe";
 
 function PostAnAd() {
   return (
@@ -37,13 +39,12 @@ function PostAnAd() {
               <ContractTypes />
             </div>
             <div>
-              <h2>Who are you looking for?</h2>
-            </div>
-            <div>
               <h2>What is your budget?</h2>
+              <Budget />
             </div>
             <div>
               <h2>What is the timeframe of your project?</h2>
+              <Timeframe />
             </div>
           </div>
         </form>
