@@ -3,20 +3,18 @@
   margin-top: 8rem;
   margin-bottom: 1rem;
 }
-.profile_picture_upload {
-  display: flex;
-  margin-left: 87rem;
-  margin-bottom: 5rem;
-}
 .checkbox_container {
   display: flex;
   flex-direction: row;
+ 
 }
 .checkbox_container input {
   width: 40%;
+  size: 2rem;
 }
 .checkbox_container label {
   width: 40%;
+  size: 2rem;
 }
 
 .profiledescription {
@@ -25,6 +23,7 @@
   padding: 3rem;
   font-size: 2rem;
   font-weight: bold;
+  border-radius: 2rem;
 }
 .softwarebuttons {
   border-radius: 0.5rem;
