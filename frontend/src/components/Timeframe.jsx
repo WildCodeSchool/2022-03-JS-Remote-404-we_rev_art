@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function Timeframe() {
+function Timeframe({ timeframe, handleTimeframe }) {
   const [timeframeType, setTimeframeType] = useState([]);
   useEffect(() => {
     axios
@@ -16,7 +16,14 @@ function Timeframe() {
   return (
     <div>
       {timeframeType.map((timeframeTypes) => (
-        <button className="form_button" type="button" key={timeframeTypes.id}>
+        <button
+          onClick={() => handleTimeframe(timeframe.id)}
+          className={
+            timeframe.includes(timeframe.id) ? "active" : "form_button"
+          }
+          type="button"
+          key={timeframe.id}
+        >
           {timeframeTypes.timeframe}
         </button>
       ))}

@@ -37,18 +37,22 @@ class UserController {
 
   static login = async (req, res) => {
     verifyPassword(req.body.password, req.user[0][0].password)
-      .then(() => {
+      .then(async () => {
         const token = jwt.sign(
           { email: req.body.email },
           process.env.PRIVATETOKEN
         );
+        const profil = await models.profil.find(req.user[0][0].id);
         res
           .status(201)
           .cookie("user_token", token, {
             httpOnly: true,
             expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
           })
-          .json({ email: req.body.email, typeaccount_id: 1 });
+          .json({
+            email: req.body.email,
+            typeaccount_id: profil[0].typeaccount_id,
+          });
       })
       .catch((err) => {
         console.error(err);
@@ -56,17 +60,4 @@ class UserController {
       });
   };
 }
-/* router.delete('/logout', (req, res) => {
-  if (req.session) {
-    req.session.destroy(err => {
-      if (err) {
-        res.status(400).send('Unable to log out')
-      } else {
-        res.send('Logout successful')
-      }
-    });
-  } else {
-    res.end()
-  }
-}) */
 module.exports = UserController;

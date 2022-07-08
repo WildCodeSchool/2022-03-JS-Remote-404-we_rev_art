@@ -12,8 +12,8 @@ function NewProject({ project }) {
           </span>
         </h3>
         <p className="cardProject_modalities">
-          Technique : {project.skills} ~ Budget {project.budget}€ ~
-          {project.offers} offers ~ client : {project.customer}
+          Technique : {project.skills} ~ Budget : {project.budget} ~
+          {project.offers} offers
         </p>
         <br />
         <p className="cardProject_details">Details of ad : {project.details}</p>

@@ -1,5 +1,5 @@
-import HelpInfo from "@components/HelpInfo";
 import React from "react";
+import HelpInfo from "../components/HelpInfo";
 import MiniHeader from "../components/miniHeader";
 
 function Help() {

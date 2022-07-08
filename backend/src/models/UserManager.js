@@ -12,7 +12,7 @@ class UserManager extends AbstractManager {
 
   findOne(email) {
     return this.connection.query(
-      `SELECT email, password FROM ${UserManager.table} WHERE email = ?`,
+      `SELECT * FROM ${UserManager.table} WHERE email = ?`,
       [email]
     );
   }

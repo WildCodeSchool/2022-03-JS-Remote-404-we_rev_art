@@ -72,6 +72,16 @@ const miniHeaderData = [
     title: "Contact us",
     text: "Contact us for further questions or information",
   },
+  {
+    id: 16,
+    title: "My Account",
+    text: "All information about your account",
+  },
+  {
+    id: 17,
+    title: "My Profile",
+    text: "All information about your profile",
+  },
 ];
 
 export default miniHeaderData;
