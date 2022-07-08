@@ -21,7 +21,8 @@ function ModalConnected({ setModal }) {
     "Log out",
   ];
 
-  const typeAccount = user.typeaccount_id === 1 ? artist : customer;
+  const typeAccount = user.usertypeaccount_id === 1 ? customer : artist;
+
   return (
     <ul className="modal_connected">
       {typeAccount.map((el) => (

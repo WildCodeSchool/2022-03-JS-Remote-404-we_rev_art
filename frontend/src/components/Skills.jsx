@@ -14,6 +14,7 @@ function Skills({ skills, handleSkills }) {
         console.error(err);
       });
   }, []);
+
   return (
     <div className="software_all_buttons">
       {mySkill.map((skill) => (

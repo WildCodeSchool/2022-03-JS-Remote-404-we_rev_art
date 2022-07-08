@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Skills from "./Skills";
 import ContractTypes from "./ContractTypes";
 import Budget from "./Budget";
 import Timeframe from "./Timeframe";
 
 function PostProject() {
+  const [skills, setSkills] = useState([]);
+  const handleSkills = (id) => {
+    if (skills.includes(id)) {
+      setSkills(skills.filter((skill) => skill !== id));
+    } else {
+      setSkills([...skills, id]);
+    }
+  };
+
   return (
     <section className="section_form2">
       <form className="form_eb">
@@ -27,7 +36,7 @@ function PostProject() {
           </label>
           <div>
             <h2>Choose an animation technique</h2>
-            <Skills />
+            <Skills skills={skills} handleSkills={handleSkills} />
           </div>
           <div>
             <h2>What type of contract?</h2>
