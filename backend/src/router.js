@@ -8,12 +8,8 @@ const {
   UserTypeController,
   TypeAccountController,
   SoftwareController,
-  SoftwareController,
-  UserTypeController,
   BudgetController,
   TimeframeController,
-  TypeAccountController,
-
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
