@@ -10,9 +10,9 @@ function MyAccount() {
     <div>
       <MiniHeader index={16} />
       {user.typeaccount_id === 1 ? (
-        <CustomerRegistration />
-      ) : (
         <ArtistRegistration />
+      ) : (
+        <CustomerRegistration />
       )}
     </div>
   );
