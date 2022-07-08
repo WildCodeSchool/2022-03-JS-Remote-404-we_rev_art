@@ -11,7 +11,7 @@ function PostAnAdForm() {
   const [description, setDescription] = useState("");
   const [detail, setDetail] = useState("");
   const [skills, setSkills] = useState([]);
-  const [contracttypes, setContractTypes] = useState([]);
+  const [typeOfContrat, setContractTypes] = useState([]);
   const [budget, setBudget] = useState([]);
   const [timeframe, setTimeframe] = useState([]);
 
@@ -24,12 +24,12 @@ function PostAnAdForm() {
   };
 
   const handleContractTypes = (id) => {
-    if (contracttypes.includes(id)) {
+    if (typeOfContrat.includes(id)) {
       setContractTypes(
-        contracttypes.filter((contracttype) => contracttype !== id)
+        typeOfContrat.filter((contracttype) => contracttype !== id)
       );
     } else {
-      setContractTypes([...contracttypes, id]);
+      setContractTypes([...typeOfContrat, id]);
     }
   };
 
@@ -79,7 +79,7 @@ function PostAnAdForm() {
       <div>
         <h3 className="profile_h3">What type of contract ?</h3>
         <ContractTypes
-          contracttype={contracttypes}
+          typeOfContrat={typeOfContrat}
           handleContractTypes={handleContractTypes}
         />
       </div>
