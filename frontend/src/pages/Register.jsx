@@ -4,6 +4,7 @@ import RegisterNow from "../components/RegisterNow";
 import LoginNow from "../components/LoginNow";
 
 import "../style/register.css";
+import "../style/Field.css";
 
 function Register() {
   return (

@@ -8,6 +8,8 @@ const {
   UserTypeController,
   TypeAccountController,
   SoftwareController,
+  BudgetController,
+  TimeframeController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -37,6 +39,8 @@ router.get("/filters/:table", FilterController.browse);
 
 router.get("/typeaccount", TypeAccountController.browse);
 
+router.get("/timeframe", TimeframeController.browse);
+router.get("/budget", BudgetController.browse);
 // router.get("/profil", ProfilController.findAll);
 
 /* router.get('/profil/:id', ProfilController.findOne);
