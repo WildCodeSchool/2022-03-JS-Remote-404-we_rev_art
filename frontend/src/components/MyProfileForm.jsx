@@ -30,6 +30,7 @@ export default function MyProfileForm() {
       setSoft([...soft, id]);
     }
   };
+  
 
   return (
     <section className="section_form">
