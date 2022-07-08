@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../style/MyProfile.css";
 
 function ContractTypes({ contracttype, handleContractTypes }) {
   const [myContractType, setContractType] = useState([]);

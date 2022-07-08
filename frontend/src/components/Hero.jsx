@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import ExportContextUser from "../context/UserContext";
 import Button from "./Button";
 import buttonData from "../data/buttonData";
 import home from "../images/home_img.jpg";
@@ -6,6 +8,7 @@ import home from "../images/home_img.jpg";
 import "../style/Hero.css";
 
 function Hero() {
+  const { user } = useContext(ExportContextUser.UserContext);
   return (
     <section className="hero-container">
       <section className="hero-text">
@@ -14,7 +17,12 @@ function Hero() {
           Publish your project for free and work with motion, 2D, 3D, XR artists
           to give a new digital life to your physical artwork.
         </p>
-        <Button buttonData={buttonData[0]} />
+        <Link
+          to={user !== null ? "/Post_An_Ad" : "/Register"}
+          className="button-container"
+        >
+          <Button buttonData={buttonData[0]} />
+        </Link>
       </section>
       <img
         src={home}
