@@ -43,7 +43,6 @@ export default function MyProfileForm() {
 
   return (
     <section className="section_form">
-      <h1>My profile</h1>
       <h3 className="profile_h3"> You are...</h3>
       <UserType type={type} setType={setType} />
 
