@@ -3,8 +3,8 @@
   margin-top: 8rem;
   margin-bottom: 1rem;
 }
-.profile_picture_upload{
-  display:flex;
+.profile_picture_upload {
+  display: flex;
   margin-left: 87rem;
   margin-bottom: 5rem;
 }
@@ -14,10 +14,9 @@
 }
 .checkbox_container input {
   width: 40%;
- }
+}
 .checkbox_container label {
   width: 40%;
-  
 }
 
 .profiledescription {
