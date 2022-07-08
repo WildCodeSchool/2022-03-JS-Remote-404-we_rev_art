@@ -15,7 +15,9 @@ class ArtworkManager extends AbstractManager {
     let sql = `select * from  ${this.table} AS art 
     INNER JOIN picture AS p ON art.picture_idpicture_original = p.idpicture 
     INNER JOIN skills AS sk ON art.skills_id = sk.id 
-    INNER JOIN profil AS pr ON art.profil_id = pr.id `;
+    INNER JOIN profil AS pr ON art.profil_id = pr.id 
+    INNER JOIN budget AS b on art.budget_id = b.id 
+    INNER JOIN timeframe AS t on art.timeframe_id = t.id `;
 
     if (contracttype)
       sql += `INNER JOIN profil_has_contracttype AS phc ON art.profil_id = phc.profil_id `;
