@@ -18,6 +18,12 @@ class ProfilManager extends AbstractManager {
       [profil.id, profil.typeaccount_id]
     );
   }
+
+  find(id) {
+    return this.connection
+      .query(`select * from  ${this.table} where user_id = ?`, [id])
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = ProfilManager;
