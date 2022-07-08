@@ -12,10 +12,19 @@ class ArtworkManager extends AbstractManager {
     const { limit, contracttype, skills, usertype } = query;
     let sqlValue = [];
 
-    let sql = `select * from  ${this.table} AS art 
+    let sql = `select DISTINCT p.idpicture,p.image,p.alt,
+    sk.skills,
+    pr.id,
+    b.budget,
+    t.timeframe,
+    art.timeframe_id,art.budget_id,art.profil_id,art.skills_id,
+    art.id,art.hashtag,art.title,art.deadline,art.details,art.date,art.offers,art.likes,
+    art.picture_idpicture_original FROM  ${this.table} AS art 
     INNER JOIN picture AS p ON art.picture_idpicture_original = p.idpicture 
     INNER JOIN skills AS sk ON art.skills_id = sk.id 
-    INNER JOIN profil AS pr ON art.profil_id = pr.id `;
+    INNER JOIN profil AS pr ON art.profil_id = pr.id 
+    INNER JOIN budget AS b on art.budget_id = b.id 
+    INNER JOIN timeframe AS t on art.timeframe_id = t.id `;
 
     if (contracttype)
       sql += `INNER JOIN profil_has_contracttype AS phc ON art.profil_id = phc.profil_id `;
@@ -69,6 +78,7 @@ class ArtworkManager extends AbstractManager {
     } else {
       sql += `LIMIT 25`;
     }
+    // console.log(sql);
     return this.connection.query(sql, sqlValue).then((res) => res[0]);
   }
 
