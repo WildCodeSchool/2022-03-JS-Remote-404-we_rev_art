@@ -47,6 +47,12 @@ const buttonData = [
     style: "button-style empty_yellow",
     type: "button",
   },
+  {
+    id: 9,
+    content: "Digitalize your art now",
+    style: "button-style yellow",
+    type: " button",
+  },
 ];
 
 export default buttonData;

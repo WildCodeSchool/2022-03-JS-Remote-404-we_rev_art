@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 5rem 0 2rem;
   align-items: flex-start;
-  background: linear-gradient(white 20%, #203864 80%);
+  background: var(--background-gradient1);
   font-weight: bold;
 }
 

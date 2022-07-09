@@ -1,8 +1,10 @@
 .hero-container {
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(white 20%, #203864 80%);
+  flex-wrap: nowrap;
+  background: var(--background-gradient1);
   padding: 2.5rem;
+  animation: appear 5s ease-in-out;
 }
 
 .hero-text {
@@ -14,14 +16,32 @@
 .hero-h1 {
   width: 75%;
   font-weight: 500;
-  color: #222a35;
+  transition: all 5s ease-in-out;
 }
+
+@keyframes appear {
+  0% {
+    color: #222a35;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0);
+    color: #f1f1f1;
+    opacity: 1;
+  }
+}
+
+
+
 
 .hero-p {
   font-size: 1.8rem;
   color: white;
-  padding: 2rem 0;
-  width: 92%;
+  padding: 2rem 2rem 0 0;
+  width: 70%;
 }
 
 .hero-img {
@@ -29,4 +49,18 @@
   height: auto;
   object-fit: contain;
   padding-right: 10rem;
+  animation-delay: 5s;
+  animation: appear 10s ease-in-out;
 }
+
+.section_carousel {
+  position:absolute;
+  left: 70%;
+  top: 35%;
+}
+
+.carousel .slider img {
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}

@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import ExportContextUser from "../context/UserContext";
 import Button from "./Button";
 import buttonData from "../data/buttonData";
-import home from "../images/home_img.jpg";
+import images from "../data/HomeImagesData";
 
 import "../style/Hero.css";
 
@@ -21,14 +23,32 @@ function Hero() {
           to={user !== null ? "/Post_An_Ad" : "/Register"}
           className="button-container"
         >
-          <Button buttonData={buttonData[0]} />
+          <Button buttonData={buttonData[8]} />
         </Link>
       </section>
-      <img
-        src={home}
-        alt="painting of two women dancing during the night"
-        className="hero-img"
-      />
+      <section className="section_carousel">
+        <Carousel
+          autoPlay
+          infiniteLoop
+          width="80%"
+          showArrows={false}
+          showStatus={false}
+          showIndicators={false}
+          showThumbs={false}
+          interval="5000"
+        >
+          {images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="hero-img"
+                id="image_carousel"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </section>
     </section>
   );
 }
