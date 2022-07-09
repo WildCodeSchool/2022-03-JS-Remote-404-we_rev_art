@@ -16,7 +16,7 @@ function Register() {
         {user === null ? (
           <Link to="/Register" className="register_link">
             <li className="register_header_right">
-              Register <br /> or <br /> Log in
+              Register <br /> Log in
             </li>
           </Link>
         ) : (
