@@ -18,10 +18,7 @@ function Likebutton() {
       <button className="btnfollow" type="button" onClick={() => handleClick()}>
         Follow
       </button>
-      <button className="btncount" type="button">
-        {" "}
-        {count}{" "}
-      </button>
+      <p className="count">{count}</p>
     </div>
   );
 }

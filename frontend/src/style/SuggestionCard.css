@@ -1,9 +1,12 @@
+.suggestioncards-container {
+  margin: 0 4rem;
+}
 .cardsuggestion {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 1.5rem;
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-left: 3rem;
   margin-bottom: 3rem;
   margin-right: 3rem;

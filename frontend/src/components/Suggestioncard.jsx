@@ -7,7 +7,7 @@ import TitleText from "./TitleText";
 
 function Suggestioncard() {
   return (
-    <section>
+    <section className="suggestioncards-container">
       <TitleText titleTextData={titleTextData} />
       <div className="suggestioncard-container">
         <h2>What would you like to do with your art?</h2>
