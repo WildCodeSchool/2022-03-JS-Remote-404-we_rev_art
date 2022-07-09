@@ -60,7 +60,6 @@ function RegisterNow() {
   };
   return (
     <section className="register_login_container">
-      <h4 className="register_h4"> Register </h4>
       <p>
         You don&apos;t have an account yet? <br /> What kind of account do you
         want to create?

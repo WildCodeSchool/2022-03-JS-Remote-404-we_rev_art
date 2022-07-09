@@ -28,7 +28,6 @@ function LoginNow() {
   const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
-      <h4 className="register_h4"> Log in </h4>
       <p>I am a registered user and I would like to log into my account</p>
 
       <form onSubmit={handleSubmit(onSubmit)}>
