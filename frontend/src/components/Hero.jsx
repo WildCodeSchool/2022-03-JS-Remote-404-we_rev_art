@@ -36,6 +36,7 @@ function Hero() {
           showIndicators={false}
           showThumbs={false}
           interval="5000"
+          axis="vertical"
         >
           {images.map((image) => (
             <div key={image.id}>
