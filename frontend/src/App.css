@@ -47,3 +47,9 @@ h2 {
   border: none;
   background-color: transparent;
 }
+
+textarea {
+  color: var(--font-color);
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
