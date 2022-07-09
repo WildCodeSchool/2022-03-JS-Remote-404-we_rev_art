@@ -1,9 +1,12 @@
 .faq {
   display: flex;
-  flex-direction: center;
 }
 .faq-body {
   background-color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
 }
 
 .faq-row {
@@ -27,8 +30,10 @@
 .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd .styles_row-content-text__2sgAB {
   padding: 1rem;
   color: var(--font-color);
+  margin: 0 auto;
 }
 
 .faq_container {
   background-color: var(--dark-color);
+  text-align: center;
 }
