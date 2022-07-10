@@ -147,3 +147,36 @@
   align-items: center;
 }
 
+.confirmation_message {
+  border-radius: 0.5rem;
+  width: 15rem;
+  height: 6rem;
+  opacity: 80%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: yellow;
+  color: var(--dark-color);
+  font-weight: bold;
+  position: absolute;
+  top: 140%;
+  right: 2rem;
+  animation : appear_disappear 5s ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear_disappear {
+  0% {
+    transform: translateX(50%);
+
+  }
+  50%{
+    transform: translateX(-20%);
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}

@@ -21,3 +21,20 @@
   border-width: bold;
   text-align: center;
 }
+.giphy_container {
+  position: relative  ;
+}
+.giphy_hide {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.flex_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

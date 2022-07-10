@@ -168,7 +168,9 @@ function RegisterNow() {
           Register
         </button>
       </form>
-      {submitted && <div>registration successfully completed, login now.</div>}
+      {submitted && (
+        <div className="confirmation_message">Registration successfull</div>
+      )}
     </section>
   );
 }
