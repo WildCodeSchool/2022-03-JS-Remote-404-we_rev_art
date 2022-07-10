@@ -29,6 +29,11 @@
   font-size: 1.2rem;
 }
 
+.eye_icon {
+  width: 1rem;
+  margin-top: 0.5rem;
+}
+
 .register_title {
   text-align: center;
 }
@@ -52,12 +57,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
 }
 
 .register_checkbox {
-  transform: scale(2);
-  margin-right: 2rem;
+  transform: scale(1.2);
+  margin-bottom: 1rem;
+  margin-right: -2rem;
+  margin-left: 1.5rem;
 }
 
 .hidden {
@@ -79,6 +85,24 @@
   animation: slowchange;
   padding: 0;
 }
+
+.button_style2 {
+  width: 12rem;
+  border-radius: 0.5rem;
+  padding: 0 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.submit {
+  margin: 2rem 0;
+}
+
+.register_description {
+  font-size: 0.75rem;
+  padding: 1rem 3rem;
+}
+
 .button_style div {
   text-align: center;
   margin: 0 auto;
@@ -116,3 +140,10 @@
 
   }
 }
+.register_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
