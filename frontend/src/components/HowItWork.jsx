@@ -6,7 +6,7 @@ import titleTextData3 from "../data/titleTextData3";
 import "../style/register.css";
 
 function HowItWork() {
-  const [work, setWork] = useState(true);
+  const [work, setWork] = useState(false);
   return (
     <section className="flex_container_column">
       <button

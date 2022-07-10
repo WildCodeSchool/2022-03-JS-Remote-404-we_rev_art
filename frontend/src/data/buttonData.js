@@ -1,7 +1,7 @@
 const buttonData = [
   {
     id: 1,
-    content: "POST AN ADD",
+    content: "POST AN AD",
     style: "button-style yellow",
     type: "button",
   },
