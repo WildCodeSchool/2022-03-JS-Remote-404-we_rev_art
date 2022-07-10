@@ -53,3 +53,10 @@ textarea {
   padding: 1rem 2rem;
   font-size: 2rem;
 }
+
+.flex_container_column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

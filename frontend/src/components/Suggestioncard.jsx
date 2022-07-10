@@ -3,7 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import "../style/SuggestionCard.css";
 import titleTextData from "../data/titleTextData";
-import ArtList from "./ArtList";
 import TitleText from "./TitleText";
 
 import gifData from "../data/gifData";
@@ -41,8 +40,6 @@ function Suggestioncard() {
             </div>
           ))}
         </Carousel>
-
-        <ArtList />
       </div>
     </section>
   );

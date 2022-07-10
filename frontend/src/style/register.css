@@ -71,7 +71,7 @@
 }
 
 .button_style {
-  width: 25rem;
+  width: 30rem;
   display: flex;
   flex-direction: row;
   color: var(--font-color);
