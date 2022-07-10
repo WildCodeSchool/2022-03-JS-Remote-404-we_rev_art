@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
 import ProjectAdsFilter from "../components/Filters/ProjectAds/ProjectAdsFilter";
 import MiniHeader from "../components/miniHeader";
@@ -36,6 +37,9 @@ function ProjectAds() {
 
   return (
     <div>
+      <Helmet>
+        <title>We Rev&apos;Art | ProjectAds </title>
+      </Helmet>
       <MiniHeader index={0} />
 
       <ProjectAdsFilter filter={filter} setFilter={setFilter} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import ArtistCards from "../components/ArtistCards";
 import ArtistFilter from "../components/Filters/Artists/ArtistFilter";
 import MiniHeader from "../components/miniHeader";
@@ -14,6 +15,9 @@ function Artists() {
 
   return (
     <div>
+      <Helmet>
+        <title>We Rev&apos;Art | Artist </title>
+      </Helmet>
       <MiniHeader index={1} />
       <ArtistFilter filter={filter} setFilter={setFilter} />
       <ArtistCards ArtistCardData={ArtistCardData} />
