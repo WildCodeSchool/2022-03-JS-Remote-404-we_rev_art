@@ -16,11 +16,15 @@ function Skills({ skills, handleSkills }) {
   }, []);
 
   return (
-    <div className="software_all_buttons">
+    <div className="postAnAd_container">
       {mySkill.map((skill) => (
         <button
           onClick={() => handleSkills(skill.id)}
-          className={skills.includes(skill.id) ? "active" : "form_button"}
+          className={
+            skills.includes(skill.id)
+              ? "button_style_paa2 yellow"
+              : "button_style_paa empty_yellow"
+          }
           type="button"
           key={skill.id}
         >
