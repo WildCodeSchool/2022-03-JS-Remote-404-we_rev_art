@@ -36,6 +36,7 @@ function Hero() {
           showIndicators={false}
           showThumbs={false}
           interval="5000"
+          stopOnHover={false}
           axis="vertical"
         >
           {images.map((image) => (
