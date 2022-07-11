@@ -14,15 +14,17 @@ function Timeframe({ timeframe, handleTimeframe }) {
       });
   }, []);
   return (
-    <div>
+    <div className="postAnAd_container">
       {timeframeType.map((timeframeTypes) => (
         <button
-          onClick={() => handleTimeframe(timeframe.id)}
+          onClick={() => handleTimeframe(timeframeTypes.id)}
           className={
-            timeframe.includes(timeframe.id) ? "active" : "form_button"
+            timeframe.includes(timeframeTypes.id)
+              ? "button_style_paa2 yellow"
+              : "button_style_paa empty_yellow"
           }
           type="button"
-          key={timeframe.id}
+          key={timeframeTypes.id}
         >
           {timeframeTypes.timeframe}
         </button>

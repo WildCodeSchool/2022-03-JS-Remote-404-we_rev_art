@@ -9,6 +9,7 @@ import show from "../images/show.png";
 function RegisterNow() {
   const [shown, setShown] = useState(false);
   const [registerButton, setRegisterButton] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     axios
@@ -54,33 +55,35 @@ function RegisterNow() {
           console.warn("User signin successful");
         })
         .catch((err) => console.error(err));
+      setSubmitted(true);
     }
     //  else {
     // }
   };
   return (
     <section className="register_login_container">
-      <h4 className="register_h4"> Register </h4>
-      <p>
-        You don&apos;t have an account yet? <br /> What kind of account do you
-        want to create?
-      </p>
       <section className="register_buttons_container">
         {registerButton.map((btn, index) => (
           <div key={btn.id}>
             <button
               type="button"
               className={
-                btn.active ? "button-style yellow" : "button-style empty_yellow"
+                btn.active
+                  ? "button_style2 yellow"
+                  : "button_style2 empty_yellow"
               }
               onClick={() => handleClick(index)}
             >
               {btn.type}
             </button>
             {btn.id === 1 ? (
-              <p>I am looking for physical artworks to animate</p>
+              <p className="register_description">
+                I am looking for physical artworks to animate
+              </p>
             ) : (
-              <p>I am looking for digital artists to animate my art</p>
+              <p className="register_description">
+                I am looking for digital artists to animate my art
+              </p>
             )}
           </div>
         ))}
@@ -112,6 +115,7 @@ function RegisterNow() {
               <img
                 src={shown ? show : hide}
                 alt="eye that changes if password is shown or hidden"
+                className="eye_icon"
               />
             </button>
           </div>
@@ -140,6 +144,7 @@ function RegisterNow() {
               <img
                 src={shown ? show : hide}
                 alt="eye that changes if password is shown or hidden"
+                className="eye_icon"
               />
             </button>
           </div>
@@ -153,15 +158,19 @@ function RegisterNow() {
             className="register_checkbox"
             {...register("terms", { required: true })}
           />
-          {errors.terms && <p> You must accept terms and conditions </p>}
-          <p>
+          <p className="register_description">
             I agree with the <Link to="/">terms and conditions </Link>
           </p>
         </div>
-        <button type="submit" className="button-style empty_yellow">
+        {errors.terms && <p> You must accept terms and conditions </p>}
+
+        <button type="submit" className="button_style2 empty_yellow submit">
           Register
         </button>
       </form>
+      {submitted && (
+        <div className="confirmation_message">Registration successfull</div>
+      )}
     </section>
   );
 }

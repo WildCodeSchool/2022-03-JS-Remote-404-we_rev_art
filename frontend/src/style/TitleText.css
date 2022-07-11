@@ -3,7 +3,7 @@
   padding: 2rem;
   align-items: flex-start;
   justify-content: space-around;
-  margin-left: -4rem;
+  flex-wrap: wrap;
 }
 
 .titleText-element {

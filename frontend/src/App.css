@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&family=Nunito+Sans:wght@200&family=PT+Serif&family=Ubuntu&display=swap%27");
 
 :root {
-  --background-gradient1: linear-gradient(white 20%, #203864 80%);
-  --background-gradient2: linear-gradient(white 20%, #203864 80%);
-  --background-gradient3: linear-gradient(white 20%, #203864 80%);
+  --background-gradient1: linear-gradient(rgb(12, 9, 9) 20%, #203864 80%);
+  --background-gradient2: linear-gradient(#203864 30%, rgb(12, 9, 9) 85%);
   --font-height: 1.5;
+  --font-color : #f1f1f1;
+  --dark-color : rgb(12, 9, 9);
+  --box-shadow: rgba(0, 0, 0, 0.45) 25px 25px 20px 20px;
+}
+
+body {
+  background-color: var(--dark-color);
+  color: #f1f1f1;
+  overflow-x: hidden;
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
+  background-color: var(--background-gradient1);
 }
 
 h1 {
@@ -37,4 +46,17 @@ h2 {
 .no_button {
   border: none;
   background-color: transparent;
+}
+
+textarea {
+  color: var(--font-color);
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
+
+.flex_container_column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

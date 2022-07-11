@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../style/MyProfile.css";
 
 import Skills from "./Skills";
 import ContractTypes from "./ContractTypes";
@@ -35,7 +34,7 @@ function PostAnAdForm() {
 
   const handleBudget = (id) => {
     if (budget.includes(id)) {
-      setBudget(Budget.filter((budgets) => budgets !== id));
+      setBudget(budget.filter((budgets) => budgets !== id));
     } else {
       setBudget([...budget, id]);
     }
@@ -54,39 +53,45 @@ function PostAnAdForm() {
       <div className="profile_picture_upload">
         <MyCreationUpload />
       </div>
-      <label className="profiledescription " htmlFor="messageInput">
-        Describe your project in few words
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="profiledescription"
-          name="descriptionInput"
-        />
-      </label>
-      <label className="profiledescription " htmlFor="messageInput">
-        Detail your need
-        <textarea
-          value={detail}
-          onChange={(e) => setDetail(e.target.value)}
-          className="profiledescription"
-          name="descriptionInput"
-        />
-      </label>
-      <div>
+      <div className="flex-column">
+        <label className="profiledescription" htmlFor="messageInput">
+          Name of the project
+          <input
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="field_input"
+            name="descriptionInput"
+          />
+        </label>
+        <label className="profiledescription " htmlFor="messageInput">
+          Details about your needs
+          <textarea
+            value={detail}
+            onChange={(e) => setDetail(e.target.value)}
+            className="textarea"
+            name="descriptionInput"
+          />
+        </label>
+      </div>
+      <div className="paa_subcontainer">
         <h3 className="profile_h3">Choose an animation technique</h3>
         <Skills skills={skills} handleSkills={handleSkills} />
       </div>
-      <div>
+      <div className="flex paa_subcontainer">
         <h3 className="profile_h3">What type of contract ?</h3>
         <ContractTypes
           typeOfContrat={typeOfContrat}
           handleContractTypes={handleContractTypes}
         />
       </div>
-      <h3 className="profile_h3">What is your budget ?</h3>
-      <Budget budget={budget} handleBudget={handleBudget} />
-      <h3 className="profile_h3">What is the timeframe of your project ?</h3>
-      <Timeframe timeframe={timeframe} handleTimeframe={handleTimeframe} />
+      <div className="flex paa_subcontainer">
+        <h3 className="profile_h3">What is your budget ?</h3>
+        <Budget budget={budget} handleBudget={handleBudget} />
+      </div>
+      <div className="flex paa_subcontainer">
+        <h3 className="profile_h3">What is the timeframe of your project ?</h3>
+        <Timeframe timeframe={timeframe} handleTimeframe={handleTimeframe} />
+      </div>
     </section>
   );
 }
