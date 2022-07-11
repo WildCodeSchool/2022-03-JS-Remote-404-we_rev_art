@@ -4,8 +4,8 @@
   --background-gradient1: linear-gradient(rgb(12, 9, 9) 20%, #203864 80%);
   --background-gradient2: linear-gradient(#203864 30%, rgb(12, 9, 9) 85%);
   --font-height: 1.5;
-  --font-color : #f1f1f1;
-  --dark-color : rgb(12, 9, 9);
+  --font-color: #f1f1f1;
+  --dark-color: rgb(12, 9, 9);
   --box-shadow: rgba(0, 0, 0, 0.45) 25px 25px 20px 20px;
 }
 
@@ -54,7 +54,7 @@ textarea {
   font-size: 2rem;
 }
 
-.flex_container_column{
+.flex_container_column {
   display: flex;
   flex-direction: column;
   justify-content: center;

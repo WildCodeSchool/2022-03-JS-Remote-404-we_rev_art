@@ -11,7 +11,7 @@ function AllArtistCards() {
   const [ArtistCardViews, setArtistCardViews] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/ArtistCardView?limit=3 `)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/digitalartists?limit=3 `)
       .then((res) => {
         setArtistCardViews(res.data);
       })
@@ -19,7 +19,6 @@ function AllArtistCards() {
         console.error(err);
       });
   }, []);
-
   return (
     <section className="cardProject_cardProject">
       <div className="cardProject_cards">

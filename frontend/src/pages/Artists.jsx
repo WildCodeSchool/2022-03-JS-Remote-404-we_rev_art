@@ -16,7 +16,7 @@ function Artists() {
   const [ArtistCardViews, setArtistCardViews] = useState([]);
 
   useEffect(() => {
-    let url = `${import.meta.env.VITE_BACKEND_URL}/ArtistCardView?limit=25`;
+    let url = `${import.meta.env.VITE_BACKEND_URL}/digitalartists?limit=25`;
     if (filter.skills[0]) {
       url += `&skills=${filter.skills.join("|")}`;
     }
@@ -38,7 +38,7 @@ function Artists() {
         console.error(err);
       });
   }, [filter]);
-
+  console.log(ArtistCardView);
   return (
     <div>
       <Helmet>

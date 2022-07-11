@@ -78,13 +78,13 @@
 }
 .btnfollow {
   text-align: center;
-  font-size:  1rem;
+  font-size: 1rem;
   padding: 0.1rem 0.25rem;
   transition: all 0.5s;
   cursor: pointer;
   background-color: #ffd700;
   border-radius: 0.25rem;
-  margin:  0 1rem;
+  margin: 0 1rem;
 }
 
 .count {
@@ -92,7 +92,6 @@
   align-items: center;
   margin-top: 1rem;
 }
-
 
 .flex-container {
   display: flex;

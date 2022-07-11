@@ -1,16 +1,21 @@
 const models = require("../models");
 
 class ProfilController {
-  static browse = (req, res) => {
-    models.profil
-      .findAll(req.params)
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
+  static browse = async (req, res) => {
+    try {
+      const [profils] = await models.profil.findAll(req.params);
+      const skills = await Promise.all(
+        profils.map((profil) => models.skills.findByProfilId(profil.id))
+      );
+      profils.forEach((profil, index) => {
+        // eslint-disable-next-line no-param-reassign
+        profil.skills = skills[index];
       });
+      res.status(200).json(profils);
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
   };
 
   static read = (req, res) => {
