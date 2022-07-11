@@ -8,22 +8,11 @@ class ArtistsCardManager extends AbstractManager {
     return sqlQueryToTest.includes("WHERE") ? " AND" : " WHERE";
   }
 
-  findAll(query) {
-    const { limit, contracttype, skills, usertype } = query;
-    let sqlValue = [];
+  findAll() {
+    /*  const { limit } = query;
+    const sqlValue = []; */
 
-    let sql = `select DISTINCT p.idpicture,p.image,p.alt,
-    sk.skills,
-    ct.contractype,
-    us.usertype,
-    pr.profil_id,art.skills_id,
-    pr.id,art.hashtag,art.title,art.offers,
-    pr.picture_idpicture_original FROM  ${this.table} AS art 
-    INNER JOIN picture AS p ON pr.picture_idpicture_original = p.idpicture 
-    INNER JOIN skills AS sk ON pr.skills_id = sk.id 
-    INNER JOIN profil AS pr ON pr. = pr.id `;
-
-    if (contracttype)
+    /* if (contracttype)
       sql += `INNER JOIN profil_has_contracttype AS phc ON pr.profil_id = phc.profil_id `;
     if (usertype)
       sql += `INNER JOIN profil_has_usertype AS phu on pr.profil_id = phu.profil_id `;
@@ -68,15 +57,19 @@ class ArtistsCardManager extends AbstractManager {
       }
       sql += `) `;
       sqlValue = [...sqlValue, ...contracttypeArray];
-    }
+    } 
 
     if (limit && limit < 25) {
       sql += `LIMIT ${limit}`;
     } else {
       sql += `LIMIT 25`;
-    }
+    } */
     // console.log(sql);
-    return this.connection.query(sql, sqlValue).then((res) => res[0]);
+    return this.connection
+      .query(
+        `SELECT * FROM ${ArtistsCardManager.table} WHERE typeaccount_id = 1 `
+      )
+      .then((res) => res[0]);
   }
 
   insert(item) {

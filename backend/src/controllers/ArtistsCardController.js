@@ -1,24 +1,31 @@
 const models = require("../models");
 
 class ArtistsCardController {
-  static browse = async (req, res) => {
-    try {
-      const artworks = await models.artwork.findAll(req.query);
-      if (artworks[0]) {
+  static browse = (req, res) => {
+    models.profil
+      .findAll()
+      .then(([cards]) => {
+        res.send(cards);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    /* if (artistcards[0]) {
         const pictureDigital = await Promise.all(
-          artworks.map((profil) =>
+          artistcards.map((profil) =>
             models.picture.find(profil.picture_idpicture_digital)
           )
         );
-        artworks.forEach((profil, index) => {
-          artworks[index] = { ...profil, ...pictureDigital[index] };
+        artistcards.forEach((profil, index) => {
+          artistcards[index] = { ...profil, ...pictureDigital[index] };
         });
-      }
-      res.status(200).json(artworks);
+      } 
+      res.status(200).json(artistcards[0]);
     } catch (err) {
       console.error(err);
       res.status(500).send("error");
-    }
+    } */
   };
 }
 
