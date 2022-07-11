@@ -26,9 +26,6 @@ function Artists() {
     if (filter.usertype[0]) {
       url += `&usertype=${filter.usertype.join("|")}`;
     }
-    if (filter.likes[0]) {
-      url += `&likes=${filter.likes.join("|")}`;
-    }
     axios
       .get(url)
       .then((res) => {
