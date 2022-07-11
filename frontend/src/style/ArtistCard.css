@@ -10,6 +10,8 @@
   border-radius: 70%;
 }
 .card-top {
+  color: red;
+  background-color: whitesmoke;
   border-radius: 1rem;
   height: 30rem;
   display: flex;

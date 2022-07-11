@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import ArtistCards from "../components/ArtistCards";
 import ArtistFilter from "../components/Filters/Artists/ArtistFilter";
 import MiniHeader from "../components/miniHeader";

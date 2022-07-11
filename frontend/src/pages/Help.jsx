@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import HelpInfo from "../components/HelpInfo";
 import MiniHeader from "../components/miniHeader";
 
