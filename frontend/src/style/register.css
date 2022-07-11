@@ -42,6 +42,10 @@
   font-size: 5rem;
 }
 
+.register_login_container {
+  position: relative;
+}
+
 .register_login_container > * {
   padding: 2rem 0;
 }
@@ -159,8 +163,8 @@
   color: var(--dark-color);
   font-weight: bold;
   position: absolute;
-  top: 140%;
-  right: 2rem;
+  top: 80%;
+  right: -100%;
   animation : appear_disappear 5s ;
   animation-fill-mode: forwards;
 }

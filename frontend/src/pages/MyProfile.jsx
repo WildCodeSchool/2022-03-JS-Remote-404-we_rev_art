@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import MiniHeader from "../components/miniHeader";
 import MyProfileForm from "../components/MyProfileForm";
+import Logo from "../components/Logo";
 
 function MyProfile() {
   const [personal, setPersonal] = useState(false);
@@ -9,20 +10,25 @@ function MyProfile() {
   const [business, setBusiness] = useState(false);
   const [billing, setBilling] = useState(false);
   const [notifications, setNotifications] = useState(false);
+  const [choice, setChoice] = useState("");
 
   const handleClick = (
     selected,
     notSelected1,
     notSelected2,
     notSelected3,
-    notSelected4
+    notSelected4,
+    choosing,
+    selectedOption
   ) => {
     notSelected1(false);
     notSelected2(false);
     notSelected3(false);
     notSelected4(false);
     selected(true);
+    choosing(selectedOption);
   };
+
   return (
     <div>
       <Helmet>
@@ -40,7 +46,9 @@ function MyProfile() {
                 setAccount,
                 setBusiness,
                 setBilling,
-                setNotifications
+                setNotifications,
+                setChoice,
+                "personal"
               )
             }
           >
@@ -55,7 +63,9 @@ function MyProfile() {
                 setPersonal,
                 setBusiness,
                 setBilling,
-                setNotifications
+                setNotifications,
+                setChoice,
+                "account"
               )
             }
           >
@@ -70,7 +80,9 @@ function MyProfile() {
                 setAccount,
                 setPersonal,
                 setBilling,
-                setNotifications
+                setNotifications,
+                setChoice,
+                "business"
               )
             }
           >
@@ -85,7 +97,9 @@ function MyProfile() {
                 setBusiness,
                 setAccount,
                 setPersonal,
-                setNotifications
+                setNotifications,
+                setChoice,
+                "billing"
               )
             }
           >
@@ -102,13 +116,22 @@ function MyProfile() {
                 setBilling,
                 setBusiness,
                 setAccount,
-                setPersonal
+                setPersonal,
+                setChoice,
+                "notifications"
               )
             }
+            on
           >
             Notifications
           </button>
         </section>
+
+        {choice === "personal" && <Logo />}
+        {choice === "account" && <Logo />}
+        {choice === "business" && <Logo />}
+        {choice === "billing" && <Logo />}
+        {choice === "notifications" && <Logo />}
 
         <MyProfileForm />
       </div>
