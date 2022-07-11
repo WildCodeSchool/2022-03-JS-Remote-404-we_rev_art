@@ -10,7 +10,27 @@ function MyProfile() {
         <title>We Rev&apos;Art | Profile </title>
       </Helmet>
       <MiniHeader index={17} />
-      <MyProfileForm />
+      <div className="flex">
+        <section className="buttons_container">
+          <button type="button" className="button_style3">
+            Personal information
+          </button>
+          <button type="button" className="button_style3">
+            Account description
+          </button>
+          <button type="button" className="button_style3">
+            Business information
+          </button>
+          <button type="button" className="button_style3">
+            Billing information
+          </button>
+          <button type="button" className="button_style3">
+            Notifications
+          </button>
+        </section>
+
+        <MyProfileForm />
+      </div>
     </div>
   );
 }
