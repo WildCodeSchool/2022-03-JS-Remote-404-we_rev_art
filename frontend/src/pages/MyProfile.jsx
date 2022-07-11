@@ -1,34 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Helmet } from "react-helmet";
+import ExportContextUser from "../context/UserContext";
+// import ArtistRegistration from "../components/ArtistRegistration";
+// import CustomerRegistration from "../components/CustomerRegistration";
 import MiniHeader from "../components/miniHeader";
 import MyProfileForm from "../components/MyProfileForm";
 import Logo from "../components/Logo";
+import PersonalForm from "../components/MyProfile/Personal/PersonalForm";
+import BillingForm from "../components/MyProfile/Billing/BillingForm";
 
 function MyProfile() {
-  const [personal, setPersonal] = useState(false);
+  const [personal, setPersonal] = useState(true);
   const [account, setAccount] = useState(false);
-  const [business, setBusiness] = useState(false);
   const [billing, setBilling] = useState(false);
   const [notifications, setNotifications] = useState(false);
-  const [choice, setChoice] = useState("");
+  const [choice, setChoice] = useState("personal");
+  const { user } = useContext(ExportContextUser.UserContext);
+  const [personalData, setPersonalData] = useState();
+  const [billingData, setBillingData] = useState();
 
   const handleClick = (
     selected,
     notSelected1,
     notSelected2,
     notSelected3,
-    notSelected4,
     choosing,
     selectedOption
   ) => {
     notSelected1(false);
     notSelected2(false);
     notSelected3(false);
-    notSelected4(false);
     selected(true);
     choosing(selectedOption);
   };
-
+  console.warn(user);
+  console.warn(personalData);
+  console.warn(billingData);
   return (
     <div>
       <Helmet>
@@ -44,7 +51,6 @@ function MyProfile() {
               handleClick(
                 setPersonal,
                 setAccount,
-                setBusiness,
                 setBilling,
                 setNotifications,
                 setChoice,
@@ -61,7 +67,6 @@ function MyProfile() {
               handleClick(
                 setAccount,
                 setPersonal,
-                setBusiness,
                 setBilling,
                 setNotifications,
                 setChoice,
@@ -73,28 +78,10 @@ function MyProfile() {
           </button>
           <button
             type="button"
-            className={business ? "button_style3 selected2" : "button_style3"}
-            onClick={() =>
-              handleClick(
-                setBusiness,
-                setAccount,
-                setPersonal,
-                setBilling,
-                setNotifications,
-                setChoice,
-                "business"
-              )
-            }
-          >
-            Business information
-          </button>
-          <button
-            type="button"
             className={billing ? "button_style3 selected2" : "button_style3"}
             onClick={() =>
               handleClick(
                 setBilling,
-                setBusiness,
                 setAccount,
                 setPersonal,
                 setNotifications,
@@ -114,7 +101,6 @@ function MyProfile() {
               handleClick(
                 setNotifications,
                 setBilling,
-                setBusiness,
                 setAccount,
                 setPersonal,
                 setChoice,
@@ -127,13 +113,14 @@ function MyProfile() {
           </button>
         </section>
 
-        {choice === "personal" && <Logo />}
-        {choice === "account" && <Logo />}
-        {choice === "business" && <Logo />}
-        {choice === "billing" && <Logo />}
+        {choice === "account" && <MyProfileForm />}
+        {choice === "personal" && (
+          <PersonalForm setPersonalData={setPersonalData} />
+        )}
+        {choice === "billing" && (
+          <BillingForm setPersonalData={setBillingData} />
+        )}
         {choice === "notifications" && <Logo />}
-
-        <MyProfileForm />
       </div>
     </div>
   );
