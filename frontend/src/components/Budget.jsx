@@ -14,13 +14,17 @@ function Budget({ budget, handleBudget }) {
       });
   }, []);
   return (
-    <div>
+    <div className="postAnAd_container">
       {budgetType.map((budgets) => (
         <button
-          onClick={() => handleBudget(budget.id)}
-          className={budget.includes(budget.id) ? "active" : "form_button"}
+          onClick={() => handleBudget(budgets.id)}
+          className={
+            budget.includes(budgets.id)
+              ? "button_style_paa2 yellow"
+              : "button_style_paa empty_yellow"
+          }
           type="button"
-          key={budget.id}
+          key={budgets.id}
         >
           {budgets.budget}
         </button>

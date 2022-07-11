@@ -1,7 +1,7 @@
 const buttonData = [
   {
     id: 1,
-    content: "POST AN ADD",
+    content: "POST AN AD",
     style: "button-style yellow",
     type: "button",
   },
@@ -46,6 +46,12 @@ const buttonData = [
     content: "SEE OFFERS",
     style: "button-style empty_yellow",
     type: "button",
+  },
+  {
+    id: 9,
+    content: "Digitalize your art now",
+    style: "button-style yellow",
+    type: " button",
   },
 ];
 

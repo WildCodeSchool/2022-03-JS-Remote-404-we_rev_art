@@ -15,24 +15,27 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 2rem 14rem 5rem;
+  width: 100%;
+  padding: 2rem 0 5rem;
 }
 
 .checkbox_container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  margin-left: 5.5rem;
 }
 
 .checkbox_container > p {
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .checkbox_container > input {
-  transform: scale(4);
-  margin-right: 2rem;
+  transform: scale(1.5);
+  width: fit-content;
+  margin: 0 1rem 1rem;
 }
 
 .myAccount_buttons_container {
@@ -63,13 +66,13 @@
 .myAccount_checkboxes_container2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 0 13rem 5rem;
+  padding: 0 3rem 5rem;
   justify-content: start;
 }
 
 .myAccount_checkboxes_container2 * {
   margin: 0;
-  padding: 0 2rem;
+  padding: 0;
   justify-self: start;
 }
 

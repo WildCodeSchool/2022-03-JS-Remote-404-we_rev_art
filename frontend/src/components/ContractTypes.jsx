@@ -15,12 +15,14 @@ function ContractTypes({ typeOfContrat, handleContractTypes }) {
       });
   }, []);
   return (
-    <div>
+    <div className="postAnAd_container">
       {myContractType.map((contracttypes) => (
         <button
-          onClick={() => handleContractTypes(typeOfContrat.id)}
+          onClick={() => handleContractTypes(contracttypes.id)}
           className={
-            typeOfContrat.includes(typeOfContrat.id) ? "active" : "form_button"
+            typeOfContrat.includes(contracttypes.id)
+              ? "button_style_paa2 yellow"
+              : "button_style_paa empty_yellow"
           }
           type="button"
           key={contracttypes.id}

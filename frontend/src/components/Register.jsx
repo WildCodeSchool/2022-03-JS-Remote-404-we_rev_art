@@ -15,8 +15,8 @@ function Register() {
       <ul className="ul_container">
         {user === null ? (
           <Link to="/Register" className="register_link">
-            <li>
-              Register <br /> or <br /> Log in
+            <li className="register_header_right">
+              Register <br /> Log in
             </li>
           </Link>
         ) : (

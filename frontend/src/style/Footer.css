@@ -1,7 +1,8 @@
 footer {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(#203864 15%, white 85%);
+  background: var(--background-gradient1);
+  box-shadow: var(--box-shadow)
 }
 
 .footer-section1 {
