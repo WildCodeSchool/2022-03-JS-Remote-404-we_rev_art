@@ -7,9 +7,14 @@ class ProfilController {
       const skills = await Promise.all(
         profils.map((profil) => models.skills.findByProfilId(profil.id))
       );
+      const contracttype = await Promise.all(
+        profils.map((profil) => models.contracttype.findByProfilId(profil.id))
+      );
       profils.forEach((profil, index) => {
         // eslint-disable-next-line no-param-reassign
         profil.skills = skills[index];
+        // eslint-disable-next-line no-param-reassign
+        profil.contracttype = contracttype[index];
       });
       res.status(200).json(profils);
     } catch (err) {
