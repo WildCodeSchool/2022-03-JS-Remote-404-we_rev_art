@@ -31,7 +31,7 @@ export default function MyProfileForm() {
     }
   };
 
-  const handleContrats = (id) => {
+  const handleContracts = (id) => {
     if (typeOfContrat.includes(id)) {
       setTypeOfContrat(
         typeOfContrat.filter((contracttype) => contracttype !== id)
@@ -62,7 +62,7 @@ export default function MyProfileForm() {
       <h3 className="profile_h3"> Your prefered type of contract</h3>
       <ContractTypes
         typeOfContrat={typeOfContrat}
-        handleContrats={handleContrats}
+        handleContracts={handleContracts}
       />
       <h3 className="profile_h3"> Your art portofolio</h3>
 
