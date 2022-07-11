@@ -11,6 +11,7 @@ const {
   BudgetController,
   TimeframeController,
   ArtistsCardController,
+  MyProjectAdsController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -27,6 +28,7 @@ router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
 
 router.get("/projects", ArtworkController.browse);
+router.get("/projects/mine", MyProjectAdsController.browse);
 router.get("/ArtistCardView", ArtistsCardController.browse);
 router.get("/usertype", UserTypeController.browse);
 router.get("/softwareused", SoftwareController.browse);
@@ -43,6 +45,7 @@ router.get("/typeaccount", TypeAccountController.browse);
 
 router.get("/timeframe", TimeframeController.browse);
 router.get("/budget", BudgetController.browse);
+
 // router.get("/profil", ProfilController.browse);
 
 /* router.get('/profil/:id', ProfilController.findOne);

@@ -26,7 +26,7 @@
   text-align: center;
 }
 .giphy_container {
-  position: relative  ;
+  position: relative;
 }
 .giphy_hide {
   z-index: 1;
@@ -37,7 +37,7 @@
   background-color: transparent;
 }
 
-.flex_container{
+.flex_container {
   display: flex;
   justify-content: center;
   align-items: center;
