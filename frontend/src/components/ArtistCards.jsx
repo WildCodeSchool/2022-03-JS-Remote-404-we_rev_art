@@ -14,7 +14,7 @@ function ArtistCards({ ArtistCardView }) {
             alt={ArtistCardView.alt}
           />
           <div>
-            <h4 className="card-title">{ArtistCardView.username}</h4>
+            <h4 className="card-title">{ArtistCardView.firstname}</h4>
             <p className="card-text">
               {ArtistCardView.country} <br />
               {ArtistCardView.nbcreation}
@@ -24,7 +24,7 @@ function ArtistCards({ ArtistCardView }) {
               <li className="list-group-item"> {ArtistCardView.usertype}</li>
               <li className="list-group-item">
                 {" "}
-                {ArtistCardView.contracttype}
+                {ArtistCardView.contracttype_id}
               </li>
             </ul>
 

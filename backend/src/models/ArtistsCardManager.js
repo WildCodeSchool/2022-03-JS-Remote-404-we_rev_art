@@ -14,30 +14,27 @@ class ArtistsCardManager extends AbstractManager {
 
     let sql = `select DISTINCT p.idpicture,p.image,p.alt,
     sk.skills,
-    pr.id,
-    b.budget,
-    t.timeframe,
-    art.timeframe_id,art.budget_id,art.profil_id,art.skills_id,
-    art.id,art.hashtag,art.title,art.deadline,art.details,art.date,art.offers,art.likes,
-    art.picture_idpicture_original FROM  ${this.table} AS art 
-    INNER JOIN picture AS p ON art.picture_idpicture_original = p.idpicture 
-    INNER JOIN skills AS sk ON art.skills_id = sk.id 
-    INNER JOIN profil AS pr ON art.profil_id = pr.id 
-    INNER JOIN budget AS b on art.budget_id = b.id 
-    INNER JOIN timeframe AS t on art.timeframe_id = t.id `;
+    ct.contractype,
+    us.usertype,
+    pr.profil_id,art.skills_id,
+    pr.id,art.hashtag,art.title,art.offers,
+    pr.picture_idpicture_original FROM  ${this.table} AS art 
+    INNER JOIN picture AS p ON pr.picture_idpicture_original = p.idpicture 
+    INNER JOIN skills AS sk ON pr.skills_id = sk.id 
+    INNER JOIN profil AS pr ON pr. = pr.id `;
 
     if (contracttype)
-      sql += `INNER JOIN profil_has_contracttype AS phc ON art.profil_id = phc.profil_id `;
+      sql += `INNER JOIN profil_has_contracttype AS phc ON pr.profil_id = phc.profil_id `;
     if (usertype)
-      sql += `INNER JOIN profil_has_usertype AS phu on art.profil_id = phu.profil_id `;
+      sql += `INNER JOIN profil_has_usertype AS phu on pr.profil_id = phu.profil_id `;
 
     if (skills) {
       const skillsArray = skills.split("|");
-      sql += `${this.andOrWhere(sql)} ( art.skills_id = ? `;
+      sql += `${this.andOrWhere(sql)} ( phs.id = ? `;
       if (skillsArray[1]) {
         skillsArray.forEach((element, index) => {
           if (index > 0) {
-            sql += `OR art.skills_id = ? `;
+            sql += `OR phs.id = ? `;
           }
         });
       }
