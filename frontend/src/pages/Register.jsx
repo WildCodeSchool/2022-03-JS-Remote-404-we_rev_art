@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import MiniHeader from "../components/miniHeader";
 import RegisterNow from "../components/RegisterNow";
@@ -8,6 +8,7 @@ import "../style/register.css";
 import "../style/Field.css";
 
 function Register() {
+  const [login, setLogin] = useState(false);
   return (
     <section className="register_container">
       <Helmet>
@@ -15,9 +16,15 @@ function Register() {
       </Helmet>
       <MiniHeader index={4} />
       <section className="register_loginVsResgister_container">
-        <RegisterNow />
-        <p className="register_div_or">OR</p>
-        <LoginNow />
+        <button
+          type="button"
+          className="button_style"
+          onClick={() => setLogin(!login)}
+        >
+          <div className={login ? "" : "button_register"}>Register</div>
+          <div className={login ? "button_login" : ""}>Login</div>
+        </button>
+        {login ? <LoginNow /> : <RegisterNow />}
       </section>
     </section>
   );

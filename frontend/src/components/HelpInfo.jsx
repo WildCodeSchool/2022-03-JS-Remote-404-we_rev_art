@@ -36,17 +36,13 @@ function HelpInfo() {
   };
 
   return (
-    <div>
-      <h3 className="section-title">General FAQ </h3>
-
-      <div>
-        <Faq
-          data={data}
-          styles={styles}
-          config={config}
-          getRowOptions={setRowsOption}
-        />
-      </div>
+    <div className="faq_container">
+      <Faq
+        data={data}
+        styles={styles}
+        config={config}
+        getRowOptions={setRowsOption}
+      />
     </div>
   );
 }

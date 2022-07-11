@@ -1,10 +1,10 @@
 .button-style {
-  padding: 0.25rem 3.5rem;
+  padding: 0.5rem 1rem;
   width: fit-content;
   height: fit-content;
   border: none;
-  border-radius: 0.25rem;
-  font-size: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
   transition: all 0.2s ease-in-out;
 }
 

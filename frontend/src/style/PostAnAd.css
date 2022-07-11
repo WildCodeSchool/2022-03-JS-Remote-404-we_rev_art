@@ -4,9 +4,15 @@
   background-color: white;
   margin-right: 1rem;
 }
-.section_form2 {
-  margin-bottom: 20rem;
+.section_form {
+  padding:  0 15rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
 }
+
 .form_eb {
   display: flex;
 }
@@ -27,4 +33,46 @@
 }
 .textarea_eb {
   border-radius: 1.5rem;
+}
+
+.postAnAd_container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button_style_paa {
+  color: var(--font-color);
+  width: 10rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.button_style_paa2 {
+  color: var(--dark-color);
+  width: 10rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.profile_h3 {
+  width: 30rem;
+  text-align: left;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.paa_subcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: -2rem;
+}
+
+.textarea {
+  border-radius: 1rem;
+  width: 50rem;
 }

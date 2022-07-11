@@ -28,9 +28,6 @@ function LoginNow() {
   const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
-      <h4 className="register_h4"> Log in </h4>
-      <p>I am a registered user and I would like to log into my account</p>
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className="field_label">
           Email address
@@ -57,14 +54,15 @@ function LoginNow() {
               <img
                 src={shown ? show : hide}
                 alt="eye that changes if password is shown or hidden"
+                className="eye_icon"
               />
             </button>
           </div>
           {errors.password && <p> Password is required </p>}
         </label>
 
-        <button type="submit" className="button-style empty_yellow">
-          Continue
+        <button type="submit" className="button_style2 empty_yellow submit">
+          Login
         </button>
       </form>
     </section>

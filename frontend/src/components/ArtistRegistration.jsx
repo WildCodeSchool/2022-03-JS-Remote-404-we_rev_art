@@ -46,7 +46,7 @@ function ArtistRegistration() {
       </div>
       <div className="register_buttons_container">
         <button type="submit" className="button-style yellow">
-          Register
+          Save
         </button>
         <button type="button" className="button-style empty_yellow">
           Modify
