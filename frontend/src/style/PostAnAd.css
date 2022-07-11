@@ -11,6 +11,8 @@
   justify-content: center;
   align-items: flex-start;
   text-align: center;
+  width: 100%;
+  height: min-content;
 }
 
 .form_eb {
@@ -38,22 +40,25 @@
 .postAnAd_container {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .button_style_paa {
   color: var(--font-color);
   width: 10rem;
+  height: 2rem;
   border-radius: 0.5rem;
   font-weight: bold;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .button_style_paa2 {
   color: var(--dark-color);
   width: 10rem;
+  height: 2rem;
   border-radius: 0.5rem;
   font-weight: bold;
-  margin-right: 2rem;
+  margin: 0.5rem 1rem;
 }
 
 .profile_h3 {
@@ -69,7 +74,6 @@
   width: 100%;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: -2rem;
 }
 
 .textarea {
