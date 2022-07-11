@@ -38,7 +38,6 @@ function Artists() {
         console.error(err);
       });
   }, [filter]);
-  console.log(ArtistCardView);
   return (
     <div>
       <Helmet>
