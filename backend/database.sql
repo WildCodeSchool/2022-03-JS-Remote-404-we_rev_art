@@ -7,6 +7,7 @@
 -- -----------------------------------------------------
 -- Schema werevart
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `werevart`.`profil_has_artwork` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
 DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
@@ -287,6 +288,37 @@ INSERT INTO `artwork`(`id`,`profil_id`,`hashtag`,`title`,`timeframe_id`,`custome
 VALUES
     ('ffd79002-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée',1,'','2022-06-14',4,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
     ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau',2,'','2022-06-15',1,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2)
+;
+
+
+-- -----------------------------------------------------
+-- Table `werevart`.`profil_has_artwork`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_artwork` (
+  `profil_id` VARCHAR(255) NOT NULL,
+  `artwork_id` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`profil_id`, `artwork_id`),
+  INDEX `fk_profil_has_artwork_artwork1_idx` (`artwork_id` ASC),
+  INDEX `fk_profil_has_artwork_profil1_idx` (`profil_id` ASC),
+  CONSTRAINT `fk_profil_has_artwork_profil1`
+    FOREIGN KEY (`profil_id`)
+    REFERENCES `werevart`.`profil` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_profil_has_artwork_artwork1`
+    FOREIGN KEY (`artwork_id`)
+    REFERENCES `werevart`.`artwork` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+INSERT INTO `werevart`.`profil_has_artwork` (
+    `profil_id`,
+  `artwork_id`)
+VALUES
+    ('d0a47566-ecb5-11ec-8ea0-0242ac120002','ffd79002-ecb5-11ec-8ea0-0242ac120002'),
+    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002','09bf63f6-ecb6-11ec-8ea0-0242ac120002')
 ;
 
 -- -----------------------------------------------------
