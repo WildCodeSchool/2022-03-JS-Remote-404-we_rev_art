@@ -1,0 +1,27 @@
+.card-group{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: black;
+    background-color: whitesmoke;
+    height: 37rem;
+    width: 16rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0rem 1rem 2rem;
+    margin: 5rem 1,5rem;
+    padding: 1rem;
+    
+}
+.card-group img {
+    width: 80%;
+    height: 80%;
+      }
+.card_footer_img{
+    width:10%; 
+    height:10%;
+    border-radius:50% 
+}
