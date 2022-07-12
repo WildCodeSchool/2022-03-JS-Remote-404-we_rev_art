@@ -12,19 +12,13 @@ class ProfilManager extends AbstractManager {
     );
   }
 
-  update(profil) {
-    return this.connection.query(
-      `update ${ProfilManager.table} set title = ? where id = ?`,
-      [profil.id, profil.typeaccount_id]
-    );
-  }
-
   find(id) {
     return this.connection
       .query(`select * from  ${this.table} where user_id = ?`, [id])
       .then((res) => res[0]);
   }
-
+  
+  
   findAll(query) {
     const { limit, contracttype, skills, usertype } = query;
     let sqlValue = [];
@@ -89,6 +83,13 @@ class ProfilManager extends AbstractManager {
       sql += `LIMIT 25`;
     }
     return this.connection.query(sql, sqlValue).then((res) => res[0]);
+
+}
+  update(profil, email) {
+    return this.connection.query(
+      `UPDATE ${ProfilManager.table} INNER JOIN user ON profil.user_id = user.id SET  ? WHERE email = ?`,
+      [profil, email]
+    );
   }
 }
 

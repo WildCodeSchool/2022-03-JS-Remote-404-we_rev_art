@@ -47,36 +47,15 @@ class ProfilController {
   };
 
   static edit = (req, res) => {
-    const profil = req.body;
-
-    // TODO validations (length, format...)
-
-    profil.id = req.params.id;
-
-    models.profil
-      .update(profil)
-      .then(([result]) => {
-        if (result.affectedRows === 0) {
-          res.sendStatus(404);
-        } else {
-          res.sendStatus(204);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static add = (req, res) => {
-    const profil = req.body;
-
+    const personalform = req.body;
+    const { email } = personalform;
+    delete personalform.email;
     // TODO validations (length, format...)
 
     models.profil
-      .insert(profil)
-      .then(([result]) => {
-        res.status(201).send({ ...profil, id: result.insertId });
+      .update(personalform, email)
+      .then(() => {
+        res.status(201).json(req.body);
       })
       .catch((err) => {
         console.error(err);
