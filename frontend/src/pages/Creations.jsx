@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import CreationCards from "../components/CreationCards";
 import CreationFilter from "../components/Filters/Creations/CreationFilter";
 import MiniHeader from "../components/miniHeader";
 
@@ -18,6 +19,7 @@ function Creations() {
       </Helmet>
       <MiniHeader index={2} />
       <CreationFilter filter={filter} setFilter={setFilter} />
+      <CreationCards />
     </div>
   );
 }
