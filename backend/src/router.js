@@ -11,6 +11,7 @@ const {
   BudgetController,
   TimeframeController,
   ArtistsCardController,
+  MailController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -43,6 +44,8 @@ router.get("/typeaccount", TypeAccountController.browse);
 
 router.get("/timeframe", TimeframeController.browse);
 router.get("/budget", BudgetController.browse);
+
+router.post("/sendEmail", MailController.sendMail);
 // router.get("/profil", ProfilController.browse);
 
 /* router.get('/profil/:id', ProfilController.findOne);
