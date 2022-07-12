@@ -13,71 +13,15 @@ class ContractTypeController {
       });
   };
 
-  static read = (req, res) => {
-    models.contracttype
-      .find(req.params.id)
-      .then(([rows]) => {
-        if (rows[0] == null) {
-          res.sendStatus(404);
-        } else {
-          res.send(rows[0]);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static edit = (req, res) => {
-    const contracttype = req.body;
-
-    // TODO validations (length, format...)
-
-    contracttype.id = req.params.id;
-
-    models.contracttype
-      .update(contracttype)
-      .then(([result]) => {
-        if (result.affectedRows === 0) {
-          res.sendStatus(404);
-        } else {
-          res.sendStatus(204);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static add = (req, res) => {
-    const contracttype = req.body;
-
-    // TODO validations (length, format...)
-
-    models.contracttype
-      .insert(contracttype)
-      .then(([result]) => {
-        res.status(201).send({ ...contracttype, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static delete = (req, res) => {
-    models.contracttype
-      .delete(req.params.id)
-      .then(() => {
-        res.sendStatus(204);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
+  findByProfilId(profilId) {
+    return this.connection
+      .query(
+        `select * from profil_has_contracttype AS phc INNER JOIN contracttype AS c ON c.id = phc.contracttype_id 
+    where profil_id = ?`,
+        [profilId]
+      )
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = ContractTypeController;

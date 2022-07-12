@@ -4,33 +4,52 @@ import "../style/ArtistCard.css";
 import Likebutton from "./Likebutton";
 
 function ArtistCards({ ArtistCardView }) {
+  // console.log(ArtistCardView);
   return (
-    <section className="card_container">
-      <div className="card_map">
-        <div className="card-top" key={ArtistCardView.id}>
+    <section className="card_container" key={ArtistCardView.id}>
+      <div>
+        <div className="card-top">
           <img
             className="card-img-top"
             src={ArtistCardView.image}
             alt={ArtistCardView.alt}
           />
-          <div>
-            <h4 className="card-title">{ArtistCardView.username}</h4>
-            <p className="card-text">
-              {ArtistCardView.country} <br />
-              {ArtistCardView.nbcreation}
-            </p>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">{ArtistCardView.skills}</li>
-              <li className="list-group-item"> {ArtistCardView.usertype}</li>
+          <div className="card-identity">
+            <h4 className="card-title">
+              {ArtistCardView.firstname && ArtistCardView.firstname}
+              {ArtistCardView.lastname && ArtistCardView.lastname}
+            </h4>
+          </div>
+          <p className="card-text">
+            {ArtistCardView.country && ArtistCardView.country}
+          </p>
+          <div className="card_map">
+            {ArtistCardView.skills.map((skill) => (
+              <ul className="skills_list" key={skill.id}>
+                <li className="list-group-item">
+                  {skill.skills && skill.skills}
+                </li>
+              </ul>
+            ))}
+            {ArtistCardView.contracttype.map((contract) => (
+              <ul className="contracttype_list" key={contract.contracttype_id}>
+                <li className="list-group-item">
+                  {contract.contracttype && contract.contracttype}
+                </li>
+              </ul>
+            ))}
+
+            {/* <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 {" "}
-                {ArtistCardView.contracttype}
+                {ArtistCardView.usertype && ArtistCardView.usertype}
               </li>
-            </ul>
+            </ul> */}
 
             <p className="card-body">
               {" "}
-              Details of ad : {ArtistCardView.description}
+              Description :
+              {ArtistCardView.description && ArtistCardView.description}
             </p>
             <Likebutton />
           </div>

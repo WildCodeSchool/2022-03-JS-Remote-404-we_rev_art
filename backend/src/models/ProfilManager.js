@@ -24,6 +24,14 @@ class ProfilManager extends AbstractManager {
       .query(`select * from  ${this.table} where user_id = ?`, [id])
       .then((res) => res[0]);
   }
+
+  findAll() {
+    return this.connection.query(
+      `select * from  ${this.table} AS p 
+      LEFT JOIN picture AS img ON img.idpicture = p.picture_idpicture 
+      WHERE typeaccount_id = 1`
+    );
+  }
 }
 
 module.exports = ProfilManager;

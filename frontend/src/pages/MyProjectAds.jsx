@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 import MiniHeader from "../components/miniHeader";
 import NewProject from "../components/NewProject";
 import ExportContextUser from "../context/UserContext";
