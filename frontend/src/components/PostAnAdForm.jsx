@@ -22,7 +22,7 @@ function PostAnAdForm() {
     }
   };
 
-  const handleContractTypes = (id) => {
+  const handleContracts = (id) => {
     if (typeOfContrat.includes(id)) {
       setContractTypes(
         typeOfContrat.filter((contracttype) => contracttype !== id)
@@ -81,7 +81,7 @@ function PostAnAdForm() {
         <h3 className="profile_h3">What type of contract ?</h3>
         <ContractTypes
           typeOfContrat={typeOfContrat}
-          handleContractTypes={handleContractTypes}
+          handleContracts={handleContracts}
         />
       </div>
       <div className="flex paa_subcontainer">

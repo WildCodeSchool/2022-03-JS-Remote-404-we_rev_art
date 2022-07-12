@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../style/MyProfile.css";
 
-function ContractTypes({ typeOfContrat, handleContractTypes }) {
+function ContractTypes({ typeOfContrat, handleContracts }) {
   const [myContractType, setContractType] = useState([]);
   useEffect(() => {
     axios
@@ -18,7 +18,7 @@ function ContractTypes({ typeOfContrat, handleContractTypes }) {
     <div className="postAnAd_container">
       {myContractType.map((contracttypes) => (
         <button
-          onClick={() => handleContractTypes(contracttypes.id)}
+          onClick={() => handleContracts(contracttypes.id)}
           className={
             typeOfContrat.includes(contracttypes.id)
               ? "button_style_paa2 yellow"

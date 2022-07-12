@@ -15,11 +15,15 @@ function SoftwareUse({ soft, handleSoft }) {
       });
   }, []);
   return (
-    <div className="software_all_buttons">
+    <div className="postAnAd_container">
       {mysoftwareUse.map((softwares) => (
         <button
           onClick={() => handleSoft(softwares.id)}
-          className={soft.includes(softwares.id) ? "active" : "form_button"}
+          className={
+            soft.includes(softwares.id)
+              ? "button_style_paa2 yellow"
+              : "button_style_paa empty_yellow"
+          }
           type="button"
           key={softwares.id}
         >
