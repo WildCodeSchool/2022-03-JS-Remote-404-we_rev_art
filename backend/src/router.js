@@ -10,7 +10,6 @@ const {
   SoftwareController,
   BudgetController,
   TimeframeController,
-  ArtistsCardController,
   MyProjectAdsController,
   ProfilController,
 } = require("./controllers");
@@ -30,7 +29,6 @@ router.post("/user/login", checkedForEmail, UserController.login);
 
 router.get("/projects", ArtworkController.browse);
 router.get("/projects/mine", MyProjectAdsController.browse);
-router.get("/ArtistCardView", ArtistsCardController.browse);
 router.get("/digitalartists", ProfilController.browse);
 
 router.get("/usertype", UserTypeController.browse);

@@ -4,11 +4,10 @@ import { Helmet } from "react-helmet-async";
 import MiniHeader from "../components/miniHeader";
 import NewProject from "../components/NewProject";
 import ExportContextUser from "../context/UserContext";
-import CustomerRegistration from "../components/CustomerRegistration";
 
 function MyProjectAds() {
   const { user } = useContext(ExportContextUser.UserContext);
-  const [myProjectAds, setMyProjectAds] = useState();
+  const [myProjectAds, setMyProjectAds] = useState([]);
   useEffect(() => {
     const url = `${import.meta.env.VITE_BACKEND_URL}/projects/mine`;
 
@@ -28,11 +27,9 @@ function MyProjectAds() {
         <title>We Rev&apos;Art | MyProjects </title>
       </Helmet>
       <MiniHeader index={6} />
-      {user.typeaccount_id === 2 ? (
-        <NewProject project={myProjectAds} />
-      ) : (
-        <CustomerRegistration />
-      )}
+      {user.typeaccount_id === 2
+        ? myProjectAds.map((projet) => <NewProject project={projet} />)
+        : "Chargement en cours veuillez patienter"}
     </div>
   );
 }

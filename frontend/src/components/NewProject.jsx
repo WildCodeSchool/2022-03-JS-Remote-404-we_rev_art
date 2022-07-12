@@ -2,7 +2,7 @@ import React from "react";
 import "../style/cardProject.css";
 
 function NewProject({ project }) {
-  return (
+  return project ? (
     <div className="cardProject_card" key={project.id}>
       <div className="cardProject_spec">
         <h3>
@@ -28,6 +28,8 @@ function NewProject({ project }) {
         />
       </div>
     </div>
+  ) : (
+    ""
   );
 }
 
