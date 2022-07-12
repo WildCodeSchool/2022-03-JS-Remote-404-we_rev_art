@@ -10,6 +10,7 @@ const {
   SoftwareController,
   BudgetController,
   TimeframeController,
+  MailController,
   ProfilController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
@@ -44,6 +45,7 @@ router.get("/typeaccount", TypeAccountController.browse);
 router.get("/timeframe", TimeframeController.browse);
 router.get("/budget", BudgetController.browse);
 
+router.post("/sendEmail", MailController.sendMail);
 // router.get("/profil", ProfilController.browse);
 
 module.exports = router;

@@ -1,5 +1,5 @@
 import "../style/ContactUs.css";
-
+import axios from "axios";
 import { useForm } from "react-hook-form";
 // eslint-disable-next-line import/no-extraneous-dependencies
 
@@ -16,8 +16,13 @@ export default function ContactUsForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    console.warn("the email was sent correctly");
+  const onSubmit = (data) => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/sendEmail`, data)
+      .then((res) => {
+        console.warn("mail was send", res);
+      })
+      .catch((err) => console.error(err));
     reset();
   };
 
