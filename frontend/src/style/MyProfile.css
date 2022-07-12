@@ -37,3 +37,26 @@
   font-size: 2rem;
   font-weight: bold;
 }
+
+.button_style3 {
+  height: 5rem;
+  width: 20rem;
+  color: var(--font-color);
+  font-weight: bold;
+  border: none;
+}
+
+.button_style3:hover  {
+  background-color: black;
+}
+
+.buttons_container {
+display: flex;
+flex-direction: column;
+padding: 5rem 0;
+border-right: solid 0.25rem black;
+}
+
+.selected2 {
+  background-color: black;
+}

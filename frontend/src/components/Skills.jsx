@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../style/MyProfile.css";
+import "../style/PostAnAd.css";
 
 function Skills({ skills, handleSkills }) {
   const [mySkill, setMySkill] = useState([]);
