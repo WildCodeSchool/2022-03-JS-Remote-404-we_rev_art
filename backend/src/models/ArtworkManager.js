@@ -88,6 +88,21 @@ class ArtworkManager extends AbstractManager {
       [id]
     );
   }
+
+  insert(data2) {
+    return this.connection.query(
+      `insert into ${this.table} (title,timeframe_id,skills_id,hashtag,details,date,budget_id) values (?,?,?,?,?,?,?) `,
+      [
+        data2.title,
+        data2.timeframe_id,
+        data2.skills_id,
+        data2.hashtag,
+        data2.details,
+        data2.date,
+        data2.budget_id,
+      ]
+    );
+  }
 }
 
 module.exports = ArtworkManager;

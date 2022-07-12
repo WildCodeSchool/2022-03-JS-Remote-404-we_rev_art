@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import Skills from "./Skills";
 import ContractTypes from "./ContractTypes";
@@ -64,18 +64,17 @@ function PostAnAdForm() {
       skills_id: skills[0],
       budget_id: budget[0],
       timeframe_id: timeframe[0],
-      contractype: typeOfContrat[0],
       date: date1,
     };
     console.warn(data2);
-    // axios
-    //   .get(`${import.meta.env.VITE_BACKEND_URL}/postanad `)
-    //   .then((res) => {
-    //     res.status(200);
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/postanad`, data2)
+      .then((res) => {
+        res.status(200);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
   return (
     <section className="section_form">
