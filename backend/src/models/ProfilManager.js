@@ -32,6 +32,13 @@ class ProfilManager extends AbstractManager {
       WHERE typeaccount_id = 1`
     );
   }
+
+  findOnebyUserEmail(email) {
+    return this.connection.query(
+      `select p.id from  ${this.table} AS p INNER JOIN user ON user.id = p.user_id WHERE user.email = ? `,
+      [email]
+    );
+  }
 }
 
 module.exports = ProfilManager;

@@ -82,17 +82,10 @@ class ArtworkManager extends AbstractManager {
     return this.connection.query(sql, sqlValue).then((res) => res[0]);
   }
 
-  insert(item) {
+  findbyProfil(id) {
     return this.connection.query(
-      `insert into ${ArtworkManager.table} (title) values (?)`,
-      [item.title]
-    );
-  }
-
-  update(item) {
-    return this.connection.query(
-      `update ${ArtworkManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
+      `SELECT * FROM profil_has_artwork INNER JOIN artwork ON artwork.id = profil_has_artwork.artwork_id WHERE profil_id = ?`,
+      [id]
     );
   }
 }

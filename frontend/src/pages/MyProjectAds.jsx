@@ -9,7 +9,7 @@ function MyProjectAds() {
   const { user } = useContext(ExportContextUser.UserContext);
   const [myProjectAds, setMyProjectAds] = useState([]);
   useEffect(() => {
-    const url = `${import.meta.env.VITE_BACKEND_URL}/projects/mine`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/dashboard/projects/`;
 
     axios
       .get(url)
@@ -29,7 +29,7 @@ function MyProjectAds() {
       <MiniHeader index={6} />
       {user.typeaccount_id === 2
         ? myProjectAds.map((projet) => <NewProject project={projet} />)
-        : "Chargement en cours veuillez patienter"}
+        : "Loading in progress please wait"}
     </div>
   );
 }

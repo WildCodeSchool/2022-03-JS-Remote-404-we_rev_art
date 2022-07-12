@@ -29,7 +29,7 @@ function NewProject({ project }) {
       </div>
     </div>
   ) : (
-    ""
+    "Loading in progress please wait"
   );
 }
 

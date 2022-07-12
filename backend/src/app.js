@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const cors = require("cors");
+const cookie = require("cookie-parser");
 
 // let's create express app
 
@@ -14,7 +15,7 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
-
+app.use(cookie());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 

@@ -1,5 +1,5 @@
+const jwt = require("jsonwebtoken");
 const models = require("../models");
-/* const jwt = require("jsonwebtoken"); */
 require("dotenv").config();
 
 const checkedForEmail = (req, res, next) => {
@@ -19,17 +19,24 @@ const checkedForEmail = (req, res, next) => {
     });
 };
 
-/* const checkAuth = (req, res, next) => {
+const checkAuth = (req, res, next) => {
   if (req.cookies) {
-    jwt.verify(req.cookies.user_token, process.env.PRIVATETOKEN, (err) => {
-      if (err) {
-        console.log(err);
-        res.status(401).send("You don t have the correct rights");
-      } else next();
-    });
+    jwt.verify(
+      req.cookies.user_token,
+      process.env.PRIVATETOKEN,
+      (err, decode) => {
+        if (err) {
+          console.error(err);
+          res.status(401).send("You don t have the correct rights");
+        } else {
+          req.user = decode;
+        }
+        next();
+      }
+    );
   } else {
     res.status(401).send("You don t have the correct rights");
   }
-}; */
+};
 
-module.exports = { checkedForEmail /* checkAuth */ };
+module.exports = { checkedForEmail, checkAuth };
