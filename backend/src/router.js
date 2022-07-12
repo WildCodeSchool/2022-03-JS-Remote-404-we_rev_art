@@ -11,6 +11,7 @@ const {
   BudgetController,
   TimeframeController,
   ArtistsCardController,
+  ProfilController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -25,6 +26,7 @@ router.delete("/items/:id", ItemController.delete); */
 
 router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
+router.put("/profile", ProfilController.edit);
 
 router.get("/projects", ArtworkController.browse);
 router.get("/ArtistCardView", ArtistsCardController.browse);

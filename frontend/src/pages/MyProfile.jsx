@@ -1,13 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import ExportContextUser from "../context/UserContext";
 // import ArtistRegistration from "../components/ArtistRegistration";
 // import CustomerRegistration from "../components/CustomerRegistration";
 import MiniHeader from "../components/miniHeader";
 import MyProfileForm from "../components/MyProfileForm";
-import Logo from "../components/Logo";
 import PersonalForm from "../components/MyProfile/Personal/PersonalForm";
 import BillingForm from "../components/MyProfile/Billing/BillingForm";
+import NotificationsForm from "../components/MyProfile/Notifications/NotificationsForm";
 
 function MyProfile() {
   const [personal, setPersonal] = useState(true);
@@ -15,9 +14,6 @@ function MyProfile() {
   const [billing, setBilling] = useState(false);
   const [notifications, setNotifications] = useState(false);
   const [choice, setChoice] = useState("personal");
-  const { user } = useContext(ExportContextUser.UserContext);
-  const [personalData, setPersonalData] = useState();
-  const [billingData, setBillingData] = useState();
 
   const handleClick = (
     selected,
@@ -33,9 +29,6 @@ function MyProfile() {
     selected(true);
     choosing(selectedOption);
   };
-  console.warn(user);
-  console.warn(personalData);
-  console.warn(billingData);
   return (
     <div>
       <Helmet>
@@ -114,13 +107,9 @@ function MyProfile() {
         </section>
 
         {choice === "account" && <MyProfileForm />}
-        {choice === "personal" && (
-          <PersonalForm setPersonalData={setPersonalData} />
-        )}
-        {choice === "billing" && (
-          <BillingForm setPersonalData={setBillingData} />
-        )}
-        {choice === "notifications" && <Logo />}
+        {choice === "personal" && <PersonalForm />}
+        {choice === "billing" && <BillingForm />}
+        {choice === "notifications" && <NotificationsForm />}
       </div>
     </div>
   );

@@ -132,16 +132,14 @@
   animation: slowchange 0.5s ease-in-out;
   padding: 1rem 2rem;
   width: 50%;
-
 }
 
 @keyframes slowchange {
   0% {
-          background-color: initial;
+    background-color: initial;
   }
   100% {
     background-color: yellow;
-
   }
 }
 .register_form {
@@ -165,16 +163,15 @@
   position: absolute;
   top: 80%;
   right: -100%;
-  animation : appear_disappear 5s ;
+  animation: appear_disappear 5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes appear_disappear {
   0% {
     transform: translateX(50%);
-
   }
-  50%{
+  50% {
     transform: translateX(-20%);
   }
 

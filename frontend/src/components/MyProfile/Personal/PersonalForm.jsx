@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import ExportContextUser from "../../../context/UserContext";
 
 import "../../../style/MyAccount.css";
 
-function PersonalForm({ setPersonalData }) {
+function PersonalForm() {
   const { handleSubmit, register } = useForm();
   const navigate = useNavigate();
-
+  const { user, handleUser } = useContext(ExportContextUser.UserContext);
   const onSubmit = (data) => {
+    const profile = { ...data, email: user.email };
     axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/profile/personalform`, data)
+      .put(`${import.meta.env.VITE_BACKEND_URL}/profile`, profile)
       .then((res) => {
-        setPersonalData(res.data);
-        navigate("/profile/personal");
+        handleUser(res.data);
+        navigate("/MyProfile/");
       })
       .catch((err) => console.error(err));
   };
@@ -56,33 +58,57 @@ function PersonalForm({ setPersonalData }) {
           </div>
           <input
             type="text"
-            className="field_input duo"
+            className="field_input"
             placeholder="Enter your first user name"
             {...register("username", { required: true })}
           />
         </label>
-        <label htmlFor="emailaddress" className="field_label">
+        <label htmlFor="adress" className="field_label">
           <div>
-            Email address
+            Address
             <span className="field_span"> (required) </span>
           </div>
           <input
-            type="email"
-            className="field_input duo"
-            placeholder="Enter your first user name"
-            {...register("emailadress", { required: true })}
+            type="text"
+            className="field_input solo"
+            placeholder="Enter your address"
+            {...register("adress", { required: true })}
           />
         </label>
-        <label htmlFor="password" className="field_label">
+        <label htmlFor="postcode" className="field_label">
           <div>
-            Password
+            Postcode
             <span className="field_span"> (required) </span>
           </div>
           <input
-            type="password"
-            className="field_input duo"
-            placeholder="Enter your first user name"
-            {...register("password", { required: true })}
+            type="text"
+            className="field_input"
+            placeholder="Enter your postcode"
+            {...register("postcode", { required: true })}
+          />
+        </label>
+        <label htmlFor="city" className="field_label">
+          <div>
+            City
+            <span className="field_span"> (required) </span>
+          </div>
+          <input
+            type="text"
+            className="field_input"
+            placeholder="Enter your city"
+            {...register("city", { required: true })}
+          />
+        </label>
+        <label htmlFor="country" className="field_label">
+          <div>
+            Country
+            <span className="field_span"> (required) </span>
+          </div>
+          <input
+            type="text"
+            className="field_input"
+            placeholder="Enter your country"
+            {...register("country", { required: true })}
           />
         </label>
       </div>
