@@ -23,7 +23,7 @@ function PostAnAdForm() {
     if (skills.includes(id)) {
       setSkills(skills.filter((skill) => skill !== id));
     } else {
-      setSkills([...skills, id]);
+      setSkills([id]);
     }
   };
 
@@ -33,7 +33,7 @@ function PostAnAdForm() {
         typeOfContrat.filter((contracttype) => contracttype !== id)
       );
     } else {
-      setContractTypes([...typeOfContrat, id]);
+      setContractTypes([id]);
     }
   };
 
@@ -41,7 +41,7 @@ function PostAnAdForm() {
     if (budget.includes(id)) {
       setBudget(budget.filter((budgets) => budgets !== id));
     } else {
-      setBudget([...Budget, id]);
+      setBudget([id]);
     }
   };
 
@@ -49,7 +49,7 @@ function PostAnAdForm() {
     if (timeframe.includes(id)) {
       setTimeframe(timeframe.filter((timeframes) => timeframes !== id));
     } else {
-      setTimeframe([...timeframe, id]);
+      setTimeframe([id]);
     }
   };
 
