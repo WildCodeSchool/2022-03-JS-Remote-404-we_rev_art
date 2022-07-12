@@ -1,13 +1,12 @@
 .card_container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 50px;
 }
 .card-img-top {
   width: 5rem;
   height: 5rem;
-  border-radius: 70%;
+  
 }
 .card-top {
   color: black;

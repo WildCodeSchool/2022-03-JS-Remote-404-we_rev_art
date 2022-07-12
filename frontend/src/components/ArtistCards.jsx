@@ -38,13 +38,13 @@ function ArtistCards({ ArtistCardView }) {
                 </li>
               </ul>
             ))}
-
-            {/* <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                {" "}
-                {ArtistCardView.usertype && ArtistCardView.usertype}
-              </li>
-            </ul> */}
+            {ArtistCardView.usertype.map((usertypes) => (
+              <ul className="contracttype_list" key={usertypes.usertype_id}>
+                <li className="list-group-item">
+                  {usertypes.usertype && usertypes.usertype}
+                </li>
+              </ul>
+            ))}
 
             <p className="card-body">
               {" "}

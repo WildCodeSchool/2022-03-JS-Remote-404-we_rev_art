@@ -20,6 +20,16 @@ class UserTypeManager extends AbstractManager {
       [item.title, item.id]
     );
   }
+
+  findByProfilId(profilId) {
+    return this.connection
+      .query(
+        `select * from profil_has_usertype AS phu INNER JOIN usertype AS u ON u.id = phu.usertype_id 
+    where profil_id = ?`,
+        [profilId]
+      )
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = UserTypeManager;

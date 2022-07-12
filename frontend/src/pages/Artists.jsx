@@ -35,6 +35,7 @@ function Artists() {
         console.error(err);
       });
   }, [filter]);
+
   return (
     <div>
       <Helmet>

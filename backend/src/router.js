@@ -26,6 +26,7 @@ router.delete("/items/:id", ItemController.delete); */
 
 router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
+router.put("/profile", ProfilController.edit);
 
 router.get("/projects", ArtworkController.browse);
 // router.get("/dashboard/projects", ArtworkController.getMine);

@@ -3,19 +3,26 @@ const models = require("../models");
 class ProfilController {
   static browse = async (req, res) => {
     try {
-      const [profils] = await models.profil.findAll(req.params);
-      const skills = await Promise.all(
-        profils.map((profil) => models.skills.findByProfilId(profil.id))
-      );
-      const contracttype = await Promise.all(
-        profils.map((profil) => models.contracttype.findByProfilId(profil.id))
-      );
-      profils.forEach((profil, index) => {
-        // eslint-disable-next-line no-param-reassign
-        profil.skills = skills[index];
-        // eslint-disable-next-line no-param-reassign
-        profil.contracttype = contracttype[index];
-      });
+      const profils = await models.profil.findAll(req.query);
+      if (profils[0]) {
+        const skills = await Promise.all(
+          profils.map((profil) => models.skills.findByProfilId(profil.id))
+        );
+        const contracttype = await Promise.all(
+          profils.map((profil) => models.contracttype.findByProfilId(profil.id))
+        );
+        const usertype = await Promise.all(
+          profils.map((profil) => models.usertype.findByProfilId(profil.id))
+        );
+        profils.forEach((profil, index) => {
+          // eslint-disable-next-line no-param-reassign
+          profil.skills = skills[index];
+          // eslint-disable-next-line no-param-reassign
+          profil.contracttype = contracttype[index];
+          // eslint-disable-next-line no-param-reassign
+          profil.usertype = usertype[index];
+        });
+      }
       res.status(200).json(profils);
     } catch (err) {
       console.error(err);
@@ -40,36 +47,15 @@ class ProfilController {
   };
 
   static edit = (req, res) => {
-    const profil = req.body;
-
-    // TODO validations (length, format...)
-
-    profil.id = req.params.id;
-
-    models.profil
-      .update(profil)
-      .then(([result]) => {
-        if (result.affectedRows === 0) {
-          res.sendStatus(404);
-        } else {
-          res.sendStatus(204);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static add = (req, res) => {
-    const profil = req.body;
-
+    const personalform = req.body;
+    const { email } = personalform;
+    delete personalform.email;
     // TODO validations (length, format...)
 
     models.profil
-      .insert(profil)
-      .then(([result]) => {
-        res.status(201).send({ ...profil, id: result.insertId });
+      .update(personalform, email)
+      .then(() => {
+        res.status(201).json(req.body);
       })
       .catch((err) => {
         console.error(err);
