@@ -15,7 +15,7 @@ const {
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
-const { checkedForEmail } = require("./middleware/Auth");
+const { checkedForEmail, checkAuth } = require("./middleware/Auth");
 
 const router = express.Router();
 
@@ -29,7 +29,7 @@ router.post("/user/login", checkedForEmail, UserController.login);
 router.put("/profile", ProfilController.edit);
 
 router.get("/projects", ArtworkController.browse);
-// router.get("/dashboard/projects", ArtworkController.getMine);
+router.get("/dashboard/projects", checkAuth, ArtworkController.getMine);
 router.get("/digitalartists", ProfilController.browse);
 
 router.get("/usertype", UserTypeController.browse);
