@@ -20,6 +20,16 @@ class SkillsManager extends AbstractManager {
       [skills.skills, skills.id]
     );
   }
+
+  findByProfilId(profilId) {
+    return this.connection
+      .query(
+        `select * from profil_has_skills AS p INNER JOIN skills AS s ON s.id = p.skills_id 
+    where profil_id = ?`,
+        [profilId]
+      )
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = SkillsManager;

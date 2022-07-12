@@ -12,7 +12,7 @@ function ArtistFilter({ filter, setFilter }) {
             list={data}
             filter={filter}
             setFilter={setFilter}
-            key={data.id}
+            key={data.type}
           />
         ))}
       </div>

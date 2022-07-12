@@ -44,7 +44,7 @@ function LoginNow() {
             <input
               type={shown ? "text" : "password"}
               className="field_input"
-              {...register("password", { minLength: 8 }, { required: true })}
+              {...register("password", { required: true }, { minLength: 8 })}
             />
             <button
               type="button"

@@ -16,6 +16,16 @@ class ContractTypeManager extends AbstractManager {
       [item.title, item.id]
     );
   }
+
+  findByProfilId(profilId) {
+    return this.connection
+      .query(
+        `select * from profil_has_contracttype AS phc INNER JOIN contracttype AS c ON c.id = phc.contracttype_id 
+    where profil_id = ?`,
+        [profilId]
+      )
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = ContractTypeManager;

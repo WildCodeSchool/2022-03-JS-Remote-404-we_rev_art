@@ -11,6 +11,7 @@ const {
   BudgetController,
   TimeframeController,
   ArtistsCardController,
+  MailController,
   ProfilController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
@@ -29,12 +30,11 @@ router.post("/user/login", checkedForEmail, UserController.login);
 router.put("/profile", ProfilController.edit);
 
 router.get("/projects", ArtworkController.browse);
-router.get("/ArtistCardView", ArtistsCardController.browse);
+router.get("/digitalartists", ProfilController.browse);
+
 router.get("/usertype", UserTypeController.browse);
 router.get("/softwareused", SoftwareController.browse);
-
 router.get("/skills", SkillsController.browse);
-
 router.get("/contracttype", ContractTypeController.browse);
 
 router.get("/filters/:table", FilterController.browse);
@@ -45,10 +45,8 @@ router.get("/typeaccount", TypeAccountController.browse);
 
 router.get("/timeframe", TimeframeController.browse);
 router.get("/budget", BudgetController.browse);
+
+router.post("/sendEmail", MailController.sendMail);
 // router.get("/profil", ProfilController.browse);
 
-/* router.get('/profil/:id', ProfilController.findOne);
-router.post('/profil', ProfilController.postprofil);
-router.put('/profil/:id', ProfilController.updateprofil);
-router.delete('/profil/:id', ProfilController.deleteprofil); */
 module.exports = router;

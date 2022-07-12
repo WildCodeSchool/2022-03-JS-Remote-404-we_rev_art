@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ExportContextUser from "./context/UserContext";
 import Home from "./pages/Home";
@@ -21,31 +22,34 @@ import PersonalInformation from "./components/MyProfile/Personal/PersonalInforma
 function App() {
   const { user } = useContext(ExportContextUser.UserContext);
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Project_Ads" element={<ProjectAds />} />
-        <Route path="/Artists" element={<Artists />} />
-        <Route path="/Creations" element={<Creations />} />
-        <Route path="/Help" element={<Help />} />
-        <Route path="/Contact_us" element={<ContactUs />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Post_An_Ad" element={<PostAnAd />} />
-        <Route path="/MyProfile" element={<MyProfile />} />
-        <Route path="/MyAccount" element={<MyAccount />} />
-        <Route path="/profile/personal" element={<PersonalInformation />} />
-        <Route
-          path="/My_Project_Ads"
-          element={
-            <ProtectedRoute user={user}>
-              <MyProjectAds />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Project_Ads" element={<ProjectAds />} />
+          <Route path="/Artists" element={<Artists />} />
+          <Route path="/Creations" element={<Creations />} />
+          <Route path="/Help" element={<Help />} />
+          <Route path="/Contact_us" element={<ContactUs />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Post_An_Ad" element={<PostAnAd />} />
+          <Route path="/MyProfile" element={<MyProfile />} />
+          <Route path="/MyAccount" element={<MyAccount />} />
+          <Route path="/profile/personal" element={<PersonalInformation />} />
+          <Route
+            path="/My_Project_Ads"
+            element={
+              <ProtectedRoute user={user}>
+                <MyProjectAds />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </HelmetProvider>
+
   );
 }
 
