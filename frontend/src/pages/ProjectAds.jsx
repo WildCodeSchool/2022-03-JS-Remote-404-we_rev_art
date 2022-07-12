@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import React, { useState, useEffect } from "react";
 import ProjectAdsFilter from "../components/Filters/ProjectAds/ProjectAdsFilter";
 import MiniHeader from "../components/miniHeader";

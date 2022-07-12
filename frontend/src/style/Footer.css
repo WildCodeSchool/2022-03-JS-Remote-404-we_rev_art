@@ -2,7 +2,7 @@ footer {
   display: flex;
   flex-direction: column;
   background: var(--background-gradient1);
-  box-shadow: var(--box-shadow)
+  box-shadow: var(--box-shadow);
 }
 
 .footer-section1 {

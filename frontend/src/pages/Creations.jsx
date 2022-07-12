@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import CreationFilter from "../components/Filters/Creations/CreationFilter";
 import MiniHeader from "../components/miniHeader";
 
