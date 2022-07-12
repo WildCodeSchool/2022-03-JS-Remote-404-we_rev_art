@@ -3,19 +3,26 @@ const models = require("../models");
 class ProfilController {
   static browse = async (req, res) => {
     try {
-      const [profils] = await models.profil.findAll(req.params);
-      const skills = await Promise.all(
-        profils.map((profil) => models.skills.findByProfilId(profil.id))
-      );
-      const contracttype = await Promise.all(
-        profils.map((profil) => models.contracttype.findByProfilId(profil.id))
-      );
-      profils.forEach((profil, index) => {
-        // eslint-disable-next-line no-param-reassign
-        profil.skills = skills[index];
-        // eslint-disable-next-line no-param-reassign
-        profil.contracttype = contracttype[index];
-      });
+      const profils = await models.profil.findAll(req.query);
+      if (profils[0]) {
+        const skills = await Promise.all(
+          profils.map((profil) => models.skills.findByProfilId(profil.id))
+        );
+        const contracttype = await Promise.all(
+          profils.map((profil) => models.contracttype.findByProfilId(profil.id))
+        );
+        const usertype = await Promise.all(
+          profils.map((profil) => models.usertype.findByProfilId(profil.id))
+        );
+        profils.forEach((profil, index) => {
+          // eslint-disable-next-line no-param-reassign
+          profil.skills = skills[index];
+          // eslint-disable-next-line no-param-reassign
+          profil.contracttype = contracttype[index];
+          // eslint-disable-next-line no-param-reassign
+          profil.usertype = usertype[index];
+        });
+      }
       res.status(200).json(profils);
     } catch (err) {
       console.error(err);
