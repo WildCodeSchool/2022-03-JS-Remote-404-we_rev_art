@@ -10,7 +10,6 @@ const {
   SoftwareController,
   BudgetController,
   TimeframeController,
-  ArtistsCardController,
   MailController,
   ProfilController,
 } = require("./controllers");

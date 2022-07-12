@@ -17,8 +17,7 @@ class ProfilManager extends AbstractManager {
       .query(`select * from  ${this.table} where user_id = ?`, [id])
       .then((res) => res[0]);
   }
-  
-  
+
   findAll(query) {
     const { limit, contracttype, skills, usertype } = query;
     let sqlValue = [];
@@ -83,12 +82,12 @@ class ProfilManager extends AbstractManager {
       sql += `LIMIT 25`;
     }
     return this.connection.query(sql, sqlValue).then((res) => res[0]);
+  }
 
-}
-  update(profil, email) {
+  update(profile, email) {
     return this.connection.query(
       `UPDATE ${ProfilManager.table} INNER JOIN user ON profil.user_id = user.id SET  ? WHERE email = ?`,
-      [profil, email]
+      [profile, email]
     );
   }
 }
