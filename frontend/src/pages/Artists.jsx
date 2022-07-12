@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import ArtistCards from "../components/ArtistCards";
 import ArtistFilter from "../components/Filters/Artists/ArtistFilter";
 import MiniHeader from "../components/miniHeader";
@@ -16,7 +16,7 @@ function Artists() {
   const [ArtistCardViews, setArtistCardViews] = useState([]);
 
   useEffect(() => {
-    let url = `${import.meta.env.VITE_BACKEND_URL}/ArtistCardView?limit=25`;
+    let url = `${import.meta.env.VITE_BACKEND_URL}/digitalartists?limit=25`;
     if (filter.skills[0]) {
       url += `&skills=${filter.skills.join("|")}`;
     }
@@ -25,9 +25,6 @@ function Artists() {
     }
     if (filter.usertype[0]) {
       url += `&usertype=${filter.usertype.join("|")}`;
-    }
-    if (filter.likes[0]) {
-      url += `&likes=${filter.likes.join("|")}`;
     }
     axios
       .get(url)
@@ -38,7 +35,6 @@ function Artists() {
         console.error(err);
       });
   }, [filter]);
-
   return (
     <div>
       <Helmet>

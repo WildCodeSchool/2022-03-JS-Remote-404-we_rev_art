@@ -12,6 +12,7 @@ const {
   TimeframeController,
   ArtistsCardController,
   MailController,
+  ProfilController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
 const { validateSignin } = require("./middleware/Usermiddleware");
@@ -28,12 +29,11 @@ router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
 
 router.get("/projects", ArtworkController.browse);
-router.get("/ArtistCardView", ArtistsCardController.browse);
+router.get("/digitalartists", ProfilController.browse);
+
 router.get("/usertype", UserTypeController.browse);
 router.get("/softwareused", SoftwareController.browse);
-
 router.get("/skills", SkillsController.browse);
-
 router.get("/contracttype", ContractTypeController.browse);
 
 router.get("/filters/:table", FilterController.browse);
@@ -48,8 +48,4 @@ router.get("/budget", BudgetController.browse);
 router.post("/sendEmail", MailController.sendMail);
 // router.get("/profil", ProfilController.browse);
 
-/* router.get('/profil/:id', ProfilController.findOne);
-router.post('/profil', ProfilController.postprofil);
-router.put('/profil/:id', ProfilController.updateprofil);
-router.delete('/profil/:id', ProfilController.deleteprofil); */
 module.exports = router;
