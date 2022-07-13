@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import React, { useState, useContext } from "react";
-import ExportContextUser from "../context/UserContext";
+import React, { useState } from "react";
 
 // import ArtistRegistration from "../components/ArtistRegistration";
 // import CustomerRegistration from "../components/CustomerRegistration";
