@@ -10,6 +10,7 @@ const {
   SoftwareController,
   BudgetController,
   TimeframeController,
+  MailController,
   ProfilController,
 } = require("./controllers");
 // const { ProfilController } = require("./controllers");
@@ -25,6 +26,7 @@ router.delete("/items/:id", ItemController.delete); */
 
 router.post("/user/signin", validateSignin, UserController.signin);
 router.post("/user/login", checkedForEmail, UserController.login);
+router.put("/profile", ProfilController.edit);
 
 router.get("/projects", ArtworkController.browse);
 router.get("/digitalartists", ProfilController.browse);
@@ -42,5 +44,8 @@ router.get("/typeaccount", TypeAccountController.browse);
 
 router.get("/timeframe", TimeframeController.browse);
 router.get("/budget", BudgetController.browse);
+
+router.post("/sendEmail", MailController.sendMail);
+// router.get("/profil", ProfilController.browse);
 
 module.exports = router;

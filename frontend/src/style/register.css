@@ -163,8 +163,7 @@
   position: absolute;
   top: 80%;
   right: -100%;
-  animation : appear_disappear 5s ;
-
+  animation: appear_disappear 5s;
   animation-fill-mode: forwards;
 }
 

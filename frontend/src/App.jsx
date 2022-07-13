@@ -17,6 +17,7 @@ import PostAnAd from "./pages/PostAnAd";
 import ProtectedRoute from "./components/Protected/ProtectedRoute";
 import MyAccount from "./pages/MyAccount";
 import "./App.css";
+import PersonalInformation from "./components/MyProfile/Personal/PersonalInformation";
 
 function App() {
   const { user } = useContext(ExportContextUser.UserContext);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Post_An_Ad" element={<PostAnAd />} />
           <Route path="/MyProfile" element={<MyProfile />} />
           <Route path="/MyAccount" element={<MyAccount />} />
+          <Route path="/profile/personal" element={<PersonalInformation />} />
           <Route
             path="/My_Project_Ads"
             element={
