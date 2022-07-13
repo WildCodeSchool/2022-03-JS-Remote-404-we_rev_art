@@ -21,20 +21,20 @@ class ArtworkController {
     }
   };
 
-  // static getMine = async (req, res) => {
-  //   try {
-  //     const [user] = await models.profil.findOnebyUserEmail(req.user.email);
-  //     if (user[0]) {
-  //       const [projects] = await models.artwork.findbyProfil(user[0].id);
-  //       res.status(200).json(projects);
-  //     } else {
-  //       res.status(400).send("user not found");
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //     res.status(500).send("error");
-  //   }
-  // };
+  static getMine = async (req, res) => {
+    try {
+      const [user] = await models.profil.findOnebyUserEmail(req.user.email);
+      if (user[0]) {
+        const [projects] = await models.artwork.findbyProfil(user[0].id);
+        res.status(200).json(projects);
+      } else {
+        res.status(400).send("user not found");
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("error");
+    }
+  };
 
   static add = (req, res) => {
     const postanad = req.body;

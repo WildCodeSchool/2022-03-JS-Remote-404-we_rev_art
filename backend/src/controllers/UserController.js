@@ -42,6 +42,7 @@ class UserController {
           { email: req.body.email },
           process.env.PRIVATETOKEN
         );
+
         const profil = await models.profil.find(req.user[0][0].id);
         res
           .status(201)
