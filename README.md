@@ -1,7 +1,12 @@
+<h1 align="center">Werevart</h1>
+
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+Werev'art is an online platform that will connect traditonal artists with digital artists in order to create fully digital arts based on static arts. 
+The platerform will be available for all kind of art lovers (museums, arts galeries, solo artists, digital artists, etc...)
+<p align="center">
+  <img  src="https://media.discordapp.net/attachments/994501943307292713/998158064429563944/LOGO_blue_2.png">
+</p>
 
 ## Setup & Use
 
