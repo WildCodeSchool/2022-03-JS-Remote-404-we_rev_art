@@ -80,3 +80,9 @@
   border-radius: 1rem;
   width: 50rem;
 }
+
+.absolute_right {
+  position: absolute;
+  top: 115rem;
+  left: 70rem;
+}

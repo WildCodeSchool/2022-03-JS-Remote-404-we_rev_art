@@ -32,6 +32,8 @@
 .eye_icon {
   width: 1rem;
   margin-top: 0.5rem;
+  background-color: var(--button-color);
+  border-radius: 50%;
 }
 
 .register_title {

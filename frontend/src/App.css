@@ -39,7 +39,7 @@ a:hover {
   color: var(--font-color);
 }
 
-nav a:hover {
+nav a:hover, footer a:hover, .ul_container a:hover{
   color: var(--button-color);
 }
 

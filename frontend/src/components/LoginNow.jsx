@@ -21,7 +21,7 @@ function LoginNow() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, data)
       .then((res) => {
         setUser(res.data);
-        navigate("/My_Project_Ads");
+        navigate("/Post_An_Ad");
       })
       .catch((err) => console.error(err));
   };

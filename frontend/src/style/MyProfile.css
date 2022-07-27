@@ -41,13 +41,15 @@
 .button_style3 {
   height: 5rem;
   width: 20rem;
-  color: var(--font-color);
+  color: var(--dark-color);
   font-weight: bold;
   border: none;
 }
 
 .button_style3:hover {
-  background-color: black;
+  box-shadow: var(box-shadow);
+  background-color: var(--button-color);
+  color: var(--font-color);
 }
 
 .buttons_container {
@@ -58,5 +60,7 @@
 }
 
 .selected2 {
-  background-color: black;
+  box-shadow: var(box-shadow);
+  background-color: var(--button-color);
+  color: var(--font-color);
 }
