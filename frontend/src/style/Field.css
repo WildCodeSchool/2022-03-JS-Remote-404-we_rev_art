@@ -21,7 +21,7 @@
   font-size: 1rem;
   text-align: left;
   display: flex;
-  color: var(--font-color);
+  color: var(--dark-color);
 }
 
 .field_span {
