@@ -97,6 +97,6 @@
 }
 
 .modal_li:hover {
-  background-color: yellow;
+  background-color: var(--button-color);
   border-radius: 0.5rem;
 }

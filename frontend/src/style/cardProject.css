@@ -34,8 +34,8 @@
 }
 
 .cardProject_allCard {
-  background-color: #203864;
-  color: #ffd700;
+  background-color: var(--button-color);
+  color: var(--font-color);
   font-weight: 700;
   font-size: 1.5rem;
   border: none;
@@ -54,8 +54,8 @@
 
 .cardProject_registerButton {
   font-weight: bold;
-  background-color: #ffd700;
-  color: #203864;
+  background-color: var(--button-color);
+  color: var(--font-color);
   width: 15rem;
   height: 5.5rem;
   border: none;
@@ -95,5 +95,4 @@
 .registerHomeForFree {
   font-weight: bold;
   font-size: 1.4rem;
-  /* text-align: center; */
 }

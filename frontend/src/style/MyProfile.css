@@ -26,7 +26,7 @@
 }
 .softwarebuttons {
   border-radius: 0.5rem;
-  border-color: yellow;
+  border-color: var(--button-color);
   background-color: white;
   margin-right: 1rem;
 }

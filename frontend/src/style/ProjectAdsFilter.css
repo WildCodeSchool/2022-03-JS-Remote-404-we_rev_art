@@ -23,7 +23,8 @@
   margin-left: 2.4rem;
 }
 .filter_selection {
-  background-color: rgb(152, 159, 193);
+  background-color: var(--button-color);
+  color: var(--font-color);
   font-size: 1.3rem;
   border-radius: 5%;
   margin-left: 2.4rem;
@@ -31,7 +32,7 @@
   height: 80px;
 }
 .filter_selection:hover {
-  background-color: rgb(238, 203, 49);
+  background-color: var(--button-color);
 }
 .desappear {
   display: none;
@@ -54,5 +55,6 @@
   flex-wrap: nowrap;
 }
 .yellow {
-  background-color: yellow;
+  background-color: var(--button-color);
+  color: var(--font-color);
 }

@@ -4,7 +4,7 @@
   flex-wrap: nowrap;
   background: var(--background-gradient1);
   padding: 2.5rem;
-  animation: appear 5s ease-in-out;
+  animation: appear 1s ease-in-out;
 }
 
 .hero-text {
@@ -16,7 +16,7 @@
 .hero-h1 {
   width: 75%;
   font-weight: 500;
-  transition: all 5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 @keyframes appear {
@@ -45,8 +45,7 @@
   width: 35rem;
   height: 35rem;
   object-fit: contain;
-  animation-delay: 5s;
-  animation: appear 10s ease-in-out;
+  animation: appear 1s ease-in-out;
 }
 
 .section_carousel {

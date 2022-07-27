@@ -10,7 +10,7 @@ footer {
   flex-direction: row;
   padding: 2rem 0;
   justify-content: space-evenly;
-  color: white;
+  color: var(--dark-color);
   font-weight: bold;
 }
 
