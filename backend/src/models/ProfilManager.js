@@ -86,7 +86,9 @@ class ProfilManager extends AbstractManager {
 
   update(profile, email) {
     return this.connection.query(
-      `UPDATE ${ProfilManager.table} INNER JOIN user ON profil.user_id = user.id SET  ? WHERE email = ?`,
+      `UPDATE ${ProfilManager.table} INNER JOIN user ON profil.user_id = user.id 
+      INNER JOIN profil_has_skills AS phs ON phs.profil_id = profil.id 
+      INNER JOIN skills ON skills.id = phs.skills_id SET  ? WHERE email = ?`,
       [profile, email]
     );
   }

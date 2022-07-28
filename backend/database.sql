@@ -38,7 +38,15 @@ VALUES
   ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','quentin.bill812@gmail.com', 'testPassword1'),
   ('5437622c-ecb5-11ec-8ea0-0242ac120002','aurore.obert@gmail.com', 'testPassword2'),
   ('5c512ede-ecb5-11ec-8ea0-0242ac120002','etienne.bacle85@gmail.com', 'testPassword3'),
-  ('644929ca-ecb5-11ec-8ea0-0242ac120002','mc.mc@gmail.com', 'testPassword4')
+  ('644929ca-ecb5-11ec-8ea0-0242ac120002','mc.mc@gmail.com', 'testPassword4'),
+  ('q6qff44929ca-ecb5-11eco-0242ac120002','jeanpierre@gmail.com', 'testPassword4'),
+  ('z644fff929ca-ecb5-11ec-8ea0-02120002','leaCastel@gmail.com', 'testPassword4'),
+  ('e644929ggca-ecb5-11ec-8ea0-0242ac002','JosephineAngeGardien@gmail.com', 'testPassword4'),
+  ('x644929cahhhj-ecb5-11ec-8ea0-0220002','Josette@gmail.com', 'testPassword4'),
+  ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','PauloLebello@gmail.com', 'testPassword4'),
+  ('q644929ca-ecb5jj-11ec-8ea0-0242a0002','kirikou@gmail.com', 'testPassword4'),
+  ('b644929ca-ecb5-11ec-8uulyfvea0-00002','digitalArtist@gmail.com', 'testPassword4'),
+  ('n644929ca-ecb5-11ec-8eakjhge0-024002','traditionalArtist@gmail.com', 'testPassword4')
 ;
 
 -- -----------------------------------------------------
@@ -56,7 +64,14 @@ INSERT INTO  `picture`(`image`,`alt`)
  VALUES
     ('https://randomwordgenerator.com/img/picture-generator/52e7d544435ab10ff3d8992cc12c30771037dbf852547941742673dc944e_640.jpg','route cassée'),
     ('https://images.unsplash.com/photo-1645680827507-9f392edae51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','main entouré d un anneau'),
-    ('https://i.ibb.co/K9cG2n3/user.png','user logo')
+    ('https://i.ibb.co/K9cG2n3/user.png','user logo'),
+    ('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80', 'peinture abstraite'),
+    ('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','art cubique'),
+    ('https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=459&q=80','galaxy art'),
+    ('https://images.unsplash.com/photo-1501472312651-726afe119ff1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', 'main colorée'),
+    ('https://images.unsplash.com/photo-1561839561-b13bcfe95249?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=379&q=80','bal des statues'),
+    ('https://images.unsplash.com/photo-1547333590-47fae5f58d21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80','visage de femme'),
+    ('https://images.unsplash.com/photo-1579833981331-676fa2bae313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80','colorfull poisson')
 ;
 
 -- -----------------------------------------------------
@@ -124,7 +139,15 @@ VALUES
     ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','beef8662-ecb5-11ec-8ea0-0242ac120002','Quentin','Billac','rue rene boylesve',37160,'Descartes','France','Quentin',1,DEFAULT,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s'),
     ('5437622c-ecb5-11ec-8ea0-0242ac120002','cb0255ce-ecb5-11ec-8ea0-0242ac120002','Aurore','Obert','rue de la soif',29000,'Brest','France','Aurore',1,DEFAULT,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s'),
     ('5c512ede-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','Etienne','Bacle','rue de loseille',33000,'Bordeaux','France','Etienne',2,1,NULL),
-    ('644929ca-ecb5-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','MC','MC','Rue de la vieille',34000,'Montpellier','France','MC',2,2,NULL)
+    ('644929ca-ecb5-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','MC','MC','Rue de la vieille',34000,'Montpellier','France','MC',2,2,NULL),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002','q6qff44929ca-ecb5-11eco-0242ac120002', 'Jean Pierre', 'Larevue', 'rue de Jean Pierre', 38520, 'Paris', 'France', 'Jean Pierre',1, 3, 'Hello, I am Jean Pierre and I am specialized in digital arts such as 3D and motion'),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002','z644fff929ca-ecb5-11ec-8ea0-02120002','Lea', 'Castel', 'rue de Castel', 75000, 'Barcelona', 'Spain', 'Lea',1, 4,'Hello, I am Lea and I am specialized in digital arts such as 3D and motion'),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002','e644929ggca-ecb5-11ec-8ea0-0242ac002', 'Josephine', 'Ange Gardien', 'rue du Paradis', 85200, 'Fontenay-le-Comte', 'France', 'Jo', 1, 5,'Hello, I am Josephine and I am specialized in digital arts such as 3D and motion'),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002','x644929cahhhj-ecb5-11ec-8ea0-0220002','Josette', 'La Moulette', 'Rue de la Moule', 92100, 'Berlin', 'Germany', 'Josette', 1, 6,'Hello, I am Josette and I am specialized in digital arts such as 3D and motion' ),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','Paulo', 'Lebello', 'Rue de le Bello', 72100, 'Lisbon', 'Portugal', 'Paulo', 1, 7,'Hello, I am Paulo and I am specialized in digital arts such as 3D and motion'  ),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002','q644929ca-ecb5jj-11ec-8ea0-0242a0002','kirikou','Le petit', 'Rue de Kirikou', 22100, 'Addis-Abeba', 'Éthiopie', 'Kirikou', 1, 8,'Hello, I am Kirikou and I am specialized in digital arts such as 3D and motion'),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002','b644929ca-ecb5-11ec-8uulyfvea0-00002','Digital','Artist', 'Rue de digital art', 55800, 'Luanda', 'Angola', 'Digital', 1, 9,'Hello, I am Digital and I am specialized in digital arts such as 3D and motion'),
+    ('n644929ca-ecb5-11ec-8eakjhge0-024002','n644929ca-ecb5-11ec-8eakjhge0-024002', 'Traditional','Artist', 'Rue de traditional art', 82000, 'Tokyo', 'Japon', 'Tradi', 2, 10,'Hello, I am Traditional and I am specialized in digital arts such as 3D and motion')
 ;
 
 
@@ -286,7 +309,14 @@ ENGINE = InnoDB;
 INSERT INTO `artwork`(`id`,`profil_id`,`hashtag`,`title`,`timeframe_id`,`customer`,`date`,`budget_id`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
 VALUES
     ('ffd79002-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée',1,'','2022-06-14',4,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
-    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau',2,'','2022-06-15',1,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2)
+    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau',2,'','2022-06-15',1,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2),
+    ('aa09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','True colors',2,'','2022-06-15',1,0,'I would like the painting to be made from scratch with colors arriving on the painting one after the other','2022-06-30',0,4,2,4),
+    ('bb09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Lightroom',2,'','2022-06-15',1,0,'I would like a 3 dimentional effect on the room, with the cubes turning into themselves','2022-06-30',0,5,2,5),
+    ('cc09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Galaxy art',2,'','2022-06-15',1,0,'I would like the whole picture to move with a focus on the colors in the middle with dimentional effects','2022-06-30',0,6,2,1),
+    ('dd09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','God punishing hand',2,'','2022-06-15',1,0,'I would like the hand to move from the top to the bottom of the image','2022-06-30',0,7,2,2),
+    ('ee09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Climbing statues',2,'','2022-06-15',1,0,'I would like the statues to climb one another','2022-06-30',0,8,2,3),
+    ('ggff09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','The great Lady',2,'','2022-06-15',1,0,'I want the art on the face to move but the rest of the picture must remain static','2022-06-30',0,9,2,4),
+    ('jj09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Fishing is peacing',2,'','2022-06-15',1,0,'I want it all animated like an aquarium of lights and fishes','2022-06-30',0,10,2,5)
 ;
 
 -- -----------------------------------------------------
@@ -318,7 +348,21 @@ VALUES
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',3),
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',2),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',1),
-    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',5)
+    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',5),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',2),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',3),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',4),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',5),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',1),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',2),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',5)
 ;
 
 -- -----------------------------------------------------
@@ -352,7 +396,14 @@ VALUES
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',5),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',6),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',8),
-    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',4)
+    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',4),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3)
 ;
 
 -- -----------------------------------------------------
@@ -386,7 +437,14 @@ VALUES
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',2),
     ('d0a47566-ecb5-11ec-8ea0-0242ac120002',1),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',1),
-    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',2)
+    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',2),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',1),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',2),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',2),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',1)
 ;
 
 -- -----------------------------------------------------
@@ -443,5 +501,12 @@ INSERT INTO `werevart`.`profil_has_usertype` (
     ('d0a47566-ecb5-11ec-8ea0-0242ac120002',5),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',6),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',3),
-    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',4)
+    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',4),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3)
 ;

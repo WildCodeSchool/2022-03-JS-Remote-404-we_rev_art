@@ -4,7 +4,6 @@ import "../style/ArtistCard.css";
 import Likebutton from "./Likebutton";
 
 function ArtistCards({ ArtistCardView }) {
-  // console.log(ArtistCardView);
   return (
     <section className="card_container" key={ArtistCardView.id}>
       <div>
