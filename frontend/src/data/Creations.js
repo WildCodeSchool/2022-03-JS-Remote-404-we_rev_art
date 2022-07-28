@@ -61,7 +61,7 @@ const creationsData = [
   {
     traditionalprofil: profil4,
     digitalprofil: profil3,
-    title: "Dancing quen",
+    title: "Dancing Queen",
     text: "Move your body as you never did before.",
     creation:
       "https://blog.ninapaley.com/wp-content/uploads/2018/01/Goddess_gif_small_10.gif",
