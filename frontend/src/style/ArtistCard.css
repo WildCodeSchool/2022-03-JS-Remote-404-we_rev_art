@@ -3,6 +3,12 @@
   justify-content: center;
   margin-top: 50px;
 }
+
+.artist_container_tot {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card-img-top {
   width: 5rem;
   height: 5rem;
