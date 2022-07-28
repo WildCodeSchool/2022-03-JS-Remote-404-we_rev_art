@@ -50,6 +50,9 @@
   box-shadow: var(box-shadow);
   background-color: var(--button-color);
   color: var(--font-color);
+  transform: scale(1.015);
+  border: 1px solid black;
+  opacity: 60%;
 }
 
 .buttons_container {

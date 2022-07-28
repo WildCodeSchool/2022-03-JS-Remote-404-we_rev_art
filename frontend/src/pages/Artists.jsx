@@ -43,9 +43,14 @@ function Artists() {
       </Helmet>
       <MiniHeader index={1} />
       <ArtistFilter filter={filter} setFilter={setFilter} />
-      {ArtistCardViews.map((ArtistCardView) => (
-        <ArtistCards ArtistCardView={ArtistCardView} key={ArtistCardView.id} />
-      ))}
+      <div className="artist_container_tot">
+        {ArtistCardViews.map((ArtistCardView) => (
+          <ArtistCards
+            ArtistCardView={ArtistCardView}
+            key={ArtistCardView.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }
