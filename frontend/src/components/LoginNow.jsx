@@ -21,7 +21,7 @@ function LoginNow() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, data)
       .then((res) => {
         setUser(res.data);
-        navigate("/Post_An_Ad");
+        navigate("/MyProfile");
       })
       .catch((err) => console.error(err));
   };
