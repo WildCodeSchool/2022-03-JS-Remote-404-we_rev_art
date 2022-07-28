@@ -3,24 +3,29 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema werevart
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema werevart
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `werevart` DEFAULT CHARACTER SET utf8 ;
-USE `werevart` ;
-
+DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
+DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
+DROP TABLE IF EXISTS `werevart`.`profil` ;
+DROP TABLE IF EXISTS `werevart`.`budget` ;
+DROP TABLE IF EXISTS `werevart`.`timeframe` ;
+DROP TABLE IF EXISTS `werevart`.`artwork` ;
+DROP TABLE IF EXISTS `werevart`.`user` ;
+DROP TABLE IF EXISTS `werevart`.`picture` ;
+DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
+DROP TABLE IF EXISTS `werevart`.`skills` ;
+DROP TABLE IF EXISTS `werevart`.`softwareused` ;
+DROP TABLE IF EXISTS `werevart`.`contracttype` ;
+DROP TABLE IF EXISTS `werevart`.`usertype` ;
 -- -----------------------------------------------------
 -- Table `werevart`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`user` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`user` (
   `id` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL UNIQUE,
@@ -33,13 +38,21 @@ VALUES
   ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','quentin.bill812@gmail.com', 'testPassword1'),
   ('5437622c-ecb5-11ec-8ea0-0242ac120002','aurore.obert@gmail.com', 'testPassword2'),
   ('5c512ede-ecb5-11ec-8ea0-0242ac120002','etienne.bacle85@gmail.com', 'testPassword3'),
-  ('644929ca-ecb5-11ec-8ea0-0242ac120002','mc.mc@gmail.com', 'testPassword4')
+  ('644929ca-ecb5-11ec-8ea0-0242ac120002','mc.mc@gmail.com', 'testPassword4'),
+  ('q6qff44929ca-ecb5-11eco-0242ac120002','jeanpierre@gmail.com', 'testPassword4'),
+  ('z644fff929ca-ecb5-11ec-8ea0-02120002','leaCastel@gmail.com', 'testPassword4'),
+  ('e644929ggca-ecb5-11ec-8ea0-0242ac002','JosephineAngeGardien@gmail.com', 'testPassword4'),
+  ('x644929cahhhj-ecb5-11ec-8ea0-0220002','Josette@gmail.com', 'testPassword4'),
+  ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','PauloLebello@gmail.com', 'testPassword4'),
+  ('q644929ca-ecb5jj-11ec-8ea0-0242a0002','kirikou@gmail.com', 'testPassword4'),
+  ('b644929ca-ecb5-11ec-8uulyfvea0-00002','digitalArtist@gmail.com', 'testPassword4'),
+  ('n644929ca-ecb5-11ec-8eakjhge0-024002','traditionalArtist@gmail.com', 'testPassword4')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`picture`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`picture` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`picture` (
   `idpicture` INT NOT NULL AUTO_INCREMENT,
   `image` VARCHAR(255) NULL,
@@ -50,13 +63,21 @@ ENGINE = InnoDB;
 INSERT INTO  `picture`(`image`,`alt`)
  VALUES
     ('https://randomwordgenerator.com/img/picture-generator/52e7d544435ab10ff3d8992cc12c30771037dbf852547941742673dc944e_640.jpg','route cassée'),
-    ('https://images.unsplash.com/photo-1645680827507-9f392edae51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','main entouré d un anneau')
+    ('https://images.unsplash.com/photo-1645680827507-9f392edae51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','main entouré d un anneau'),
+    ('https://i.ibb.co/K9cG2n3/user.png','user logo'),
+    ('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80', 'peinture abstraite'),
+    ('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80','art cubique'),
+    ('https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=459&q=80','galaxy art'),
+    ('https://images.unsplash.com/photo-1501472312651-726afe119ff1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', 'main colorée'),
+    ('https://images.unsplash.com/photo-1561839561-b13bcfe95249?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=379&q=80','bal des statues'),
+    ('https://images.unsplash.com/photo-1547333590-47fae5f58d21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80','visage de femme'),
+    ('https://images.unsplash.com/photo-1579833981331-676fa2bae313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80','colorfull poisson')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`typeaccount`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`typeaccount` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`typeaccount` (
   `id` int NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(255) NOT NULL,
@@ -65,36 +86,36 @@ ENGINE = InnoDB;
 
 INSERT INTO
     `typeaccount` (`type`)
-VALUES 
-    ('digital Artist'),
-    ('customer')
+VALUES
+    ('Digital Artist'),
+    ('Traditional Artist')
 ;
 
 
 -- -----------------------------------------------------
 -- Table `werevart`.`profil`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil` (
   `id` VARCHAR(255) NOT NULL,
   `user_id` VARCHAR(255) NOT NULL,
-  `typeaccount_id` INT NOT NULL,
-  `picture_idpicture` INT NOT NULL,
-  `firstname` VARCHAR(255) NOT NULL,
-  `lastname` VARCHAR(255) NOT NULL,
-  `adress` VARCHAR(255) NOT NULL,
-  `postcode` INT NOT NULL,
-  `city` VARCHAR(255) NOT NULL,
-  `country` VARCHAR(255) NOT NULL,
-  `username` VARCHAR(255) NOT NULL,
-  `namecompagny` VARCHAR(255) NULL,
-  `compagnyregistration` INT NULL,
-  `countryregistration` VARCHAR(255) NULL,
-  `description` TEXT NULL,
+  `typeaccount_id` INT,
+  `picture_idpicture` INT DEFAULT 3 ,
+  `firstname` VARCHAR(255),
+  `lastname` VARCHAR(255),
+  `adress` VARCHAR(255),
+  `postcode` INT,
+  `city` VARCHAR(255),
+  `country` VARCHAR(255),
+  `username` VARCHAR(255),
+  `namecompagny` VARCHAR(255),
+  `compagnyregistration` INT,
+  `countryregistration` VARCHAR(255),
+  `description` LONGTEXT,
   PRIMARY KEY (`id`, `typeaccount_id`),
-  INDEX `fk_profil_user1_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_profil_picture1_idx` (`picture_idpicture` ASC) VISIBLE,
-  INDEX `fk_profil_typeaccount1_idx` (`typeaccount_id` ASC) VISIBLE,
+  INDEX `fk_profil_user1_idx` (`user_id` ASC),
+  INDEX `fk_profil_picture1_idx` (`picture_idpicture` ASC),
+  INDEX `fk_profil_typeaccount1_idx` (`typeaccount_id` ASC),
   CONSTRAINT `fk_profil_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `werevart`.`user` (`id`)
@@ -113,19 +134,27 @@ CREATE TABLE IF NOT EXISTS `werevart`.`profil` (
 ENGINE = InnoDB;
 
 INSERT INTO
-    `profil`(`user_id`,`id`,`firstName`, `lastName`, `adress`, `postcode`,`city`,`country`,`username`,`typeaccount_id`, `picture_idpicture`)
+    `profil`(`user_id`,`id`,`firstName`, `lastName`, `adress`, `postcode`,`city`,`country`,`username`,`typeaccount_id`, `picture_idpicture`,`description`)
 VALUES
-    ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','beef8662-ecb5-11ec-8ea0-0242ac120002','Quentin','Billac','rue rene boylesve',37160,'Descartes','France','Quentin',1,NULL),
-    ('5437622c-ecb5-11ec-8ea0-0242ac120002','cb0255ce-ecb5-11ec-8ea0-0242ac120002','Aurore','Obert','rue de la soif',29000,'Brest','France','Aurore',1,NULL),
-    ('5c512ede-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','Etienne','Bacle','rue de loseille',33000,'Bordeaux','France','Etienne',2,1),
-    ('644929ca-ecb5-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','MC','MC','Rue de la vieille',34000,'Montpellier','France','MC',2,2)
+    ('fd274f1a-ecb4-11ec-8ea0-0242ac120002','beef8662-ecb5-11ec-8ea0-0242ac120002','Quentin','Billac','rue rene boylesve',37160,'Descartes','France','Quentin',1,DEFAULT,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s'),
+    ('5437622c-ecb5-11ec-8ea0-0242ac120002','cb0255ce-ecb5-11ec-8ea0-0242ac120002','Aurore','Obert','rue de la soif',29000,'Brest','France','Aurore',1,DEFAULT,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s'),
+    ('5c512ede-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','Etienne','Bacle','rue de loseille',33000,'Bordeaux','France','Etienne',2,1,NULL),
+    ('644929ca-ecb5-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','MC','MC','Rue de la vieille',34000,'Montpellier','France','MC',2,2,NULL),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002','q6qff44929ca-ecb5-11eco-0242ac120002', 'Jean Pierre', 'Larevue', 'rue de Jean Pierre', 38520, 'Paris', 'France', 'Jean Pierre',1, 3, 'Hello, I am Jean Pierre and I am specialized in digital arts such as 3D and motion'),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002','z644fff929ca-ecb5-11ec-8ea0-02120002','Lea', 'Castel', 'rue de Castel', 75000, 'Barcelona', 'Spain', 'Lea',1, 4,'Hello, I am Lea and I am specialized in digital arts such as 3D and motion'),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002','e644929ggca-ecb5-11ec-8ea0-0242ac002', 'Josephine', 'Ange Gardien', 'rue du Paradis', 85200, 'Fontenay-le-Comte', 'France', 'Jo', 1, 5,'Hello, I am Josephine and I am specialized in digital arts such as 3D and motion'),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002','x644929cahhhj-ecb5-11ec-8ea0-0220002','Josette', 'La Moulette', 'Rue de la Moule', 92100, 'Berlin', 'Germany', 'Josette', 1, 6,'Hello, I am Josette and I am specialized in digital arts such as 3D and motion' ),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','w644929ca-ecbj5-jjjkk11ec-8ea0-o0002','Paulo', 'Lebello', 'Rue de le Bello', 72100, 'Lisbon', 'Portugal', 'Paulo', 1, 7,'Hello, I am Paulo and I am specialized in digital arts such as 3D and motion'  ),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002','q644929ca-ecb5jj-11ec-8ea0-0242a0002','kirikou','Le petit', 'Rue de Kirikou', 22100, 'Addis-Abeba', 'Éthiopie', 'Kirikou', 1, 8,'Hello, I am Kirikou and I am specialized in digital arts such as 3D and motion'),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002','b644929ca-ecb5-11ec-8uulyfvea0-00002','Digital','Artist', 'Rue de digital art', 55800, 'Luanda', 'Angola', 'Digital', 1, 9,'Hello, I am Digital and I am specialized in digital arts such as 3D and motion'),
+    ('n644929ca-ecb5-11ec-8eakjhge0-024002','n644929ca-ecb5-11ec-8eakjhge0-024002', 'Traditional','Artist', 'Rue de traditional art', 82000, 'Tokyo', 'Japon', 'Tradi', 2, 10,'Hello, I am Traditional and I am specialized in digital arts such as 3D and motion')
 ;
 
 
 -- -----------------------------------------------------
 -- Table `werevart`.`skills`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`skills` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`skills` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `skills` VARCHAR(255) NOT NULL,
@@ -135,17 +164,17 @@ ENGINE = InnoDB;
 INSERT INTO
     `skills` (`skills`)
 VALUES
-    ('motion'),
+    ('Motion'),
     ('VR'),
     ('3D'),
-    ('painting'),
-    ('photography')
+    ('Painting'),
+    ('Photography')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`softwareused`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`softwareused` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`softwareused` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `software` VARCHAR(100) NOT NULL,
@@ -168,43 +197,83 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`contracttype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`contracttype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`contracttype` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `contract` VARCHAR(100) NOT NULL,
+  `contracttype` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 INSERT INTO
-    `contracttype` (`contract`)
+    `contracttype` (`contracttype`)
 VALUES
-    ('paid service'),
-    ('free collaboration')
+    ('Paid Service'),
+    ('Free Collaboration')
+;
+
+-- -----------------------------------------------------
+-- Table `werevart`.`budget`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `werevart`.`budget` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `budget` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `budget`))
+ENGINE = InnoDB;
+
+INSERT INTO
+    `budget` (`budget`)
+VALUES
+    ('No Budget'),
+    ('Less than 200€'),
+    ('200€ to 1000€'),
+    ('1000€ to 3000€'),
+    ('Over 3000€')
+;
+
+-- -----------------------------------------------------
+-- Table `werevart`.`timeframe`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `werevart`.`timeframe` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `timeframe` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `timeframe`))
+ENGINE = InnoDB;
+
+INSERT INTO
+    `timeframe` (`timeframe`)
+VALUES
+    ('Urgent'),
+    ('One Month'),
+    ('Long-therm'),
+    ('Reccurent')
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`artwork`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`artwork` ;
 CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
   `id` VARCHAR(255) NOT NULL,
   `hashtag` VARCHAR(255) NULL,
   `title` VARCHAR(255) NOT NULL,
-  `timeframe` VARCHAR(255) NULL,
   `customer` VARCHAR(255) NULL,
   `date` DATE NOT NULL,
-  `budget` INT NULL,
   `offers` INT NULL,
   `details` TEXT NULL,
   `deadline` DATE NULL,
   `likes` INT NULL,
   `picture_idpicture_original` INT NOT NULL,
   `picture_idpicture_digital` INT NULL,
+  `profil_id` VARCHAR(255) NOT NULL,
   `skills_id` INT NOT NULL,
+  `timeframe_id` INT NOT NULL,
+  `budget_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_artwork_picture1_idx` (`picture_idpicture_original` ASC) VISIBLE,
   INDEX `fk_artwork_picture2_idx` (`picture_idpicture_digital` ASC) VISIBLE,
   INDEX `fk_artwork_skills1_idx` (`skills_id` ASC) VISIBLE,
+  INDEX `fk_artwork_budget1_idx` (`budget_id` ASC) VISIBLE,
+  INDEX `fk_artwork_timeframe1_idx` (`timeframe_id` ASC) VISIBLE,
+  INDEX `fk_artwork_profil1_idx` (`profil_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_picture1`
     FOREIGN KEY (`picture_idpicture_original`)
     REFERENCES `werevart`.`picture` (`idpicture`)
@@ -215,59 +284,51 @@ CREATE TABLE IF NOT EXISTS `werevart`.`artwork` (
     REFERENCES `werevart`.`picture` (`idpicture`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_artwork_skills1`
+   CONSTRAINT `fk_artwork_skills1`
     FOREIGN KEY (`skills_id`)
     REFERENCES `werevart`.`skills` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-INSERT INTO `artwork`(`id`,`hashtag`,`title`,`timeframe`,`customer`,`date`,`budget`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
-VALUES
-    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée','contemporain','',14/06/2022,1000,0,'je veux que la route se casse a cause d un tremblement de terre',14/07/2022,0,1,1,5),
-    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau','contemporain','',15/06/2022,500,0,'je veux que l anneau tourne autours de la main',30/06/2022,0,2,2,2)
-;
-
--- -----------------------------------------------------
--- Table `werevart`.`profil_has_artwork`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_artwork` ;
-CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_artwork` (
-  `profil_id` VARCHAR(255) NOT NULL,
-  `artwork_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`profil_id`, `artwork_id`),
-  INDEX `fk_profil_has_artwork_artwork1_idx` (`artwork_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_artwork_profil1_idx` (`profil_id` ASC) VISIBLE,
-  CONSTRAINT `fk_profil_has_artwork_profil1`
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_budget1`
+    FOREIGN KEY (`budget_id`)
+    REFERENCES `werevart`.`budget` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_timeframe1`
+    FOREIGN KEY (`timeframe_id`)
+    REFERENCES `werevart`.`timeframe` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_artwork_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_profil_has_artwork_artwork1`
-    FOREIGN KEY (`artwork_id`)
-    REFERENCES `werevart`.`artwork` (`id`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `werevart`.`profil_has_artwork` (
-    `profil_id`,
-  `artwork_id`)
+INSERT INTO `artwork`(`id`,`profil_id`,`hashtag`,`title`,`timeframe_id`,`customer`,`date`,`budget_id`,`offers`,`details`,`deadline`,`likes`,`picture_idpicture_original`,`picture_idpicture_digital`,`skills_id`)
 VALUES
-    ('d0a47566-ecb5-11ec-8ea0-0242ac120002','ffd79002-ecb5-11ec-8ea0-0242ac120002'),
-    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002','09bf63f6-ecb6-11ec-8ea0-0242ac120002')
+    ('ffd79002-ecb5-11ec-8ea0-0242ac120002','d0a47566-ecb5-11ec-8ea0-0242ac120002','#test1#test2#test3#test4','route fissurée',1,'','2022-06-14',4,0,'je veux que la route se casse a cause d un tremblement de terre','2022-07-14',0,1,1,5),
+    ('09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','main entourée d un anneau',2,'','2022-06-15',1,0,'je veux que l anneau tourne autours de la main','2022-06-30',0,2,2,2),
+    ('aa09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','True colors',2,'','2022-06-15',1,0,'I would like the painting to be made from scratch with colors arriving on the painting one after the other','2022-06-30',0,4,2,4),
+    ('bb09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Lightroom',2,'','2022-06-15',1,0,'I would like a 3 dimentional effect on the room, with the cubes turning into themselves','2022-06-30',0,5,2,5),
+    ('cc09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Galaxy art',2,'','2022-06-15',1,0,'I would like the whole picture to move with a focus on the colors in the middle with dimentional effects','2022-06-30',0,6,2,1),
+    ('dd09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','God punishing hand',2,'','2022-06-15',1,0,'I would like the hand to move from the top to the bottom of the image','2022-06-30',0,7,2,2),
+    ('ee09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Climbing statues',2,'','2022-06-15',1,0,'I would like the statues to climb one another','2022-06-30',0,8,2,3),
+    ('ggff09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','The great Lady',2,'','2022-06-15',1,0,'I want the art on the face to move but the rest of the picture must remain static','2022-06-30',0,9,2,4),
+    ('jj09bf63f6-ecb6-11ec-8ea0-0242ac120002','d35d38d8-ecb5-11ec-8ea0-0242ac120002','#test4#test6#test7#test8','Fishing is peacing',2,'','2022-06-15',1,0,'I want it all animated like an aquarium of lights and fishes','2022-06-30',0,10,2,5)
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_skills`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_skills` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_skills` (
   `profil_id` VARCHAR(255) NOT NULL,
   `skills_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `skills_id`),
-  INDEX `fk_profil_has_skills_skills1_idx` (`skills_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_skills_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_skills_skills1_idx` (`skills_id` ASC),
+  INDEX `fk_profil_has_skills_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_skills_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -287,19 +348,33 @@ VALUES
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',3),
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',2),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',1),
-    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',5)
+    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',5),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',2),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',3),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',4),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',5),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',1),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',2),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',5)
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_softwareused`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_softwareused` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_softwareused` (
   `profil_id` VARCHAR(255) NOT NULL,
   `softwareused_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `softwareused_id`),
-  INDEX `fk_profil_has_softwareused_softwareused1_idx` (`softwareused_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_softwareused_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_softwareused_softwareused1_idx` (`softwareused_id` ASC),
+  INDEX `fk_profil_has_softwareused_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_softwareused_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -321,19 +396,26 @@ VALUES
     ('beef8662-ecb5-11ec-8ea0-0242ac120002',5),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',6),
     ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',8),
-    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',4)
+    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',4),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3)
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_contracttype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_contracttype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_contracttype` (
   `profil_id` VARCHAR(255) NOT NULL,
   `contracttype_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `contracttype_id`),
-  INDEX `fk_profil_has_contacttype_contacttype1_idx` (`contracttype_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_contacttype_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_contacttype_contacttype1_idx` (`contracttype_id` ASC),
+  INDEX `fk_profil_has_contacttype_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_contacttype_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -350,15 +432,25 @@ INSERT INTO `werevart`.`profil_has_contracttype` (
   `profil_id`,
   `contracttype_id`)
 VALUES
+    ('cb0255ce-ecb5-11ec-8ea0-0242ac120002',2),
+    ('beef8662-ecb5-11ec-8ea0-0242ac120002',1),
+    ('beef8662-ecb5-11ec-8ea0-0242ac120002',2),
     ('d0a47566-ecb5-11ec-8ea0-0242ac120002',1),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',1),
-    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',2)
+    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',2),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',1),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',2),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',2),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',1)
 ;
 
 -- -----------------------------------------------------
 -- Table `werevart`.`usertype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`usertype` ;
+
 CREATE TABLE IF NOT EXISTS `werevart`.`usertype` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usertype` VARCHAR(100) NOT NULL,
@@ -380,13 +472,12 @@ VALUES
 -- -----------------------------------------------------
 -- Table `werevart`.`profil_has_usertype`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `werevart`.`profil_has_usertype` ;
 CREATE TABLE IF NOT EXISTS `werevart`.`profil_has_usertype` (
   `profil_id` VARCHAR(255) NOT NULL,
   `usertype_id` INT NOT NULL,
   PRIMARY KEY (`profil_id`, `usertype_id`),
-  INDEX `fk_profil_has_usertype_usertype1_idx` (`usertype_id` ASC) VISIBLE,
-  INDEX `fk_profil_has_usertype_profil1_idx` (`profil_id` ASC) VISIBLE,
+  INDEX `fk_profil_has_usertype_usertype1_idx` (`usertype_id` ASC),
+  INDEX `fk_profil_has_usertype_profil1_idx` (`profil_id` ASC),
   CONSTRAINT `fk_profil_has_usertype_profil1`
     FOREIGN KEY (`profil_id`)
     REFERENCES `werevart`.`profil` (`id`)
@@ -410,9 +501,12 @@ INSERT INTO `werevart`.`profil_has_usertype` (
     ('d0a47566-ecb5-11ec-8ea0-0242ac120002',5),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',6),
     ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',3),
-    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',4)
+    ('d35d38d8-ecb5-11ec-8ea0-0242ac120002',4),
+    ('q6qff44929ca-ecb5-11eco-0242ac120002',1),
+    ('z644fff929ca-ecb5-11ec-8ea0-02120002',2),
+    ('e644929ggca-ecb5-11ec-8ea0-0242ac002',3),
+    ('x644929cahhhj-ecb5-11ec-8ea0-0220002',1),
+    ('w644929ca-ecbj5-jjjkk11ec-8ea0-o0002',5),
+    ('q644929ca-ecb5jj-11ec-8ea0-0242a0002',4),
+    ('b644929ca-ecb5-11ec-8uulyfvea0-00002',3)
 ;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

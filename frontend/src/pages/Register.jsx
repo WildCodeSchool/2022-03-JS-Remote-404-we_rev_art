@@ -1,41 +1,31 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import MiniHeader from "../components/miniHeader";
-import ArtistRegistration from "../components/ArtistRegistration";
-import CustomerRegistration from "../components/CustomerRegistration";
 import RegisterNow from "../components/RegisterNow";
 import LoginNow from "../components/LoginNow";
 
 import "../style/register.css";
+import "../style/Field.css";
 
 function Register() {
-  const [customer, setCustomer] = useState(false);
-  const [artist, setArtist] = useState(false);
-  const [registerButton, setRegisterButton] = useState(false);
-
-  console.warn(customer);
-
+  const [login, setLogin] = useState(false);
   return (
     <section className="register_container">
+      <Helmet>
+        <title>We Rev&apos;Art | Register-Login </title>
+      </Helmet>
       <MiniHeader index={4} />
-      <section
-        className={
-          (artist && registerButton) || (customer && registerButton)
-            ? "hidden"
-            : "register_loginVsResgister_container"
-        }
-      >
-        <RegisterNow
-          artist={artist}
-          setArtist={setArtist}
-          customer={customer}
-          setCustomer={setCustomer}
-          setRegisterButton={setRegisterButton}
-        />
-        <p className="register_div_or">OR</p>
-        <LoginNow />
+      <section className="register_loginVsResgister_container">
+        <button
+          type="button"
+          className="button_style"
+          onClick={() => setLogin(!login)}
+        >
+          <div className={login ? "" : "button_register"}>Register</div>
+          <div className={login ? "button_login" : ""}>Login</div>
+        </button>
+        {login ? <LoginNow /> : <RegisterNow />}
       </section>
-      {artist && registerButton ? <ArtistRegistration /> : ""}
-      {customer && registerButton ? <CustomerRegistration /> : ""}
     </section>
   );
 }

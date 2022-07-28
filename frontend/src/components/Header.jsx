@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import ExportContextUser from "../context/UserContext";
 import Logo from "../images/logo.png";
 import Nav from "./Nav";
 import Register from "./Register";
@@ -8,13 +10,20 @@ import "../style/Header.css";
 import "../style/Logo.css";
 
 function Header() {
+  const { user } = useContext(ExportContextUser.UserContext);
+
   return (
     <section className="header-container">
-      <img className="logo" src={Logo} alt="logo" />
+      <Link to="/">
+        <img className="logo" src={Logo} alt="logo" />
+      </Link>
       <Nav />
-      <div className="button-container">
+      <Link
+        to={user !== null ? "/Post_An_Ad" : "/Register"}
+        className="button-container"
+      >
         <Button buttonData={buttonData[0]} />
-      </div>
+      </Link>
       <Register />
     </section>
   );

@@ -3,12 +3,12 @@
   flex-direction: column;
   padding: 5rem 0 2rem;
   align-items: flex-start;
-  background: linear-gradient(white 20%, #203864 80%);
+  background: var(--background-gradient1);
   font-weight: bold;
 }
 
 .miniHeader-container p {
-  padding: 3rem 80rem 2rem 5rem;
+  padding: 3rem 20rem 2rem 5rem;
   font-size: 1.5rem;
   color: white;
 }

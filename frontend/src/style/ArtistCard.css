@@ -1,42 +1,30 @@
 .card_container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 50px;
-  margin-left: 3rem;
 }
 .card-img-top {
-  width: 10rem;
-  height: 10rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  border-radius: 70%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
 }
 .card-top {
-  border-radius: 2rem;
-  height: 35rem;
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  height: 37rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.35) 0rem 1rem 5rem;
-  margin-bottom: 5rem;
-  margin-left: 4rem;
-  width: 35rem;
+  box-shadow: var(--box-shadow);
+  border: 0.0015rem #0f0e0d solid;
+  margin: 5rem 3rem;
+  padding: 2rem;
+  width: 25rem;
 }
-.card_map {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1.5rem;
-  padding-top: 4rem;
-  padding-left: 3rem;
-  margin-bottom: 3rem;
-  margin-right: 3rem;
-}
+
 .card-top:hover {
   transform: scale(1.05);
-  box-shadow: 10rem 10rem 15rem rgba(0, 0, 0, 0.3);
 }
 .allcards {
   display: flex;
@@ -44,36 +32,50 @@
   margin-top: 1rem;
   margin-left: 2rem;
 }
-
+.card-identity {
+  display: flex;
+  justify-content: first baseline;
+  margin-top: -4rem;
+  margin-left: 6rem;
+}
 .card-title {
-  margin-left: 12rem;
-  margin-top: -9rem;
   font-weight: bold;
+  word-spacing: normal;
 }
 
 .card-text {
-  margin-left: 23rem;
-  margin-top: -2rem;
   font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  margin-top: -4rem;
 }
-
-.list-group {
-  align-items: center;
+.card_map {
   margin-top: 4rem;
 }
-
 .list-group-item {
-  display: flex;
-
   background-color: rgb(218, 235, 250);
   font-weight: bold;
-  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.25rem;
+}
+.skills_list {
+  display: inline-flex;
+  margin-right: 1rem;
+}
+.contracttype_list {
+  display: inline-flex;
+  margin-right: 1rem;
 }
 .card-body {
   font-weight: bold;
 }
 .likediv {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn {
   margin-left: 25rem;
@@ -85,29 +87,24 @@
   margin-left: 1rem;
 }
 .btnfollow {
-  display: inline-block;
-  position: relative;
   text-align: center;
-  font-size: 0, 1rem;
-  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  padding: 0.1rem 0.25rem;
   transition: all 0.5s;
   cursor: pointer;
-  margin-top: 1rem;
-  background-color: #ffd700;
-  margin-left: 15rem;
-  border-radius: 0.5rem;
+  background-color: var(--button-color);
+  border-radius: 0.25rem;
+  margin: 0 1rem;
+  color: white;
 }
 
-.btncount {
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  font-size: 0, 1rem;
-  padding: 0.5rem 0.5rem;
-  transition: all 0.5s;
-  cursor: pointer;
+.count {
+  font-size: 1.5rem;
+  align-items: center;
   margin-top: 1rem;
-  background-color: white;
-  margin-left: 1rem;
-  border-radius: 0.5rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
 }

@@ -22,7 +22,7 @@ function Footer() {
         <div className="footer-links">
           <Link to="/">HOW IT WORKS</Link>
           <Link to="/">OUR PRICES</Link>
-          <Link to="/">ABOUT US</Link>
+          <Link to="aboutus">ABOUT US</Link>
         </div>
         <div className="footer-links">
           <Link to="/">BLOG</Link>

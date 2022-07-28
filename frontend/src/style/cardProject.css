@@ -1,15 +1,16 @@
 .cardProject_cardProject {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .cardProject_card {
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  height: 12rem;
-  background-color: lightgrey;
-  margin-top: 1rem;
-  margin-left: 4rem;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  margin: 2rem 2rem 5rem;
+  padding: 0.5rem;
+  height: 15rem;
 }
 
 .cardProject_spec {
@@ -17,9 +18,7 @@
 }
 
 .cardProject_imageCardProject {
-  width: 10rem;
-  height: 12rem;
-  padding: 4px;
+  height: 14rem;
 }
 
 .cardProject_small {
@@ -35,8 +34,8 @@
 }
 
 .cardProject_allCard {
-  background-color: #203864;
-  color: #ffd700;
+  background-color: var(--button-color);
+  color: var(--font-color);
   font-weight: 700;
   font-size: 1.5rem;
   border: none;
@@ -55,8 +54,8 @@
 
 .cardProject_registerButton {
   font-weight: bold;
-  background-color: #ffd700;
-  color: #203864;
+  background-color: var(--button-color);
+  color: var(--font-color);
   width: 15rem;
   height: 5.5rem;
   border: none;
@@ -92,4 +91,8 @@
 }
 .cardProject_details {
   font-size: 1.2rem;
+}
+.registerHomeForFree {
+  font-weight: bold;
+  font-size: 1.4rem;
 }

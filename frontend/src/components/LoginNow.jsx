@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import ExportContextUser from "../context/UserContext";
+
+import hide from "../images/hide.png";
+import show from "../images/show.png";
 
 function LoginNow() {
+  const { setUser } = useContext(ExportContextUser.UserContext);
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -9,13 +17,17 @@ function LoginNow() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.warn(data);
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, data)
+      .then((res) => {
+        setUser(res.data);
+        navigate("/MyProfile");
+      })
+      .catch((err) => console.error(err));
   };
-
+  const [shown, setShown] = useState(false);
   return (
     <section className="register_login_container">
-      <h4 className="register_h4"> Log in </h4>
-      <p>I am a registered user and I would like to log into my account</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className="field_label">
           Email address
@@ -28,15 +40,29 @@ function LoginNow() {
         </label>
         <label htmlFor="password" className="field_label">
           Password
-          <input
-            type="password"
-            className="field_input"
-            {...register("password", { required: true })}
-          />
+          <div className="flex">
+            <input
+              type={shown ? "text" : "password"}
+              className="field_input"
+              {...register("password", { required: true }, { minLength: 8 })}
+            />
+            <button
+              type="button"
+              className="no_button"
+              onClick={() => setShown(!shown)}
+            >
+              <img
+                src={shown ? show : hide}
+                alt="eye that changes if password is shown or hidden"
+                className="eye_icon"
+              />
+            </button>
+          </div>
           {errors.password && <p> Password is required </p>}
         </label>
-        <button type="submit" className="button-style empty_yellow">
-          Continue
+
+        <button type="submit" className="button_style2 empty_yellow submit">
+          Login
         </button>
       </form>
     </section>

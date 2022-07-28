@@ -15,7 +15,7 @@
   font-weight: bold;
   color: #203864;
   margin-bottom: 3rem;
-  margin-left: 4.5rem;
+  margin-left: 5.5rem;
   line-height: 2;
   margin-top: 5rem;
 }
@@ -35,14 +35,14 @@
   margin-left: 25rem;
 }
 
-.button-artlist{
-    padding: 0.25rem 3.5rem;
-    width: fit-content;
-    height: fit-content;
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 2rem;
-    background-color: #ffd700;
-    color: #222a35;
-    margin-left: 19rem;
+.button-artlist {
+  padding: 0.25rem 3.5rem;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  background-color: var(--button-color);
+  color: #222a35;
+  margin-left: 19rem;
 }

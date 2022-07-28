@@ -3,7 +3,7 @@
   padding: 2rem;
   align-items: flex-start;
   justify-content: space-around;
-  margin-left: -4rem;
+  flex-wrap: wrap;
 }
 
 .titleText-element {
@@ -19,6 +19,13 @@
   height: 100%;
   font-size: 12rem;
   font-weight: bolder;
-  color: yellow;
+  color: var(--button-color);
   padding: 0 0.5rem;
+}
+.dataText-p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h3 {
+  color: #203864;
 }

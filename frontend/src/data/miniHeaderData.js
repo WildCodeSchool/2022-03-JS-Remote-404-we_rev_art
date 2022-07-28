@@ -62,6 +62,26 @@ const miniHeaderData = [
     title: "Blog",
     text: "Find here articles, guides, good practices and tutorials to help you grow your business and reach more customers.",
   },
+  {
+    id: 14,
+    title: "About us",
+    text: "who we are and what is our vision",
+  },
+  {
+    id: 15,
+    title: "Contact us",
+    text: "Contact us for further questions or information",
+  },
+  {
+    id: 16,
+    title: "My Account",
+    text: "All information about your account",
+  },
+  {
+    id: 17,
+    title: "My Profile",
+    text: "All information about your profile",
+  },
 ];
 
 export default miniHeaderData;
