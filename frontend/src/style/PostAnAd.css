@@ -1,6 +1,6 @@
 .form_button {
   border-radius: 0.5rem;
-  border-color: yellow;
+  border-color: var(--button-color);
   background-color: white;
   margin-right: 1rem;
 }
@@ -44,7 +44,7 @@
 }
 
 .button_style_paa {
-  color: var(--font-color);
+  color: var(--dark-color);
   width: 10rem;
   height: 2rem;
   border-radius: 0.5rem;
@@ -52,8 +52,8 @@
   margin: 0.5rem 1rem;
 }
 
-.button_style_paa2 {
-  color: var(--dark-color);
+.button_style_paa2.yellow {
+  color: var(--font-color);
   width: 10rem;
   height: 2rem;
   border-radius: 0.5rem;
@@ -79,4 +79,10 @@
 .textarea {
   border-radius: 1rem;
   width: 50rem;
+}
+
+.absolute_right {
+  position: absolute;
+  top: 115rem;
+  left: 70rem;
 }

@@ -5,7 +5,7 @@ import Mail from "../images/mail.png";
 
 function Nav() {
   return (
-    <section className="nav">
+    <nav className="nav">
       <ul className="nav_ul">
         <Link className="nav_link" to="/Project_Ads">
           Project Ads
@@ -23,7 +23,7 @@ function Nav() {
           <img className="navMail" src={Mail} alt="logo mail" />
         </Link>
       </ul>
-    </section>
+    </nav>
   );
 }
 

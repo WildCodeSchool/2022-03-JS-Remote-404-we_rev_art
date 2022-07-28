@@ -42,7 +42,7 @@
   border: none;
   border-radius: 0.25rem;
   font-size: 2rem;
-  background-color: #ffd700;
+  background-color: var(--button-color);
   color: #222a35;
   margin-left: 19rem;
 }

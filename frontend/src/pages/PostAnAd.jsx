@@ -6,7 +6,7 @@ import PostAnAdForm from "../components/PostAnAdForm";
 
 function PostAnAd() {
   return (
-    <div>
+    <div className="post-ad-container">
       <Helmet>
         <title>We Rev&apos;Art | PostAnAd </title>
       </Helmet>

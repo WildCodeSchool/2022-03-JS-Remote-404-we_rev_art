@@ -19,7 +19,7 @@
   height: 100%;
   font-size: 12rem;
   font-weight: bolder;
-  color: yellow;
+  color: var(--button-color);
   padding: 0 0.5rem;
 }
 .dataText-p {

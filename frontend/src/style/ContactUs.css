@@ -26,7 +26,7 @@
   border: none;
   border-radius: 1rem;
   font-size: 2rem;
-  color: #222a35;
+  color: var(--font-color);
   cursor: pointer;
 }
 

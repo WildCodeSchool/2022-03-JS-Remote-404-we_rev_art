@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import ExportContextUser from "../context/UserContext";
-import Button from "./Button";
-import buttonData from "../data/buttonData";
 import images from "../data/HomeImagesData";
 
 import "../style/Hero.css";
@@ -23,7 +21,9 @@ function Hero() {
           to={user !== null ? "/Post_An_Ad" : "/Register"}
           className="button-container"
         >
-          <Button buttonData={buttonData[8]} />
+          <button type="button" className="button-style yellow">
+            Animate your art now
+          </button>
         </Link>
       </section>
       <section className="section_carousel">

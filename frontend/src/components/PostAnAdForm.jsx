@@ -92,6 +92,9 @@ function PostAnAdForm() {
         <h3 className="profile_h3">What is the timeframe of your project ?</h3>
         <Timeframe timeframe={timeframe} handleTimeframe={handleTimeframe} />
       </div>
+      <button type="submit" className="button-style yellow absolute_right">
+        Submit
+      </button>
     </section>
   );
 }
